@@ -1,0 +1,5 @@
+﻿l_english:
+ district_city_desc:0 "These dense urban centers provide large amounts of housing and office space for clerical workers.§!\n--------------\n$fl_num_building_long$"
+ district_nexus_desc:0 "Centralized districts from which drones are controlled and deployed to their work assignments.§!\n--------------\n$fl_num_building_long$"
+ district_hive_desc:0 "These towering spires are where the drones gather when not working to rejuvenate and consume nutrients.§!\n--------------\n$fl_num_building_long$"
+ district_hab_housing_desc:0 "A habitat housing district provides comfortable, if compact residences for its population.§!\n--------------\n$fl_num_building_long$"

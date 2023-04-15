@@ -1,0 +1,64 @@
+#
+defined_text = {
+        name = fl_building_capacity
+        value = value:bslot_capacity
+}
+defined_text = {
+        name = fl_building_built
+        value = value:bslot_num_built
+}
+defined_text = {
+        name = fl_building_from_tech
+        value = value:bslot_from_tech
+}
+defined_text = {
+        name = fl_building_from_housing
+        value = value:bslot_from_housing_district
+}
+defined_text = {
+        name = fl_building_from_capital
+        value = value:bslot_from_capital
+}
+defined_text = {
+        name = fl_building_from_civic_trad_ap
+        value = value:bslot_from_civic_trad_ap
+}
+defined_text = {
+        name = fl_building_from_origin
+        value = value:bslot_from_origin
+}
+defined_text = {
+        name = fl_building_from_orbital_module
+        value = value:bslot_from_orbital
+}
+defined_text = {
+        name = fl_building_from_demesne
+        value = value:bslot_from_demesne
+}
+defined_text = {
+        name = fl_building_from_deposits_bad
+        value = value:bslot_from_deposits_bad
+}
+defined_text = {
+        name = fl_building_from_pc
+        value = value:bslot_from_pc
+}
+defined_text = {
+        name = fl_building_free
+        value = value:bslot_free
+}
+defined_text = {
+        name = fl_building_from_capital_dyn
+        text = {
+                trigger = {
+
+                }
+                localization_key = fl_building_from_capital_text
+        }
+        #text = {
+                #trigger = {
+#
+                #}
+                #localization_key = fl_empty
+        #}
+}
