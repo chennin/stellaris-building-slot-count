@@ -23,6 +23,7 @@ bslot_from_housing_district = {
 					type = district_city
 			}
 			mode = add
+			mult = @bslot_district_city_add
 	}
 	complex_trigger_modifier = {
 			trigger = num_districts
@@ -30,6 +31,7 @@ bslot_from_housing_district = {
 					type = district_hive
 			}
 			mode = add
+			mult = @bslot_district_city_add
 	}
 	complex_trigger_modifier = {
 			trigger = num_districts
@@ -37,6 +39,7 @@ bslot_from_housing_district = {
 					type = district_nexus
 			}
 			mode = add
+			mult = @bslot_district_city_add
 	}
 	# Storage Building and District 2762644349
 	complex_trigger_modifier = {
@@ -45,6 +48,7 @@ bslot_from_housing_district = {
 				type = district_storage
 		}
 		mode = add
+		mult = @bslot_district_storage_add
 	}
 }
 bslot_farming_districts_buildings = {
@@ -185,17 +189,17 @@ bslot_from_capital = {
 	}
 	modifier = {
 		planet = { has_imperial_capital = yes }
-		add = 11
+		add = @bslot_building_imperial_capital_add
 	}
 	# Governor's Palace / Resort Administration
 	modifier = {
 		planet = { has_special_tier1_capital = yes }
-		add = 5
+		add = @bslot_building_resort_capital_add
 	}
 	# Governor's Estates / Resort Capital-Complex
 	modifier = {
 		planet = { has_special_tier2_capital = yes }
-		add = 11
+		add = @bslot_building_resort_major_capital_add
 	}
 }
 bslot_from_tech = {
@@ -204,12 +208,12 @@ bslot_from_tech = {
 	modifier = {
 		exists = owner
 		owner = { has_technology = tech_planetary_infrastructure_1 }
-		add = 1
+		add = @bslot_tech_planetary_infrastructure_1_add
 	}
 	modifier = {
 		exists = owner
 		owner = { has_technology = tech_planetary_infrastructure_2 }
-		add = 1
+		add = @bslot_tech_planetary_infrastructure_2_add
 	}
 }
 bslot_from_civic_trad_ap = {
@@ -223,14 +227,14 @@ bslot_from_civic_trad_ap = {
 				has_valid_civic = civic_machine_builder
 			}
 		}
-		add = 1
+		add = @bslot_civic_functional_architecture_add
 	}
 	# Voidborne ascension perk 
 	modifier = {
 		exists = owner
 		owner = { has_ascension_perk = ap_voidborn }
 		uses_district_set = habitat
-		add = 2
+		add = @bslot_building_hab_capital_ap_voidborn_add
 	}
 	# Agrarian Idyll civic
 	add = value:bslot_farming_districts_buildings
@@ -242,14 +246,14 @@ bslot_from_civic_trad_ap = {
 	modifier = {
 		exists = owner
 		owner = { has_active_tradition = tr_adaptability_adaptive_ecology }
-		add = 1
+		add = @bslot_tr_adaptability_adaptive_ecology_add
 	}
 	# Modular Superstructures tradition
 	modifier = {
 		exists = owner
 		owner = { has_active_tradition = tr_prosperity_void_works }
 		uses_district_set = habitat
-		add = 1
+		add = @bslot_building_hab_capital_tr_prosperity_void_works_add
 	}
 }
 bslot_from_origin = {
@@ -261,11 +265,11 @@ bslot_from_deposits_bad = {
 	base = 0
 	modifier = {
 		has_deposit = d_venomous_insects
-		subtract = 1
+		add = @bslot_d_venomous_insects_add
 	}
 	modifier = {
 		has_deposit = d_rotten_soil
-		subtract = 2
+		add = @bslot_d_rotten_soil_add
 	}
 }
 bslot_from_pc = {
