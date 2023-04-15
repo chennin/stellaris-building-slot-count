@@ -1,5 +1,16 @@
-#
+
 @buildings_t1 = 1
 @buildings_t2 = 2
 @buildings_t3 = 3
 @buildings_t4 = 4
+@buildings_pc_hive = 12
+@buildings_pc_machine = 12
+@buildings_pc_ringworld_habitable = 12
+@buildings_uncapped = 12
+@buildings_pc_city = 12
+@buildings_ecu_ari = 24
+@bslot_district_farming_civic_agrarian_idyll_mult = 0.25
+@bslot_district_mining_uncapped_origin_subterranean_mult = 0.34
+@bslot_district_industrial_is_crafter_empire_mult = 0.34
+@bslot_district_orders_demesne_d_dimensional_manipulation_device_mult = 0.5
+@bslot_orbital_ring_habitation_holding_orbital_assembly_complex_mult = 0.5

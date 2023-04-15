@@ -1,7 +1,4 @@
 #
-@buildings_uncapped = 12
-@buildings_ecu_ari = 24 # Diff over uncapped - Ariphaos sets to 36
-
 bslot_num_built = {
 	base = -1 # Don't count capital building
 	complex_trigger_modifier = {
@@ -50,7 +47,7 @@ bslot_from_housing_district = {
 		mode = add
 	}
 }
-capped_farming_districts_buildings = {
+bslot_farming_districts_buildings = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = num_districts
@@ -63,20 +60,29 @@ capped_farming_districts_buildings = {
 		}
 		mode = add
 	}
-	mult = 0.25
+	complex_trigger_modifier = {
+		trigger = num_districts
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			uncapped_districts = yes
+		}
+		parameters = {
+			type = district_farming_uncapped
+		}
+		mode = add
+	}
+	mult = @bslot_district_farming_civic_agrarian_idyll_mult
 	floor = yes
 }
-capped_industrial_districts_buildings = {
+bslot_industrial_districts_buildings = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = num_districts
 		potential = {
 			exists = owner
 			owner = {
-				OR = {
-					has_valid_civic = civic_crafters
-					has_valid_civic = civic_corporate_crafters
-				}
+				is_crafter_empire = yes
 			}
 		}
 		parameters = {
@@ -84,10 +90,10 @@ capped_industrial_districts_buildings = {
 		}
 		mode = add
 	}
-	mult = 0.34
+	mult = @bslot_district_industrial_is_crafter_empire_mult
 	floor = yes
 }
-capped_mining_districts_buildings = {
+bslot_mining_districts_buildings = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = num_districts
@@ -102,7 +108,21 @@ capped_mining_districts_buildings = {
 		}
 		mode = add
 	}
-	mult = 0.34
+	complex_trigger_modifier = {
+		trigger = num_districts
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_subterranean
+			}
+			uncapped_districts = yes
+		}
+		parameters = {
+			type = district_mining_uncapped
+		}
+		mode = add
+	}
+	mult = @bslot_district_mining_uncapped_origin_subterranean_mult
 	floor = yes
 }
 bslot_from_orbital = {
@@ -126,7 +146,7 @@ bslot_from_orbital = {
 		}
 		mode = add
 	}
-	mult = 0.5
+	mult = @bslot_orbital_ring_habitation_holding_orbital_assembly_complex_mult
 	floor = yes
 }
 bslot_from_demesne = {
@@ -141,7 +161,7 @@ bslot_from_demesne = {
 		}
 		mode = add
 	}
-	mult = 0.5
+	mult = @bslot_district_orders_demesne_d_dimensional_manipulation_device_mult
 	floor = yes
 }
 bslot_from_capital = {
@@ -213,10 +233,10 @@ bslot_from_civic_trad_ap = {
 		add = 2
 	}
 	# Agrarian Idyll civic
-	add = value:capped_farming_districts_buildings
+	add = value:bslot_farming_districts_buildings
 
 	# Masterful Crafters / Mastercraft Inc
-	add = value:capped_industrial_districts_buildings
+	add = value:bslot_industrial_districts_buildings
 
 	# Adaptive Ecology tradition 
 	modifier = {
@@ -235,7 +255,7 @@ bslot_from_civic_trad_ap = {
 bslot_from_origin = {
 	base = 0
 	# Subterranean origin
-	add = value:capped_mining_districts_buildings
+	add = value:bslot_mining_districts_buildings
 }
 bslot_from_deposits_bad = {
 	base = 0
