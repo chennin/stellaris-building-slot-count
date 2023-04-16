@@ -96,8 +96,9 @@ def process_file(infilename, outfilename, makefunc, testfunc, genargs = {}, test
     if not os.path.exists(outfilename):
       os.makedirs( os.path.dirname(outfilename), exist_ok=True )
     with io.open(outfilename, 'a', newline="\r\n") as outfile:
-      outfile.write("\n")
+      outfile.write(f"#\n")
       outfile.write(cwp.CWToString(ele_to_add))
+      outfile.write("\n")
   except Exception as e:
     raise
     fail(e)

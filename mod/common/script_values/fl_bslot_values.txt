@@ -1,6 +1,6 @@
 #
 bslot_num_built = {
-	base = -1 # Don't count capital building
+	base = 0 # Do count capital building
 	complex_trigger_modifier = {
 			trigger = num_buildings
 			parameters = {
@@ -13,9 +13,10 @@ bslot_num_built = {
 bslot_free = {
 	base = 0
 	add = value:bslot_capacity
+	max = @MAX_PLANET_BUILDING_SLOTS
 	subtract = value:bslot_num_built
 }
-bslot_from_housing_district = {
+bslot_from_housing = {
 	base = 0
 	complex_trigger_modifier = {
 			trigger = num_districts
@@ -129,7 +130,7 @@ bslot_mining_districts_buildings = {
 	mult = @bslot_district_mining_uncapped_origin_subterranean_mult
 	floor = yes
 }
-bslot_from_orbital = {
+bslot_from_holding = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = count_starbase_modules
@@ -216,7 +217,7 @@ bslot_from_tech = {
 		add = @bslot_tech_planetary_infrastructure_2_add
 	}
 }
-bslot_from_civic_trad_ap = {
+bslot_from_cta = {
 	base = 0
 	# Functional Architecture / Constructobot civic
 	modifier = {
@@ -261,7 +262,7 @@ bslot_from_origin = {
 	# Subterranean origin
 	add = value:bslot_mining_districts_buildings
 }
-bslot_from_deposits_bad = {
+bslot_from_deposits = {
 	base = 0
 	modifier = {
 		has_deposit = d_venomous_insects
@@ -286,24 +287,24 @@ bslot_from_pc = {
 }
 bslot_capacity = {
 	base = 0
-
+	add = 1 # Adjust for capital building
 	# Sub Origin
 	add = value:bslot_from_origin
 	# Infrastructure technology
 	add = value:bslot_from_tech
 	# Planetary housing district
-	add = value:bslot_from_housing_district
+	add = value:bslot_from_housing
 	# Functional Architecture / Constructobot civic, Agrarian Idyll civic, Masterful Crafters / Mastercraft Inc, Voidborne ascension perk, Traditions
-	add = value:bslot_from_civic_trad_ap
+	add = value:bslot_from_cta
 
 	# Orbital Assembly Complex
-	add = value:bslot_from_orbital
+	add = value:bslot_from_holding
 	# Dimensional Manipulation Device
 	add = value:bslot_from_demesne
 	# Capitals
 	add = value:bslot_from_capital
-	# Bad Deposits
-	add = value:bslot_from_deposits_bad
+	# Deposits
+	add = value:bslot_from_deposits
 	# Planet class
 	add = value:bslot_from_pc
 

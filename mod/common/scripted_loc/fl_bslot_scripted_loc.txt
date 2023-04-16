@@ -13,7 +13,7 @@ defined_text = {
 }
 defined_text = {
         name = fl_building_from_housing
-        value = value:bslot_from_housing_district
+        value = value:bslot_from_housing
 }
 defined_text = {
         name = fl_building_from_capital
@@ -21,7 +21,7 @@ defined_text = {
 }
 defined_text = {
         name = fl_building_from_civic_trad_ap
-        value = value:bslot_from_civic_trad_ap
+        value = value:bslot_from_cta
 }
 defined_text = {
         name = fl_building_from_origin
@@ -29,7 +29,7 @@ defined_text = {
 }
 defined_text = {
         name = fl_building_from_orbital_module
-        value = value:bslot_from_orbital
+        value = value:bslot_from_holding
 }
 defined_text = {
         name = fl_building_from_demesne
@@ -52,9 +52,15 @@ defined_text = {
 
         text = {
                 trigger = {
-                        check_variable_arithmetic = { which = value:bslot_free value >= 0 }
+                        check_variable_arithmetic = { which = value:bslot_free value > 0 }
                 }
                 localization_key = fl_building_free_good
+        }
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_free value = 0 }
+                }
+                localization_key = fl_building_free_zero
         }
         text = {
                 trigger = {
@@ -85,64 +91,17 @@ defined_text = {
                 localization_key = fl_bslot_deposit_bad
         }
 }
+
 defined_text = {
-        name = fl_bslot_from_tech_dyn2
-        text = {
-                trigger = {
-                        check_variable_arithmetic = { which = value:bslot_from_tech value >= 1 }
-                }
-                localization_key = fl_bslot_from_tech
-        }
-        text = {
-                trigger = {
-                        check_variable_arithmetic = { which = value:bslot_from_tech value < 1 }
-                }
-                localization_key = fl_empty
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = cta
         }
 }
 defined_text = {
-        name = fl_bslot_from_cta_dyn
-        text = {
-                trigger = {
-                        check_variable_arithmetic = { which = value:bslot_from_civic_trad_ap value >= 1 }
-                }
-                localization_key = fl_bslot_from_cta
-        }
-        text = {
-                trigger = {
-                        check_variable_arithmetic = { which = value:bslot_from_civic_trad_ap value < 1 }
-                }
-                localization_key = fl_empty
-        }
-}
-defined_text = {
-        name = fl_bslot_from_holding_dyn
-        text = {
-                trigger = {
-                        check_variable_arithmetic = { which = value:bslot_from_orbital value >= 1 }
-                }
-                localization_key = fl_bslot_from_holding
-        }
-        text = {
-                trigger = {
-                        check_variable_arithmetic = { which = value:bslot_from_orbital value < 1 }
-                }
-                localization_key = fl_empty
-        }
-}
-defined_text = {
-        name = fl_bslot_from_demesne_dyn2
-        text = {
-                trigger = {
-                        check_variable_arithmetic = { which = value:bslot_from_demesne value >= 1 }
-                }
-                localization_key = fl_bslot_from_demesne
-        }
-        text = {
-                trigger = {
-                        check_variable_arithmetic = { which = value:bslot_from_demesne value < 1 }
-                }
-                localization_key = fl_empty
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = holding
         }
 }
 defined_text = {
@@ -155,5 +114,23 @@ defined_text = {
         inline_script = {
                 script = fl_sloc_one_or_more
                 KEY = tech
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = origin
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = pc
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = housing
         }
 }
