@@ -1713,6 +1713,18 @@ guiTypes = {
 						format = left
 						orientation = upper_left
 					}
+					effectButtonType = {
+						name = fl_planet_num_buildings
+						spriteType = GFX_fl_button_48_24
+						position = {
+							x = -75
+							y = 15
+						}
+						orientation = upper_right
+						buttonFont = cg_16b
+						buttonText = $fl_building_built$/$fl_building_capacity$
+						effect = fl_num_building_effect
+					}
 				}
 				gridBoxType = {
 					name = buildings_box
