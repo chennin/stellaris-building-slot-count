@@ -2,7 +2,7 @@
 
 import sys, os, io
 import Diagraphers_Stellaris_Mods.cw_parser_2 as cwp
-import shutil
+import shutil, subprocess
 
 cwp.workshop_path = os.path.expanduser( os.path.expandvars( "~/stellaris-workshop" ) )
 cwp.mod_docs_path = os.path.expanduser( os.path.expandvars( "~/stellaris-mod" ) )
@@ -30,7 +30,7 @@ bslot_display = """
 						orientation = upper_right
 						buttonFont = {font}
 						
-						buttonText = "$fl_building_built$/$fl_building_capacity$"
+						buttonText = "$fl_building_built$"
 						effect = fl_num_building_effect
 					}}
 """
@@ -494,7 +494,11 @@ process_file(f"{cwp.vanilla_path}/interface/planet_view.gui",
 
 for mod in other_mods:
   mod_dir = "mod_{}".format(mod["name"])
-  shutil.copytree("mod", mod_dir, dirs_exist_ok=True, ignore = shutil.ignore_patterns("planet_view.gui"))
+#  shutil.copytree("mod", mod_dir, dirs_exist_ok=True, ignore = shutil.ignore_patterns("planet_view.gui"))
+  rsync = subprocess.run([ "rsync", "-a", "--delete", "-v", "mod/", mod_dir ], capture_output=True)
+  print(rsync.stdout)
+  if rsync.returncode != 0:
+    fail(f"Copying mods had an error: {rsync.stderr}")
   make_descriptor(f"{mod_dir}/descriptor.mod".format(mod["name"]), mod = mod)
 
   process_file(f"{cwp.workshop_path}/{mod['num']}/interface/planet_view.gui",
