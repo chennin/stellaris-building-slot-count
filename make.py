@@ -15,6 +15,7 @@ SUPPORTED_VERSION = "3.7.*"
 files = {
   "SCRIPTED_VAR_FILENAME": "mod/common/scripted_variables/fl_bslot_vars.txt",
   "VANILLA_PLANET_VIEW": "mod/interface/planet_view.gui",
+  "ZZ_DEFINES": "mod/common/scripted_variables/zzzzzzzzzzzz_fl_bslot_define.txt",
 }
 other_mods = [
   { "name": "UIOD", "num": 1623423360 },
@@ -47,7 +48,8 @@ def clear_files():
     try:
       os.unlink(files[file])
     except FileNotFoundError as e:
-      print(e)
+      pass
+#      print(e)
     except Exception as e:
       fail(e)
 
@@ -207,6 +209,16 @@ def look_in_block(inlist, outlist, tests):
           if name == None:
             name = ""
           outlist.extend( cwp.stringToCW( "@{}{}_{}{} = {}".format(test["prefix"], test["outmostblock"], name, test["suffix"], val) ) )
+  return outlist
+
+#  " [ { "outmostblock":, "keywanted": } ]
+def look_in_defines(inlist, outlist, tests):
+  for outer in inlist:
+    for test in tests:
+      if test["outmostblock"] == outer.name:
+        for ele in outer.subelements:
+          if test["keywanted"] == ele.name:
+            outlist.extend( cwp.stringToCW( "@{} = {}".format(ele.name, ele.value) ) )
   return outlist
 
 clear_files()
@@ -483,7 +495,19 @@ process_file(f"{cwp.workshop_path}/2762644349/common/districts/storage_districts
                },
              ] }
 )
-
+process_file(f"{cwp.vanilla_path}/common/defines/00_defines.txt",
+             files["ZZ_DEFINES"],
+             look_in_defines,
+             success_len,
+             testargs = { "expected": 1 },
+             genargs = { "tests": [
+               {
+               "outmostblock": "NGameplay",
+               "keywanted": "MAX_PLANET_BUILDING_SLOTS",
+               },
+             ] }
+)
+# Vanilla Planet View
 process_file(f"{cwp.vanilla_path}/interface/planet_view.gui",
              files["VANILLA_PLANET_VIEW"],
              process_planet_view,
@@ -491,12 +515,11 @@ process_file(f"{cwp.vanilla_path}/interface/planet_view.gui",
              testargs = {},
              genargs = { "mod_name": "van" },
 )
-
+# Descriptors and Other Planet Views
 for mod in other_mods:
   mod_dir = "mod_{}".format(mod["name"])
 #  shutil.copytree("mod", mod_dir, dirs_exist_ok=True, ignore = shutil.ignore_patterns("planet_view.gui"))
-  rsync = subprocess.run([ "rsync", "-a", "--delete", "-v", "mod/", mod_dir ], capture_output=True)
-  print(rsync.stdout)
+  rsync = subprocess.run([ "rsync", "-a", "--delete", "mod/", mod_dir ], capture_output=True)
   if rsync.returncode != 0:
     fail(f"Copying mods had an error: {rsync.stderr}")
   make_descriptor(f"{mod_dir}/descriptor.mod".format(mod["name"]), mod = mod)
