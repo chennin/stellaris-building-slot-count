@@ -1,0 +1,136 @@
+#
+defined_text = {
+        name = fl_building_capacity
+        value = value:bslot_capacity
+}
+defined_text = {
+        name = fl_building_built_dyn
+        value = value:bslot_num_built
+}
+defined_text = {
+        name = fl_building_from_tech
+        value = value:bslot_from_tech
+}
+defined_text = {
+        name = fl_building_from_housing
+        value = value:bslot_from_housing
+}
+defined_text = {
+        name = fl_building_from_capital
+        value = value:bslot_from_capital
+}
+defined_text = {
+        name = fl_building_from_civic_trad_ap
+        value = value:bslot_from_cta
+}
+defined_text = {
+        name = fl_building_from_origin
+        value = value:bslot_from_origin
+}
+defined_text = {
+        name = fl_building_from_orbital_module
+        value = value:bslot_from_holding
+}
+defined_text = {
+        name = fl_building_from_demesne
+        value = value:bslot_from_demesne
+}
+defined_text = {
+        name = fl_building_from_deposits
+        value = value:bslot_from_deposits
+}
+defined_text = {
+        name = fl_building_from_pc
+        value = value:bslot_from_pc
+}
+defined_text = {
+        name = fl_building_free
+        value = value:bslot_free
+}
+defined_text = {
+        name = fl_bslot_free_dyn
+
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_free value > 0 }
+                }
+                localization_key = fl_building_free_good
+        }
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_free value = 0 }
+                }
+                localization_key = fl_building_free_zero
+        }
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_free value < 0 }
+                }
+                localization_key = fl_building_free_bad
+        }
+}
+defined_text = {
+        name = fl_bslot_deposit_dyn
+
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_deposits value > 0 }
+                }
+                localization_key = fl_bslot_deposit_good
+        }
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_deposits value = 0 }
+                }
+                localization_key = fl_empty
+        }
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_deposits value < 0 }
+                }
+                localization_key = fl_bslot_deposit_bad
+        }
+}
+
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = cta
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = holding
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = demesne
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = tech
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = origin
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = pc
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = housing
+        }
+}

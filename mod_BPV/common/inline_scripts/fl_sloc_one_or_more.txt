@@ -1,0 +1,13 @@
+        name = fl_bslot_from_$KEY$_dyn
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_$KEY$ value >= 1 }
+                }
+                localization_key = fl_bslot_from_$KEY$
+        }
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_$KEY$ value < 1 }
+                }
+                localization_key = fl_empty
+        }
