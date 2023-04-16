@@ -36,8 +36,8 @@ defined_text = {
         value = value:bslot_from_demesne
 }
 defined_text = {
-        name = fl_building_from_deposits_bad
-        value = value:bslot_from_deposits_bad
+        name = fl_building_from_deposits
+        value = value:bslot_from_deposits
 }
 defined_text = {
         name = fl_building_from_pc
@@ -48,17 +48,112 @@ defined_text = {
         value = value:bslot_free
 }
 defined_text = {
-        name = fl_building_from_capital_dyn
+        name = fl_bslot_free_dyn
+
         text = {
                 trigger = {
-
+                        check_variable_arithmetic = { which = value:bslot_free value >= 0 }
                 }
-                localization_key = fl_building_from_capital_text
+                localization_key = fl_building_free_good
         }
-        #text = {
-                #trigger = {
-#
-                #}
-                #localization_key = fl_empty
-        #}
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_free value < 0 }
+                }
+                localization_key = fl_building_free_bad
+        }
+}
+defined_text = {
+        name = fl_bslot_deposit_dyn
+
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_deposits value > 0 }
+                }
+                localization_key = fl_bslot_deposit_good
+        }
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_deposits value = 0 }
+                }
+                localization_key = fl_empty
+        }
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_deposits value < 0 }
+                }
+                localization_key = fl_bslot_deposit_bad
+        }
+}
+defined_text = {
+        name = fl_bslot_from_tech_dyn2
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_tech value >= 1 }
+                }
+                localization_key = fl_bslot_from_tech
+        }
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_tech value < 1 }
+                }
+                localization_key = fl_empty
+        }
+}
+defined_text = {
+        name = fl_bslot_from_cta_dyn
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_civic_trad_ap value >= 1 }
+                }
+                localization_key = fl_bslot_from_cta
+        }
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_civic_trad_ap value < 1 }
+                }
+                localization_key = fl_empty
+        }
+}
+defined_text = {
+        name = fl_bslot_from_holding_dyn
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_orbital value >= 1 }
+                }
+                localization_key = fl_bslot_from_holding
+        }
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_orbital value < 1 }
+                }
+                localization_key = fl_empty
+        }
+}
+defined_text = {
+        name = fl_bslot_from_demesne_dyn2
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_demesne value >= 1 }
+                }
+                localization_key = fl_bslot_from_demesne
+        }
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_from_demesne value < 1 }
+                }
+                localization_key = fl_empty
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = demesne
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = tech
+        }
 }
