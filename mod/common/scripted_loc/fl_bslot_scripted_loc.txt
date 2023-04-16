@@ -4,7 +4,7 @@ defined_text = {
         value = value:bslot_capacity
 }
 defined_text = {
-        name = fl_building_built
+        name = fl_building_built_dyn
         value = value:bslot_num_built
 }
 defined_text = {

@@ -1,6 +1,6 @@
 ﻿l_english:
-  fl_num_building_long:0 "§SBuildings§!\nBuilding Capacity: $fl_building_capacity_color$\nHardcoded Maximum: $@MAX_PLANET_BUILDING_SLOTS|*0M$\nCurrently Built: §W[This.fl_building_built]§!\nFree Building Slots: [This.fl_bslot_free_dyn]\n\nCapital: 1\nFrom Capital: [This.fl_building_from_capital][This.fl_bslot_from_housing_dyn][This.fl_bslot_from_tech_dyn][This.fl_bslot_from_cta_dyn][This.fl_bslot_from_holding_dyn][This.fl_bslot_from_demesne_dyn][This.fl_bslot_from_origin_dyn][This.fl_bslot_from_pc_dyn][This.fl_bslot_deposit_dyn]"
-  fl_building_built:0 "[This.fl_building_built]"
+  fl_num_building_long:0 "§SBuildings§!\nBuilding Capacity: $fl_building_capacity_color$\nHardcoded Maximum: $@MAX_PLANET_BUILDING_SLOTS|*0M$\nCurrently Built: §W[This.fl_building_built_dyn]§!\nFree Building Slots: [This.fl_bslot_free_dyn]\n\nCapital: 1\nFrom Capital: [This.fl_building_from_capital][This.fl_bslot_from_housing_dyn][This.fl_bslot_from_tech_dyn][This.fl_bslot_from_cta_dyn][This.fl_bslot_from_holding_dyn][This.fl_bslot_from_demesne_dyn][This.fl_bslot_from_origin_dyn][This.fl_bslot_from_pc_dyn][This.fl_bslot_deposit_dyn]"
+  fl_button_text:0 "[This.fl_building_built_dyn]"
   fl_building_capacity_color:0 "§Y[This.fl_building_capacity]§!"
   fl_building_capacity:0 "[This.fl_building_capacity]"
   fl_building_free_good:0 "§G[This.fl_building_free]§!"

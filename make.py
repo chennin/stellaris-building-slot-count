@@ -31,7 +31,7 @@ bslot_display = """
 						orientation = upper_right
 						buttonFont = {font}
 						
-						buttonText = "$fl_building_built$"
+						buttonText = "$fl_button_text$"
 						effect = fl_num_building_effect
 					}}
 """
@@ -396,6 +396,22 @@ process_file(f"{cwp.vanilla_path}/common/buildings/00_capital_buildings.txt",
                "testright": "tr_prosperity_void_works",
                "keywanted": "planet_max_buildings_add",
                "prefix": "bslot_", "suffix": "_add"
+               },
+             ] }
+)
+process_file(f"{cwp.vanilla_path}/common/buildings/13_fallen_empire_buildings.txt",
+             files["SCRIPTED_VAR_FILENAME"],
+             look_in_block,
+             success_len,
+             testargs = { "expected": 1 },
+             genargs =  { "tests": [
+               {
+               "outmostblock": "building_fe_xeno_zoo",
+               "innerblock": "planet_modifier",
+               "testleft": "planet_modifier",
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_", "suffix": "add"
                },
              ] }
 )

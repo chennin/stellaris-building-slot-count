@@ -1725,7 +1725,7 @@ guiTypes = {
 						}
 						orientation = upper_right
 						buttonFont = @fl_font_van
-						buttonText = $fl_building_built$
+						buttonText = $fl_button_text$
 						effect = fl_num_building_effect
 					}
 				}

@@ -31,6 +31,8 @@
 @bslot_building_slave_major_capital_add = 11
 @bslot_building_imperial_capital_add = 11
 #
+@bslot_building_fe_xeno_zoo_add = 15
+#
 @bslot_d_venomous_insects_add = -1
 @bslot_d_rotten_soil_add = -2
 #

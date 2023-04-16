@@ -202,6 +202,11 @@ bslot_from_capital = {
 		planet = { has_special_tier2_capital = yes }
 		add = @bslot_building_resort_major_capital_add
 	}
+	# building_fe_xeno_zoo
+	modifier = {
+		planet = { has_special_tier3_capital = yes }
+		add = @bslot_building_fe_xeno_zoo_add
+	}
 }
 bslot_from_tech = {
 	base = 0
