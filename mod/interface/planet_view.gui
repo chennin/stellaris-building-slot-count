@@ -1,4 +1,7 @@
 
+@fl_pos_van_x = -75
+@fl_pos_van_y = 15
+@fl_font_van = cg_16b
 @tab_height = -42
 guiTypes = {
 	positionType = {
@@ -1717,12 +1720,12 @@ guiTypes = {
 						name = fl_planet_num_buildings
 						spriteType = GFX_fl_button_48_24
 						position = {
-							x = -75
-							y = 15
+							x = @fl_pos_van_x
+							y = @fl_pos_van_y
 						}
 						orientation = upper_right
-						buttonFont = cg_16b
-						buttonText = $fl_building_built$/$fl_building_capacity$
+						buttonFont = @fl_font_van
+						buttonText = $fl_building_built$
 						effect = fl_num_building_effect
 					}
 				}
