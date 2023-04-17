@@ -21,7 +21,7 @@
 
 import sys, os, io
 import Diagraphers_Stellaris_Mods.cw_parser_2 as cwp
-import shutil, subprocess
+import shutil, subprocess, copy
 
 cwp.workshop_path = os.path.expanduser( os.path.expandvars( "~/stellaris-workshop" ) )
 cwp.mod_docs_path = os.path.expanduser( os.path.expandvars( "~/stellaris-mod" ) )
@@ -30,6 +30,8 @@ cwp.vanilla_path = os.path.expanduser( os.path.expandvars( "~/stellaris-game" ) 
 MOD_NAME = "Show Building Slot Capacity"
 VERSION = "1"
 SUPPORTED_VERSION = "3.7.*"
+# 3 = unlisted, 2 = hidden, 1 = friends, 0 = public
+VISIBILITY = 3
 
 files = {
   "SCRIPTED_VAR_FILENAME": "mod/common/scripted_variables/fl_bslot_vars.txt",
@@ -572,3 +574,31 @@ for mod in other_mods:
              testargs = {},
              genargs = { "mod_name": mod["name"] },
   )
+
+# Make steamcmd.txt
+alldirs = copy.copy(other_mods)
+alldirs.append( { "name": "", "num": 0 })
+for mod in alldirs:
+  outfile = "mod/steamcmd.txt"
+  if mod["name"] != "":
+    outfile = "mod_{}/steamcmd.txt".format( mod["name"] )
+  name = f"{MOD_NAME}"
+  if mod["name"] != "":
+    name += " - {}".format(mod["name"])
+  if not os.path.exists(outfile):
+    shutil.copy("steamcmd-template.txt", outfile)
+  steamcmd = []
+  with open(outfile, "r") as file:
+    steamcmd = file.readlines()
+  with open(outfile, "w") as file:
+    for line in steamcmd:
+      if '"contentfolder"' in line or '"previewfile"' in line:
+        line = line.replace("FULLMODPATH", "{}/{}".format(os.getcwd(), os.path.dirname(outfile)) )
+      elif '"title"' in line:
+        line = f'\t"title"\t\t"{name}"\n'
+      elif '"visibility"' in line:
+        line = f'\t"visibility"\t\t"{VISIBILITY}"\n'
+      elif '"description"' in line and '"New description."' not in line:
+        line = ""
+
+      file.write(line)
