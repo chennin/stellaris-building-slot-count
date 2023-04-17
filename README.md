@@ -6,7 +6,7 @@ Useful for example for knowing how many city districts you are wasting after you
 
 # Downloads
 
-Vanilla | UIOD | UIOD + BPV | Planet View
+Vanilla | UIOD | Bigger Planet View | PD - Planet View
 :---: | :---: | :---: | :--:
 [![Get it from the Workshop](https://img.shields.io/badge/steam-%23000000.svg?style=for-the-badge&logo=steam&logoColor=white)](https://steamcommunity.com/sharedfiles/filedetails/?id=2963495048) | [![Get it from the Workshop](https://img.shields.io/badge/steam-%23000000.svg?style=for-the-badge&logo=steam&logoColor=white)](https://steamcommunity.com/sharedfiles/filedetails/?id=2963495133) | [![Get it from the Workshop](https://img.shields.io/badge/steam-%23000000.svg?style=for-the-badge&logo=steam&logoColor=white)](https://steamcommunity.com/sharedfiles/filedetails/?id=2963495085) |  [![Get it from the Workshop](https://img.shields.io/badge/steam-%23000000.svg?style=for-the-badge&logo=steam&logoColor=white)](https://steamcommunity.com/sharedfiles/filedetails/?id=2963495107)
 
