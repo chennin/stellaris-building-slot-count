@@ -48,7 +48,7 @@ bslot_from_housing = {
 				type = district_crashed_slaver_ship
 		}
 		mode = add
-		mult = @bslot_district_city_add
+		mult = @bslot_district_crashed_slaver_ship_add
 	}
 	# Storage Building and District 2762644349
 	complex_trigger_modifier = {

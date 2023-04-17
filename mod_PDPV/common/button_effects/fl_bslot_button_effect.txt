@@ -1,0 +1,13 @@
+#
+fl_num_building_effect = {
+	potential = {
+		is_scope_type = planet
+	}
+	allow = {
+		is_scope_type = planet
+	}
+
+	effect = {
+		custom_tooltip = fl_num_building_long
+	}
+}

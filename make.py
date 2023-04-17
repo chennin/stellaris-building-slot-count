@@ -39,6 +39,7 @@ files = {
 other_mods = [
   { "name": "UIOD", "num": 1623423360 },
   { "name": "BPV", "num": 1587178040 },
+  { "name": "PDPV", "num": 1866576239 },
 ]
 min_uncapped = 0
 bslot_display = """
@@ -559,8 +560,7 @@ process_file(f"{cwp.vanilla_path}/interface/planet_view.gui",
 # Descriptors and Other Planet Views
 for mod in other_mods:
   mod_dir = "mod_{}".format(mod["name"])
-#  shutil.copytree("mod", mod_dir, dirs_exist_ok=True, ignore = shutil.ignore_patterns("planet_view.gui"))
-  rsync = subprocess.run([ "rsync", "-a", "--delete", "mod/", mod_dir ], capture_output=True)
+  rsync = subprocess.run([ "rsync", "-a", "--delete", "--exclude-from", "./rsync-exclude", "mod/", mod_dir ], capture_output=True)
   if rsync.returncode != 0:
     fail(f"Copying mods had an error: {rsync.stderr}")
   make_descriptor(f"{mod_dir}/descriptor.mod".format(mod["name"]), mod = mod)
