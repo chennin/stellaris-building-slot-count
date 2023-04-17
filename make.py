@@ -593,12 +593,13 @@ for mod in alldirs:
   with open(outfile, "w") as file:
     for line in steamcmd:
       if '"contentfolder"' in line or '"previewfile"' in line:
-        line = line.replace("FULLMODPATH", "{}/{}".format(os.getcwd(), os.path.dirname(outfile)) )
+        line = line.replace("FULLMODPATH", "{}/{}".format(os.getcwd(), os.path.dirname(outfile) ) )
       elif '"title"' in line:
         line = f'\t"title"\t\t"{name}"\n'
       elif '"visibility"' in line:
         line = f'\t"visibility"\t\t"{VISIBILITY}"\n'
-      elif '"description"' in line and '"New description."' not in line:
-        line = ""
+      elif '"description"' in line:
+        if '"New description."' in line:
+          line = ""
 
       file.write(line)
