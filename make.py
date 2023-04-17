@@ -1,4 +1,23 @@
 #!/usr/bin/env python3
+#Copyright (c) 2023 Chris Henning
+#
+#Permission is hereby granted, free of charge, to any person obtaining a copy
+#of this software and associated documentation files (the "Software"), to deal
+#in the Software without restriction, including without limitation the rights
+#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#copies of the Software, and to permit persons to whom the Software is
+#furnished to do so, subject to the following conditions:
+#
+#The above copyright notice and this permission notice shall be included in all
+#copies or substantial portions of the Software.
+#
+#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#SOFTWARE.
 
 import sys, os, io
 import Diagraphers_Stellaris_Mods.cw_parser_2 as cwp
@@ -253,7 +272,7 @@ process_file(f"{cwp.vanilla_path}/common/districts/02_rural_districts.txt",
              testargs = { "expected": 2 },
 
              genargs =  { "tests": [
-               { 
+               {
                "outmostblock": "district_farming",
                "innerblock": "triggered_planet_modifier",
                "testleft": "has_valid_civic",
@@ -261,7 +280,7 @@ process_file(f"{cwp.vanilla_path}/common/districts/02_rural_districts.txt",
                "keywanted": "planet_max_buildings_add",
                "prefix": "bslot_", "suffix": "_mult"
                },
-               { 
+               {
                "outmostblock": "district_mining_uncapped",
                "innerblock": "triggered_planet_modifier",
                "testleft": "has_origin",
@@ -279,10 +298,10 @@ process_file(f"{cwp.vanilla_path}/common/districts/00_urban_districts.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
              success_len,
-             testargs = { "expected": 2 },
+             testargs = { "expected": 3 },
 
              genargs =  { "tests": [ 
-               { 
+               {
                "outmostblock": "district_industrial",
                "innerblock": "triggered_planet_modifier",
                "testleft": "is_crafter_empire",
@@ -290,18 +309,23 @@ process_file(f"{cwp.vanilla_path}/common/districts/00_urban_districts.txt",
                "keywanted": "planet_max_buildings_add",
                "prefix": "bslot_", "suffix": "_mult"
                },
-               { 
+               {
                "outmostblock": "district_city",
                "innerblock": "planet_modifier",
                "testleft": "planet_modifier",
                "testright": None,
                "keywanted": "planet_max_buildings_add",
                "prefix": "bslot_", "suffix": "add"
-               }
+               },
+               {
+               "outmostblock": "district_crashed_slaver_ship",
+               "innerblock": "planet_modifier",
+               "testleft": "planet_modifier",
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_", "suffix": "add"
+               },
               ] }
-#             genargs = { "test": [
-#                    ("district_industrial", "is_crafter_empire", "yes")
-#             ] }
 )
 process_file(f"{cwp.vanilla_path}/common/districts/00_special_districts.txt", 
              files["SCRIPTED_VAR_FILENAME"],
