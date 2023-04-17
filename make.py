@@ -599,7 +599,9 @@ for mod in alldirs:
       elif '"visibility"' in line:
         line = f'\t"visibility"\t\t"{VISIBILITY}"\n'
       elif '"description"' in line:
-        if '"New description."' in line:
+        if '"TEMPLATE_DESC"' in line:
+          line = line.replace('"TEMPLATE_DESC"', '"New description."')
+        elif '"New description."' in line:
           line = ""
 
       file.write(line)

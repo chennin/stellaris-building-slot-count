@@ -5,5 +5,5 @@
 	"previewfile"		"FULLMODPATH/thumbnail.png"
 	"visibility"		"2"
 	"title"		"MODNAME"
-	"description"		"New description."
+	"description"		"TEMPLATE_DESC"
 }
