@@ -22,6 +22,7 @@
 import sys, os, io
 import Diagraphers_Stellaris_Mods.cw_parser_2 as cwp
 import shutil, subprocess, copy
+from pathlib import Path
 
 cwp.workshop_path = os.path.expanduser( os.path.expandvars( "~/stellaris-workshop" ) )
 cwp.mod_docs_path = os.path.expanduser( os.path.expandvars( "~/stellaris-mod" ) )
@@ -559,7 +560,34 @@ process_file(f"{cwp.vanilla_path}/interface/planet_view.gui",
              testargs = {},
              genargs = { "mod_name": "van" },
 )
+# Copy localisation files to other langs
+p = Path(f"{cwp.vanilla_path}/localisation/")
+# Vanilla lang folders (not hidden folders):
+langs = [x.name for x in p.iterdir() if x.is_dir() and not x.name.startswith(".") and x.name != "english" ]
+srclocfile = "mod/localisation/english/fl_bslot_l_english.yml"
+outloc = []
+try:
+  with open(srclocfile, "r") as file:
+    outloc = file.readlines()
+except Exception as e:
+  fail(f"Could not open src loc file {srclocfile}: {e}")
+for lang in langs:
+  # Copy loc files
+  try:
+    locfilename = f"mod/localisation/{lang}/fl_bslot_l_{lang}.yml"
+    if not os.path.exists(locfilename):
+      os.makedirs( os.path.dirname(locfilename), exist_ok=True )
+    with open(locfilename, "w", encoding='utf-8-sig') as file:
+      for line in outloc:
+        if line.startswith("l_"):
+          file.write(f"l_{lang}:\n")
+        else:
+          file.write(line)
+  except Exception as e:
+    fail(f"Failed to write loc file {locfilename}: {e}")
+
 # Descriptors and Other Planet Views
+# Copy all files from base mod to other mods
 for mod in other_mods:
   mod_dir = "mod_{}".format(mod["name"])
   rsync = subprocess.run([ "rsync", "-a", "--delete", "--exclude-from", "./rsync-exclude", "mod/", mod_dir ], capture_output=True)

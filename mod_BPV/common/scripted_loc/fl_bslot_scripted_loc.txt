@@ -80,16 +80,11 @@ defined_text = {
         }
         text = {
                 trigger = {
-                        check_variable_arithmetic = { which = value:bslot_from_deposits value = 0 }
-                }
-                localization_key = fl_empty
-        }
-        text = {
-                trigger = {
                         check_variable_arithmetic = { which = value:bslot_from_deposits value < 0 }
                 }
                 localization_key = fl_bslot_deposit_bad
         }
+        default = BLANK_STRING
 }
 
 defined_text = {
