@@ -32,7 +32,7 @@ MOD_NAME = "Show Building Slot Capacity"
 VERSION = "1"
 SUPPORTED_VERSION = "3.7.*"
 # 3 = unlisted, 2 = hidden, 1 = friends, 0 = public
-VISIBILITY = 3
+VISIBILITY = 0
 
 files = {
   "SCRIPTED_VAR_FILENAME": "mod/common/scripted_variables/fl_bslot_vars.txt",
