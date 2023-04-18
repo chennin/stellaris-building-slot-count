@@ -633,5 +633,3 @@ for mod in alldirs:
         elif '"New description."' in line:
           line = ""
       file.write(line)
-  del outfile
-  del steamcmd
