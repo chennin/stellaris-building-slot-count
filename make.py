@@ -621,7 +621,8 @@ for mod in alldirs:
   with open(outfile, "w") as file:
     for line in steamcmd:
       if '"contentfolder"' in line or '"previewfile"' in line:
-        line = line.replace("FULLMODPATH", "{}/{}".format(os.getcwd(), os.path.dirname(outfile) ) )
+        newpath = "{}/{}".format(os.getcwd(), os.path.dirname(outfile) )
+        line = line.replace("FULLMODPATH", newpath)
       elif '"title"' in line:
         line = f'\t"title"\t\t"{name}"\n'
       elif '"visibility"' in line:
@@ -631,5 +632,6 @@ for mod in alldirs:
           line = line.replace('"TEMPLATE_DESC"', '"New description."')
         elif '"New description."' in line:
           line = ""
-
       file.write(line)
+  del outfile
+  del steamcmd
