@@ -1,8 +1,8 @@
 ﻿﻿# Show Building Slot Capacity 
 l_polish:
-  fl_num_building_long: "§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|*0M$\n$building_constructed$: §W[This.fl_building_built_dyn]§!\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_bslot_free_dyn]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital][This.fl_bslot_from_housing_dyn][This.fl_bslot_from_tech_dyn][This.fl_bslot_from_cta_dyn][This.fl_bslot_from_holding_dyn][This.fl_bslot_from_demesne_dyn][This.fl_bslot_from_origin_dyn][This.fl_bslot_from_pc_dyn][This.fl_bslot_deposit_dyn]"
+  fl_num_building_long: "§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|0M$\n$building_constructed$: §W[This.fl_building_built_dyn]§!\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_bslot_free_dyn]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital][This.fl_bslot_from_housing_dyn][This.fl_bslot_from_tech_dyn][This.fl_bslot_from_cta_dyn][This.fl_bslot_from_holding_dyn][This.fl_bslot_from_demesne_dyn][This.fl_bslot_from_origin_dyn][This.fl_bslot_from_pc_dyn][This.fl_bslot_deposit_dyn]"
   
-  fl_num_building_long_static: "DEBUG\n§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|*0M$\n$building_constructed$: §W[This.fl_building_built_dyn]§!\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_bslot_free_dyn]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital]$fl_bslot_from_housing$$fl_bslot_from_tech$$fl_bslot_from_cta$$fl_bslot_from_holding$$fl_bslot_from_demesne$$fl_bslot_from_origin$$fl_bslot_from_pc$$fl_bslot_deposit$"
+  fl_num_building_long_static: "DEBUG\n§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|0M$\n$building_constructed$: §W[This.fl_building_built_dyn]§!\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_bslot_free_dyn]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital]$fl_bslot_from_housing$$fl_bslot_from_tech$$fl_bslot_from_cta$$fl_bslot_from_holding$$fl_bslot_from_demesne$$fl_bslot_from_origin$$fl_bslot_from_pc$$fl_bslot_deposit$"
  
   fl_button_text: "[This.fl_building_built_dyn]"
   fl_building_capacity_color: "§Y[This.fl_building_capacity]§!"
@@ -10,8 +10,8 @@ l_polish:
   fl_building_free_good: "§G[This.fl_building_free]§!"
   fl_building_free_zero: "§W[This.fl_building_free]§!"
   fl_building_free_bad: "§R[This.fl_building_free]§!"
-  fl_bslot_deposit_good: "\n$planet_deposits$: §W[This.fl_building_from_deposits]§!"
-  fl_bslot_deposit_bad: "\n$planet_deposits$: §R[This.fl_building_from_deposits]§!"
+  fl_bslot_deposit_good: "\n$DEPOSITS_TITLE$: §W[This.fl_building_from_deposits]§!"
+  fl_bslot_deposit_bad: "\n$DEPOSITS_TITLE$: §R[This.fl_building_from_deposits]§!"
   fl_bslot_from_tech: "\n$TECHNOLOGY$: [This.fl_building_from_tech]"
   fl_bslot_from_cta: "\n$GOVERNMENT_CIVICS$/$TRADITIONS$/$ASCENSION_PERKS$: [This.fl_building_from_civic_trad_ap]"
   fl_bslot_from_holding: "\n$HOLDINGS$+$sm_orbital_ring_habitation$: [This.fl_building_from_orbital_module]"
@@ -19,3 +19,4 @@ l_polish:
   fl_bslot_from_origin: "\n$ORIGIN$: [This.fl_building_from_origin]"
   fl_bslot_from_pc: "\n$PLANETVIEW_PLANET_CLASS$: [This.fl_building_from_pc]"
   fl_bslot_from_housing: "\n$PLANET_HOUSING_TITLE$ $DISTRICTS$: [This.fl_building_from_housing]"
+
