@@ -41,15 +41,22 @@ guiTypes = {
 		}
 		position = {
 			x = 35
-			y = -91
+			y = 50
 		}
-		orientation = lower_left
-		origo = lower_left
 		if_resolution = {
-			min_width = 2560
+			min_height = 1080
 			position = {
-				x = 55
+				x = 35
 				y = -91
+			}
+			orientation = lower_left
+			origo = lower_left
+			if_resolution = {
+				min_width = 2560
+				position = {
+					x = 55
+					y = -91
+				}
 			}
 		}
 		moveable = yes
@@ -1304,7 +1311,7 @@ guiTypes = {
 						top = 2
 						bottom = 2
 					}
-					verticalScrollbar = right_vertical_slider_thick
+					verticalScrollbar = bpv_right_vertical_slider_thick
 					background = {
 						name = districts_window_background
 						spriteType = GFX_tiles_dark_area_cut_8
@@ -2179,7 +2186,7 @@ guiTypes = {
 							x = 0
 							y = 0
 						}
-						scrollbarType = standardlistbox_slider_thick
+						scrollbarType = bpv_standardlistbox_slider_thick
 						offset = {
 							x = -3
 							y = 0
@@ -2303,7 +2310,7 @@ guiTypes = {
 					x = @pop_strata
 					y = 628
 				}
-				scrollbarType = standardlistbox_slider_thick
+				scrollbarType = bpv_standardlistbox_slider_thick
 				borderSize = {
 					x = 0
 					y = 0
@@ -2431,7 +2438,7 @@ guiTypes = {
 							x = 110
 							y = 544
 						}
-						scrollbarType = standardlistbox_slider_thick
+						scrollbarType = bpv_standardlistbox_slider_thick
 						offset = {
 							x = -3
 							y = 0
@@ -3571,7 +3578,7 @@ guiTypes = {
 							y = 0
 						}
 						spacing = 2
-						scrollbarType = standardlistbox_slider_thick
+						scrollbarType = bpv_standardlistbox_slider_thick
 						autohide_scrollbar = yes
 					}
 				}
@@ -3853,7 +3860,7 @@ guiTypes = {
 							x = 0
 							y = 0
 						}
-						scrollbarType = standardlistbox_slider_thick
+						scrollbarType = bpv_standardlistbox_slider_thick
 						offset = {
 							x = -3
 							y = 0
@@ -4047,7 +4054,7 @@ guiTypes = {
 						x = 560
 						y = 920
 					}
-					scrollbarType = standardlistbox_slider_thick
+					scrollbarType = bpv_standardlistbox_slider_thick
 					spacing = 2
 				}
 			}
@@ -4407,7 +4414,7 @@ guiTypes = {
 						x = @sidebar_inner_w
 						y = @sidebar_list_h
 					}
-					scrollbarType = standardlistbox_slider_thick
+					scrollbarType = bpv_standardlistbox_slider_thick
 					offset = {
 						x = -3
 						y = 0
@@ -4626,7 +4633,7 @@ guiTypes = {
 							x = @sidebar_inner_w
 							y = 350
 						}
-						scrollbarType = standardlistbox_slider_thick
+						scrollbarType = bpv_standardlistbox_slider_thick
 						offset = {
 							x = -3
 							y = 0
@@ -5181,7 +5188,7 @@ guiTypes = {
 						width = -22
 						height = 236
 					}
-					verticalScrollbar = right_vertical_slider_thick_small
+					verticalScrollbar = bpv_right_vertical_slider_thick_small
 					margin = {
 						top = 2
 						right = 4
@@ -5400,7 +5407,7 @@ guiTypes = {
 						x = @sidebar_inner_w
 						y = @sidebar_list_h
 					}
-					scrollbarType = standardlistbox_slider_thick
+					scrollbarType = bpv_standardlistbox_slider_thick
 					offset = {
 						x = -3
 						y = 0
@@ -5551,7 +5558,7 @@ guiTypes = {
 						x = @sidebar_inner_w
 						y = @sidebar_list_h
 					}
-					scrollbarType = standardlistbox_slider_thick
+					scrollbarType = bpv_standardlistbox_slider_thick
 					offset = {
 						x = -3
 						y = 0
@@ -5594,7 +5601,7 @@ guiTypes = {
 						x = @sidebar_inner_w
 						y = @sidebar_list_h
 					}
-					scrollbarType = standardlistbox_slider_thick
+					scrollbarType = bpv_standardlistbox_slider_thick
 					offset = {
 						x = -3
 						y = 0
@@ -5676,7 +5683,7 @@ guiTypes = {
 						x = @sidebar_inner_w
 						y = @sidebar_list_h_construction
 					}
-					scrollbarType = standardlistbox_slider_thick
+					scrollbarType = bpv_standardlistbox_slider_thick
 					offset = {
 						x = -3
 						y = 0
@@ -5719,7 +5726,7 @@ guiTypes = {
 						x = @sidebar_inner_w
 						y = @sidebar_list_h
 					}
-					scrollbarType = standardlistbox_slider_thick
+					scrollbarType = bpv_standardlistbox_slider_thick
 					offset = {
 						x = -3
 						y = 0
@@ -5762,7 +5769,7 @@ guiTypes = {
 						x = @sidebar_inner_w
 						y = @sidebar_list_h
 					}
-					scrollbarType = standardlistbox_slider_thick
+					scrollbarType = bpv_standardlistbox_slider_thick
 					offset = {
 						x = -3
 						y = 0
@@ -5805,7 +5812,7 @@ guiTypes = {
 						x = @sidebar_inner_w
 						y = @sidebar_list_h
 					}
-					scrollbarType = standardlistbox_slider_thick
+					scrollbarType = bpv_standardlistbox_slider_thick
 					offset = {
 						x = -3
 						y = 0
@@ -6792,7 +6799,7 @@ guiTypes = {
 					x = 0
 					y = 210
 				}
-				scrollbarType = standardlistbox_slider_thick
+				scrollbarType = bpv_standardlistbox_slider_thick
 				borderSize = {
 					x = 0
 					y = 0

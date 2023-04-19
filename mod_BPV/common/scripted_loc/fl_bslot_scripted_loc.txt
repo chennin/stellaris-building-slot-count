@@ -28,6 +28,10 @@ defined_text = {
         value = value:bslot_from_origin
 }
 defined_text = {
+        name = fl_building_from_edicts
+        value = value:bslot_from_edicts
+}
+defined_text = {
         name = fl_building_from_orbital_module
         value = value:bslot_from_holding
 }
@@ -129,7 +133,12 @@ defined_text = {
                 KEY = housing
         }
 }
-
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = edicts
+        }
+}
 defined_text = {
         name = fl_scope_is_planet
 

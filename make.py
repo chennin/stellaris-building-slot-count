@@ -162,7 +162,7 @@ def process_ecu_vanilla(inlist, outlist):
           outlist.extend( cwp.stringToCW( "@buildings_{} = {}".format( pc.name, ele.getValue("planet_max_buildings_add") ) ) )
   return outlist
 
-# Ecu Ari
+# Ecu Ari 1995601384
 def process_ecu_ariphaos(inlist, outlist):
   for pc in inlist:
     if pc.name in [ "pc_city" ]:
@@ -170,6 +170,16 @@ def process_ecu_ariphaos(inlist, outlist):
         if ele.hasAttribute("planet_max_buildings_add"):
           ari_diff = int(ele.getValue("planet_max_buildings_add")) - min_uncapped
           outlist.extend( cwp.stringToCW( f"@buildings_ecu_ari = {ari_diff}" ) )
+  return outlist
+
+# Claire Edicts 2949397716
+def process_edicts_claire(inlist, outlist):
+  for edict in inlist:
+    if edict.name in [ "architectonic_base", "architectonic_med", "architectonic_max" ]:
+      for ele in edict.getElements("modifier"):
+        if ele.hasAttribute("planet_max_buildings_add"):
+          cadd = int(ele.getValue("planet_max_buildings_add"))
+          outlist.extend( cwp.stringToCW( f"@buildings_edict_{edict.name} = {cadd}" ) )
   return outlist
 
 def process_planet_view(inlist, outlist, mod_name) :
@@ -268,6 +278,12 @@ process_file(f"{cwp.workshop_path}/1995601384/common/planet_classes/02_planet_cl
              process_ecu_ariphaos,
              success_len,
              testargs = { "expected": 1 }
+)
+process_file(f"{cwp.workshop_path}/2949397716/common/edicts/bs_edicts.txt",
+             files["SCRIPTED_VAR_FILENAME"],
+             process_edicts_claire,
+             success_len,
+             testargs = { "expected": 3 }
 )
 process_file(f"{cwp.vanilla_path}/common/districts/02_rural_districts.txt", 
              files["SCRIPTED_VAR_FILENAME"],
@@ -551,6 +567,87 @@ process_file(f"{cwp.vanilla_path}/common/defines/00_defines.txt",
                "keywanted": "MAX_PLANET_BUILDING_SLOTS",
                },
              ] }
+)
+# Claire 2949397716
+process_file(f"{cwp.workshop_path}/2949397716/common/districts/00_urban_districts.txt",
+             files["SCRIPTED_VAR_FILENAME"],
+             look_in_block,
+             success_len,
+             testargs = { "expected": 3 },
+             genargs =  { "tests": [
+               {
+               "outmostblock": "district_industrial",
+               "innerblock": "triggered_planet_modifier",
+               "testleft": "is_crafter_empire",
+               "testright": "yes",
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_claire_", "suffix": "_mult"
+               },
+               {
+               "outmostblock": "district_city",
+               "innerblock": "planet_modifier",
+               "testleft": "planet_modifier",
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_claire_", "suffix": "add"
+               },
+               {
+               "outmostblock": "district_crashed_slaver_ship",
+               "innerblock": "planet_modifier",
+               "testleft": "planet_modifier",
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_claire_", "suffix": "add"
+               },
+              ] }
+)
+process_file(f"{cwp.workshop_path}/2949397716/common/districts/01_arcology_districts.txt",
+             files["SCRIPTED_VAR_FILENAME"],
+             look_in_block,
+             success_len,
+             testargs = { "expected": 1 },
+             genargs =  { "tests": [
+               {
+               "outmostblock": "district_arcology_housing",
+               "innerblock": "planet_modifier",
+               "testleft": "planet_modifier",
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_claire_", "suffix": "add"
+               },
+              ] }
+)
+process_file(f"{cwp.workshop_path}/2949397716/common/districts/03_habitat_districts.txt",
+             files["SCRIPTED_VAR_FILENAME"],
+             look_in_block,
+             success_len,
+             testargs = { "expected": 1 },
+             genargs =  { "tests": [
+               {
+               "outmostblock": "district_hab_housing",
+               "innerblock": "planet_modifier",
+               "testleft": "planet_modifier",
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_claire_", "suffix": "add"
+               },
+              ] }
+)
+process_file(f"{cwp.workshop_path}/2949397716/common/districts/04_ringworld_districts.txt",
+             files["SCRIPTED_VAR_FILENAME"],
+             look_in_block,
+             success_len,
+             testargs = { "expected": 1 },
+             genargs =  { "tests": [
+               {
+               "outmostblock": "district_rw_city",
+               "innerblock": "planet_modifier",
+               "testleft": "planet_modifier",
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_claire_", "suffix": "add"
+               },
+              ] }
 )
 # Vanilla Planet View
 process_file(f"{cwp.vanilla_path}/interface/planet_view.gui",

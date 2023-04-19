@@ -323,6 +323,28 @@ bslot_from_pc = {
 		add = @buildings_ecu_ari
 	}
 }
+bslot_from_edicts = {
+	base = 0
+	modifier = {
+		is_scope_type = planet
+		exists = owner
+		owner = { has_edict = architectonic_base }
+		add = @buildings_edict_architectonic_base
+	}
+	modifier = {
+		is_scope_type = planet
+		exists = owner
+		owner = { has_edict = architectonic_med }
+		add = @buildings_edict_architectonic_med
+	}
+	modifier = {
+		is_scope_type = planet
+		exists = owner
+		owner = { has_edict = architectonic_max }
+		add = @buildings_edict_architectonic_max
+	}
+}
+
 bslot_capacity = {
 	base = 0
 	add = 1 # Adjust for capital building
@@ -345,7 +367,8 @@ bslot_capacity = {
 	add = value:bslot_from_deposits
 	# Planet class
 	add = value:bslot_from_pc
-
+	# Edicts
+	add = value:bslot_from_edicts
 	modifier = {
 		is_scope_type = planet
 		NOT = { has_owner = yes }

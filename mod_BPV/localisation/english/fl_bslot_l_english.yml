@@ -1,8 +1,8 @@
 ﻿# Show Building Slot Capacity 
 l_english:
-  fl_num_building_long: "§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|0M$\n$building_constructed$: §W[This.fl_building_built_dyn]§!\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_bslot_free_dyn]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital][This.fl_bslot_from_housing_dyn][This.fl_bslot_from_tech_dyn][This.fl_bslot_from_cta_dyn][This.fl_bslot_from_holding_dyn][This.fl_bslot_from_demesne_dyn][This.fl_bslot_from_origin_dyn][This.fl_bslot_from_pc_dyn][This.fl_bslot_deposit_dyn]"
+  fl_num_building_long: "§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|0M$\n$building_constructed$: §W[This.fl_building_built_dyn]§!\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_bslot_free_dyn]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital][This.fl_bslot_from_housing_dyn][This.fl_bslot_from_tech_dyn][This.fl_bslot_from_cta_dyn][This.fl_bslot_from_holding_dyn][This.fl_bslot_from_demesne_dyn][This.fl_bslot_from_origin_dyn][This.fl_bslot_from_pc_dyn][This.fl_bslot_deposit_dyn][This.fl_bslot_from_edicts_dyn]"
   
-  fl_num_building_long_static: "DEBUG\n[This.fl_scope_is_planet]\n  This: [This.GetName]\n  Owner: [Owner.GetName]\n  This's Planet: [This.Planet.GetName]\n\n§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|0M$\n$building_constructed$: §W[This.fl_building_built_dyn]§!\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_bslot_free_dyn]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital]$fl_bslot_from_housing$$fl_bslot_from_tech$$fl_bslot_from_cta$$fl_bslot_from_holding$$fl_bslot_from_demesne$$fl_bslot_from_origin$$fl_bslot_from_pc$$fl_bslot_deposit_good$"
+  fl_num_building_long_static: "DEBUG\n[This.fl_scope_is_planet]\n  This: [This.GetName]\n  Owner: [Owner.GetName]\n\n§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|0M$\n$building_constructed$: §W[This.fl_building_built_dyn]§!\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_bslot_free_dyn]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital]$fl_bslot_from_housing$$fl_bslot_from_tech$$fl_bslot_from_cta$$fl_bslot_from_holding$$fl_bslot_from_demesne$$fl_bslot_from_origin$$fl_bslot_from_pc$$fl_bslot_deposit_good$$fl_bslot_from_edicts$"
  
   fl_button_text: "§Y[This.fl_bslot_free_dyn]§!"
   fl_building_capacity_color: "§Y[This.fl_building_capacity]§!"
@@ -19,5 +19,6 @@ l_english:
   fl_bslot_from_origin: "\n$ORIGIN$: [This.fl_building_from_origin]"
   fl_bslot_from_pc: "\n$PLANETVIEW_PLANET_CLASS$: [This.fl_building_from_pc]"
   fl_bslot_from_housing: "\n$PLANET_HOUSING_TITLE$ $DISTRICTS$: [This.fl_building_from_housing]"
+  fl_bslot_from_edicts: "\n$EDICTS$: [This.fl_building_from_edicts]"
   fl_scope_planet: "£trigger_yes£ Scope is $PLANET$"
   fl_scope_not_planet: "£trigger_no£ Scope is NOT $PLANET$"
