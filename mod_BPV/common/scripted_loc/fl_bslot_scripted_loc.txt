@@ -49,26 +49,26 @@ defined_text = {
 }
 defined_text = {
         name = fl_building_free
-        value = value:bslot_free
+        value = trigger:free_building_slots
 }
 defined_text = {
         name = fl_bslot_free_dyn
 
         text = {
                 trigger = {
-                        check_variable_arithmetic = { which = value:bslot_free value > 0 }
+                        check_variable_arithmetic = { which = trigger:free_building_slots value > 0 }
                 }
                 localization_key = fl_building_free_good
         }
         text = {
                 trigger = {
-                        check_variable_arithmetic = { which = value:bslot_free value = 0 }
+                        check_variable_arithmetic = { which = trigger:free_building_slots value = 0 }
                 }
                 localization_key = fl_building_free_zero
         }
         text = {
                 trigger = {
-                        check_variable_arithmetic = { which = value:bslot_free value < 0 }
+                        check_variable_arithmetic = { which = trigger:free_building_slots value < 0 }
                 }
                 localization_key = fl_building_free_bad
         }

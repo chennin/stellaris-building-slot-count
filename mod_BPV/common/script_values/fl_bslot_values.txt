@@ -11,12 +11,6 @@ bslot_num_built = {
 		mode = add
 	}
 }
-bslot_free = {
-	base = 0
-	add = value:bslot_capacity
-	max = @MAX_PLANET_BUILDING_SLOTS
-	subtract = value:bslot_num_built
-}
 bslot_from_housing = {
 	base = 0
 	complex_trigger_modifier = {
@@ -85,7 +79,6 @@ bslot_farming_districts_buildings = {
 			is_scope_type = planet
 			exists = owner
 			owner = { has_valid_civic = civic_agrarian_idyll }
-			uncapped_districts = yes
 		}
 		trigger = num_districts
 		parameters = {
@@ -138,7 +131,6 @@ bslot_mining_districts_buildings = {
 			owner = {
 				has_origin = origin_subterranean
 			}
-			uncapped_districts = yes
 		}
 		trigger = num_districts
 		parameters = {
