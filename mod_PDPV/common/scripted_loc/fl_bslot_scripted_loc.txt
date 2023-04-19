@@ -129,3 +129,15 @@ defined_text = {
                 KEY = housing
         }
 }
+
+defined_text = {
+        name = fl_scope_is_planet
+
+        text = {
+                trigger = {
+                        is_scope_type = planet
+                }
+                localization_key = fl_scope_planet
+        }
+        default = fl_scope_not_planet
+}
