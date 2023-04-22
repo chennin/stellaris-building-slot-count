@@ -22,6 +22,7 @@
 import sys, os, io
 import Diagraphers_Stellaris_Mods.cw_parser_2 as cwp
 import shutil, subprocess, copy
+from srctools import Keyvalues as kv
 from pathlib import Path
 
 cwp.workshop_path = os.path.expanduser( os.path.expandvars( "~/stellaris-workshop" ) )
@@ -703,30 +704,45 @@ for mod in other_mods:
 # Make steamcmd.txt
 alldirs = copy.copy(other_mods)
 alldirs.append( { "name": "", "num": 0 })
+desc = "New description."
+try:
+  with open( "steamdesc.txt", "r" ) as descfile:
+    desc = descfile.read()
+except Exception as e:
+  fail(f"No description found {e}")
+
 for mod in alldirs:
-  outfile = "mod/steamcmd.txt"
+  outfile = "workshop/mod/steamcmd.txt"
   if mod["name"] != "":
-    outfile = "mod_{}/steamcmd.txt".format( mod["name"] )
+    outfile = "workshop/mod_{}/steamcmd.txt".format( mod["name"] )
   name = f"{MOD_NAME}"
   if mod["name"] != "":
     name += " - {}".format(mod["name"])
   if not os.path.exists(outfile):
     shutil.copy("steamcmd-template.txt", outfile)
-  steamcmd = []
-  with open(outfile, "r") as file:
-    steamcmd = file.readlines()
-  with open(outfile, "w") as file:
-    for line in steamcmd:
-      if '"contentfolder"' in line or '"previewfile"' in line:
-        newpath = "{}/{}".format(os.getcwd(), os.path.dirname(outfile) )
-        line = line.replace("FULLMODPATH", newpath)
-      elif '"title"' in line:
-        line = f'\t"title"\t\t"{name}"\n'
-      elif '"visibility"' in line:
-        line = f'\t"visibility"\t\t"{VISIBILITY}"\n'
-      elif '"description"' in line:
-        if '"TEMPLATE_DESC"' in line:
-          line = line.replace('"TEMPLATE_DESC"', '"New description."')
-        elif '"New description."' in line:
-          line = ""
-      file.write(line)
+  file = open(outfile, 'r')
+  steamcmdtxt = kv.parse(file, outfile)
+  file.close()
+  newpath = "{}/{}".format(os.getcwd(), os.path.dirname(outfile) )
+  witem = steamcmdtxt.find_block("workshopitem")
+  witem["contentfolder"] = witem["contentfolder"].replace("FULLMODPATH", newpath)
+  witem["previewfile"] = witem["previewfile"].replace("FULLMODPATH", newpath)
+  witem["title"] = name
+  witem["visibility"] = f"{VISIBILITY}"
+  lofilename = "{}/{}".format( os.path.dirname( outfile ), "loadorder.txt" )
+#    print(lofilename)
+  loadorder = "UNDEFINED"
+  if os.path.isfile(lofilename):
+    with open(lofilename, "r") as lofile:
+      loadorder = lofile.read()
+#    print(loadorder)
+  moddesc = desc.replace("%LOADORDER%", loadorder)
+  moddesc = moddesc.replace('"', "'")
+  witem["description"] = moddesc
+  try:
+    with open(outfile, 'w') as file:
+      for line in steamcmdtxt.export():
+        # Re-interprets escapes but does not handle real unicode https://stackoverflow.com/a/24519338/6791494
+        file.write( bytes(line, "utf-8").decode("unicode_escape") )
+  except Exception as e:
+    fail(f"Failed to write steamcmd.txt for {name} {e}")

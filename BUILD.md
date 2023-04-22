@@ -6,7 +6,7 @@
 
 ```
 STEAMUSER=
-for file in */steamcmd.txt; do
+for file in workshop/mod*/steamcmd.txt; do
   steamcmd +login $STEAMUSER +workshop_build_item "$PWD/${file}" +quit
 done
 ```

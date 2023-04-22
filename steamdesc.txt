@@ -3,8 +3,6 @@ This mod displays your currently-built building count on the planet view, and de
 
 Useful for example for knowing how many city districts you are wasting after you've researched some techs or taken some traditions.
 
-This is the [b]VANILLA[/b] version.
-
 [h1]Compatibility[/h1]
 Not achievement compatible.
 
@@ -27,7 +25,7 @@ Compatible with mods:
 Save game compatible.
 
 [h1]Load Order[/h1]
-Does not matter, as this is the vanilla mod and you have no other mods conflicting, right?
+%LOADORDER%
 
 [h1]Localisation[/h1]
 Everything is localised using VANILLA strings, so it should be close, but I only speak English and it might sound weird in places.
