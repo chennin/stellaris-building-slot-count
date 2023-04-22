@@ -1,0 +1,47 @@
+[h1]About[/h1]
+This mod displays your currently-built building count on the planet view, and details where the building slots are coming from on the tooltip.
+
+Useful for example for knowing how many city districts you are wasting after you've researched some techs or taken some traditions.
+
+This is the [b]VANILLA[/b] version.
+
+[h1]Compatibility[/h1]
+Not achievement compatible.
+
+Not compatible with any other mod that changes the planet view (planet_view.gui). I have compatibility mods, use [b]only one[/b]:
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2963495048]Show Building Slot Capacity - Vanilla[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2963495133]Show Building Slot Capacity - UI Overhaul Dynamic[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2963495085]Show Building Slot Capacity - Bigger Planet View[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2963495107]Show Building Slot Capacity - Planetary Diversity - Planet View[/url]
+[/list]
+
+Compatible with mods:
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1995601384]Ariphaos Unofficial Patch[/url] 
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2762644349]Storage Building and District[/url].
+[*]Partial (edict only) support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2949397716]Unlock More Building Slots[/url]
+[*]Additional building slots mods [b]IF[/b] they set the [u]scripted variable[/u] [i]@MAX_PLANET_BUILDING_SLOTS[/i] like for example [url=https://steamcommunity.com/workshop/filedetails/?id=2465534550]UIOD - 16 Building Slots[/url]. Otherwise the maximum and free numbers will be incorrect around 12 slots.
+[/list]
+
+Save game compatible.
+
+[h1]Load Order[/h1]
+Does not matter, as this is the vanilla mod and you have no other mods conflicting, right?
+
+[h1]Localisation[/h1]
+Everything is localised using VANILLA strings, so it should be close, but I only speak English and it might sound weird in places.
+
+[h1]Notes[/h1]
+Source code is on [url=https://github.com/chennin/stellaris-building-slot-count]GitHub[/url].
+
+The tooltip will not display most modifiers that are zero, but to test everything out you can select a planet then paste this in the console: [code]effect custom_tooltip = $fl_num_building_long_static$[/code]
+
+[h1]Known Issues[/h1]
+Due to supporting other mods, you may find messages like the following in your error log, but, they are harmless:
+[code][15:36:43][trigger_impl.cpp:13953]: script error, has_edict is using an invalid edict key: architectonic_base.  file: script value bslot_from_edicts at file: script value bslot_capacity at file: script value bslot_free at file: common/scripted_loc/fl_bslot_scripted_loc.txt line: 65 line: 1 line: 1 line: 1
+[15:36:43][trigger_impl.cpp:10587]: num_districts trigger uses inexistent district: district_storage.  file: script value bslot_from_housing at file: script value bslot_capacity at file: script value bslot_free at file: common/scripted_loc/fl_bslot_scripted_loc.txt line: 71 line: 1 line: 1 line: 1[/code]
+
+[h1]Modder Info[/h1]
+
+The mod takes planet_view.gui and makes only two additions: some variables, and an effectButtonType named fl_planet_num_buildings.  As part of my automation it does re-flow the file using [url=https://github.com/kuyan-judith/Diagraphers-Stellaris-Mods]this[/url].
