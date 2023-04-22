@@ -26,14 +26,8 @@ Save game compatible.
 
 [h1]Load Order[/h1]
 %LOADORDER%
-
 [h1]Localisation[/h1]
 Everything is localised using VANILLA strings, so it should be close, but I only speak English and it might sound weird in places.
-
-[h1]Notes[/h1]
-Source code is on [url=https://github.com/chennin/stellaris-building-slot-count]GitHub[/url].
-
-The tooltip will not display most modifiers that are zero, but to test everything out you can select a planet then paste this in the console: [code]effect custom_tooltip = $fl_num_building_long_static$[/code]
 
 [h1]Known Issues[/h1]
 Due to supporting other mods, you may find messages like the following in your error log, but, they are harmless:
@@ -41,5 +35,9 @@ Due to supporting other mods, you may find messages like the following in your e
 [15:36:43][trigger_impl.cpp:10587]: num_districts trigger uses inexistent district: district_storage.  file: script value bslot_from_housing at file: script value bslot_capacity at file: script value bslot_free at file: common/scripted_loc/fl_bslot_scripted_loc.txt line: 71 line: 1 line: 1 line: 1[/code]
 
 [h1]Modder Info[/h1]
-
 The mod takes planet_view.gui and makes only two additions: some variables, and an effectButtonType named fl_planet_num_buildings.  As part of my automation it does re-flow the file using [url=https://github.com/kuyan-judith/Diagraphers-Stellaris-Mods]this[/url].
+
+[h1]Notes[/h1]
+Source code is on [url=https://github.com/chennin/stellaris-building-slot-count]GitHub[/url].
+
+The tooltip will not display most modifiers that are zero, but to test everything out you can select a planet then paste this in the console: [code]effect custom_tooltip = $fl_num_building_long_static$[/code]
