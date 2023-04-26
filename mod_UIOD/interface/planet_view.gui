@@ -61,7 +61,8 @@ guiTypes = {
 		clipping = no
 		background = {
 			name = planet_bg
-			spriteType = GFX_tile_large_center_bg
+			quadTextureSprite = GFX_tile_large_center_bg
+			pdx_tooltip = UIO_MOVEABLE_WINDOW
 		}
 		containerWindowType = {
 			name = header_actions
@@ -1241,7 +1242,7 @@ guiTypes = {
 						maxHeight = 241
 						format = left
 						text_color_code = L
-						scrollbarType = standardtext_slider_small
+						scrollbarType = standardlistbox_slider_thick_small
 					}
 				}
 				containerWindowType = {
@@ -1311,7 +1312,7 @@ guiTypes = {
 						maxWidth = 235
 						maxHeight = 140
 						format = left
-						scrollbarType = standardtext_slider_small
+						scrollbarType = standardlistbox_slider_thick_small
 					}
 				}
 			}
@@ -1574,7 +1575,7 @@ guiTypes = {
 						maxHeight = 476
 						format = left
 						text_color_code = L
-						scrollbarType = standardtext_slider_small
+						scrollbarType = standardlistbox_slider_thick_small
 					}
 				}
 			}
@@ -1788,7 +1789,7 @@ guiTypes = {
 						maxHeight = 349
 						format = left
 						text_color_code = L
-						scrollbarType = standardtext_slider_small
+						scrollbarType = standardlistbox_slider_thick_small
 					}
 				}
 				containerWindowType = {
@@ -1887,7 +1888,7 @@ guiTypes = {
 						maxHeight = 151
 						fixedSize = yes
 						format = center
-						scrollbarType = standardtext_slider_small
+						scrollbarType = standardlistbox_slider_thick_small
 					}
 					instantTextBoxType = {
 						name = planetary_consumption_output_title
@@ -1917,7 +1918,7 @@ guiTypes = {
 						maxHeight = 151
 						fixedSize = yes
 						format = center
-						scrollbarType = standardtext_slider_small
+						scrollbarType = standardlistbox_slider_thick_small
 					}
 				}
 				containerWindowType = {
@@ -4491,7 +4492,7 @@ guiTypes = {
 					maxHeight = 241
 					fixedSize = yes
 					format = center
-					scrollbarType = standardtext_slider_small
+					scrollbarType = standardlistbox_slider_thick_small
 				}
 				instantTextBoxType = {
 					name = holdings_planet_owner_consumption_output_title
@@ -4521,7 +4522,7 @@ guiTypes = {
 					maxHeight = 241
 					fixedSize = yes
 					format = center
-					scrollbarType = standardtext_slider_small
+					scrollbarType = standardlistbox_slider_thick_small
 				}
 			}
 			containerWindowType = {
@@ -5030,7 +5031,7 @@ guiTypes = {
 						maxWidth = 320
 						maxHeight = 90
 						format = left
-						scrollbarType = standardtext_slider_small
+						scrollbarType = standardlistbox_slider_thick_small
 					}
 				}
 				containerWindowType = {
@@ -5239,7 +5240,7 @@ guiTypes = {
 						maxHeight = 64
 						fixedSize = yes
 						format = left
-						scrollbarType = standardtext_slider_small
+						scrollbarType = standardlistbox_slider_thick_small
 					}
 					instantTextBoxType = {
 						name = district_cost
@@ -5604,7 +5605,7 @@ guiTypes = {
 						maxWidth = 395
 						maxHeight = 96
 						format = left
-						scrollbarType = standardtext_slider_small
+						scrollbarType = standardlistbox_slider_thick_small
 					}
 					buttonType = {
 						name = view_species_button
@@ -6569,7 +6570,6 @@ guiTypes = {
 				x = 1
 				y = 1
 			}
-			alwaysTransparent = yes
 			scale = 1
 		}
 		iconType = {
@@ -6835,7 +6835,7 @@ guiTypes = {
 				maxHeight = 50
 				format = left
 				alwaysTransparent = yes
-				scrollbarType = standardtext_slider_small
+				scrollbarType = standardlistbox_slider_thick_small
 			}
 		}
 		containerWindowType = {
@@ -8622,7 +8622,7 @@ guiTypes = {
 			text = ""
 			position = {
 				x = 36
-				y = 18
+				y = 0
 			}
 			maxWidth = 164
 			maxHeight = 20
@@ -8941,7 +8941,7 @@ guiTypes = {
 					maxHeight = 140
 					fixedSize = yes
 					format = center
-					scrollbarType = standardtext_slider_small
+					scrollbarType = standardlistbox_slider_thick_small
 				}
 				instantTextBoxType = {
 					name = holdings_consumption_output_title
@@ -8969,7 +8969,7 @@ guiTypes = {
 					maxHeight = 140
 					fixedSize = yes
 					format = center
-					scrollbarType = standardtext_slider_small
+					scrollbarType = standardlistbox_slider_thick_small
 				}
 			}
 			buttonType = {
