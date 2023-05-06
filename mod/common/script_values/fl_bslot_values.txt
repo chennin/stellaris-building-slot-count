@@ -2,13 +2,31 @@
 bslot_num_built = {
 	base = 0 # Do count capital building
 	complex_trigger_modifier = {
-		potential = { is_scope_type = planet }
+		potential = { 
+			is_scope_type = planet
+			exists = owner
+		 }
 		trigger = num_buildings
 		parameters = {
 			type = any
 			disabled = any
 		}
 		mode = add
+	}
+}
+# num_buildings doesn't support both 'any' building and in_construction 'yes' or 'any'.
+# So calculate manually
+bslot_num_constructing = {
+	base = @MAX_PLANET_BUILDING_SLOTS
+	max = value:bslot_capacity
+	subtract = value:bslot_num_built
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+		}
+		trigger = free_building_slots
+		mode = subtract
 	}
 }
 bslot_from_housing = {

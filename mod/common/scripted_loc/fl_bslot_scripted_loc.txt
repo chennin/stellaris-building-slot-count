@@ -4,6 +4,10 @@ defined_text = {
         value = value:bslot_capacity
 }
 defined_text = {
+        name = fl_building_constructing
+        value = value:bslot_num_constructing
+}
+defined_text = {
         name = fl_building_built_dyn
         value = value:bslot_num_built
 }
@@ -72,6 +76,16 @@ defined_text = {
                 }
                 localization_key = fl_building_free_bad
         }
+}
+defined_text = {
+        name = fl_building_constructing_dyn
+        text = {
+                trigger = {
+                        check_variable_arithmetic = { which = value:bslot_num_constructing value >= 1 }
+                }
+                localization_key = fl_building_constructing
+        }
+        default = BLANK_STRING
 }
 defined_text = {
         name = fl_bslot_deposit_dyn
