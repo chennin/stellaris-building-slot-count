@@ -30,8 +30,8 @@ cwp.mod_docs_path = os.path.expanduser( os.path.expandvars( "~/stellaris-mod" ) 
 cwp.vanilla_path = os.path.expanduser( os.path.expandvars( "~/stellaris-game" ) )
 
 MOD_NAME = "Show Building Slot Capacity"
-VERSION = "4"
-SUPPORTED_VERSION = "3.7.*"
+VERSION = "5"
+SUPPORTED_VERSION = "3.8.*"
 # 3 = unlisted, 2 = hidden, 1 = friends, 0 = public
 VISIBILITY = 0
 
@@ -685,6 +685,7 @@ for lang in langs:
     fail(f"Failed to write loc file {locfilename}: {e}")
 
 # Descriptors and Other Planet Views
+make_descriptor("mod/descriptor.mod")
 # Copy all files from base mod to other mods
 for mod in other_mods:
   mod_dir = "mod_{}".format(mod["name"])

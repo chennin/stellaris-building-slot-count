@@ -1,6 +1,6 @@
 name="Show Building Slot Capacity - UIOD"
-version="4"
-supported_version="3.7.*"
+version="5"
+supported_version="3.8.*"
 tags={
         "Graphics"
 }
