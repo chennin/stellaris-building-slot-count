@@ -314,6 +314,7 @@ guiTypes = {
 			background = {
 				name = governor_window
 				spriteType = GFX_invisible
+				alwaysTransparent = yes
 			}
 		}
 		containerWindowType = {
@@ -330,6 +331,7 @@ guiTypes = {
 			background = {
 				name = sector_governor_window
 				spriteType = GFX_invisible
+				alwaysTransparent = yes
 			}
 		}
 		containerWindowType = {
