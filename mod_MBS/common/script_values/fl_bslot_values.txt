@@ -1,0 +1,387 @@
+#
+bslot_num_built = {
+	base = 0 # Do count capital building
+	complex_trigger_modifier = {
+		potential = { 
+			is_scope_type = planet
+			exists = owner
+		 }
+		trigger = num_buildings
+		parameters = {
+			type = any
+			disabled = any
+		}
+		mode = add
+	}
+}
+# num_buildings doesn't support both 'any' building and in_construction 'yes' or 'any'.
+# So calculate manually
+bslot_num_constructing = {
+	base = @MAX_PLANET_BUILDING_SLOTS
+	max = value:bslot_capacity
+	subtract = value:bslot_num_built
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+		}
+		trigger = free_building_slots
+		mode = subtract
+	}
+}
+bslot_from_housing = {
+	base = 0
+	complex_trigger_modifier = {
+		potential = { is_scope_type = planet }
+		trigger = num_districts
+		parameters = {
+			type = district_city
+		}
+		mode = add
+		mult = @bslot_district_city_add
+	}
+	complex_trigger_modifier = {
+		potential = { is_scope_type = planet }
+		trigger = num_districts
+		parameters = {
+			type = district_hive
+		}
+		mode = add
+		mult = @bslot_district_city_add
+	}
+	complex_trigger_modifier = {
+		potential = { is_scope_type = planet }
+		trigger = num_districts
+		parameters = {
+			type = district_nexus
+		}
+		mode = add
+		mult = @bslot_district_city_add
+	}
+	complex_trigger_modifier = {
+		potential = { is_scope_type = planet }
+		trigger = num_districts
+		parameters = {
+			type = district_crashed_slaver_ship
+		}
+		mode = add
+		mult = @bslot_district_crashed_slaver_ship_add
+	}
+	# Storage Building and District 2762644349
+	complex_trigger_modifier = {
+		potential = { is_scope_type = planet }
+		trigger = num_districts
+		parameters = {
+			type = district_storage
+		}
+		mode = add
+		mult = @bslot_district_storage_add
+	}
+}
+bslot_farming_districts_buildings = {
+	base = 0
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_farming
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_farming_uncapped
+		}
+		mode = add
+	}
+	mult = @bslot_district_farming_civic_agrarian_idyll_mult
+	floor = yes
+}
+bslot_industrial_districts_buildings = {
+	base = 0
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+			owner = {
+				is_crafter_empire = yes
+			}
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_industrial
+		}
+		mode = add
+	}
+	mult = @bslot_district_industrial_is_crafter_empire_mult
+	floor = yes
+}
+bslot_mining_districts_buildings = {
+	base = 0
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+			owner = {
+				has_origin = origin_subterranean
+			}
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_mining
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+			owner = {
+				has_origin = origin_subterranean
+			}
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_mining_uncapped
+		}
+		mode = add
+	}
+	mult = @bslot_district_mining_uncapped_origin_subterranean_mult
+	floor = yes
+}
+bslot_from_holding = {
+	base = 0
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner.overlord
+			has_holding = {
+				holding = holding_orbital_assembly_complex
+				owner = owner.overlord 
+			}
+			exists = orbital_defence
+			orbital_defence = {
+				exists = starbase
+			}
+		}
+		trigger = count_starbase_modules
+		trigger_scope = this.orbital_defence.starbase
+		parameters = {
+			type = orbital_ring_habitation
+		}
+		mode = add
+	}
+	mult = @bslot_orbital_ring_habitation_holding_orbital_assembly_complex_mult
+	floor = yes
+}
+bslot_from_demesne = {
+	base = 0
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			has_deposit = d_dimensional_manipulation_device
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_orders_demesne
+		}
+		mode = add
+	}
+	mult = @bslot_district_orders_demesne_d_dimensional_manipulation_device_mult
+	floor = yes
+}
+bslot_from_capital = {
+	base = 0
+	# Capitals
+	modifier = {
+		is_scope_type = planet
+		planet = { has_tier1_capital = yes }
+		add = @buildings_t1
+	}
+	modifier = {
+		is_scope_type = planet
+		planet = { has_tier2_capital = yes }
+		add = @buildings_t2
+	}
+	modifier = {
+		is_scope_type = planet
+		planet = { has_tier3_capital = yes }
+		add = @buildings_t3
+	}
+	modifier = {
+		is_scope_type = planet
+		planet = { has_tier4_capital = yes }
+		add = @buildings_t4
+	}
+	modifier = {
+		is_scope_type = planet
+		planet = { has_imperial_capital = yes }
+		add = @bslot_building_imperial_capital_add
+	}
+	# Governor's Palace / Resort Administration
+	modifier = {
+		is_scope_type = planet
+		planet = { has_special_tier1_capital = yes }
+		add = @bslot_building_resort_capital_add
+	}
+	# Governor's Estates / Resort Capital-Complex
+	modifier = {
+		is_scope_type = planet
+		planet = { has_special_tier2_capital = yes }
+		add = @bslot_building_resort_major_capital_add
+	}
+	# building_fe_xeno_zoo
+	modifier = {
+		is_scope_type = planet
+		planet = { has_special_tier3_capital = yes }
+		add = @bslot_building_fe_xeno_zoo_add
+	}
+}
+bslot_from_tech = {
+	base = 0
+	# Infrastructure technology
+	modifier = {
+		exists = owner
+		owner = { has_technology = tech_planetary_infrastructure_1 }
+		add = @bslot_tech_planetary_infrastructure_1_add
+	}
+	modifier = {
+		exists = owner
+		owner = { has_technology = tech_planetary_infrastructure_2 }
+		add = @bslot_tech_planetary_infrastructure_2_add
+	}
+}
+bslot_from_cta = {
+	base = 0
+	# Functional Architecture / Constructobot civic
+	modifier = {
+		exists = owner
+		owner = {
+			OR = {
+				has_valid_civic = civic_functional_architecture
+				has_valid_civic = civic_machine_builder
+			}
+		}
+		add = @bslot_civic_functional_architecture_add
+	}
+	# Voidborne ascension perk 
+	modifier = {
+		exists = owner
+		owner = { has_ascension_perk = ap_voidborn }
+		uses_district_set = habitat
+		add = @bslot_building_hab_capital_ap_voidborn_add
+	}
+	# Agrarian Idyll civic
+	add = value:bslot_farming_districts_buildings
+
+	# Masterful Crafters / Mastercraft Inc
+	add = value:bslot_industrial_districts_buildings
+
+	# Adaptive Ecology tradition 
+	modifier = {
+		exists = owner
+		owner = { has_active_tradition = tr_adaptability_adaptive_ecology }
+		add = @bslot_tr_adaptability_adaptive_ecology_add
+	}
+	# Modular Superstructures tradition
+	modifier = {
+		exists = owner
+		owner = { has_active_tradition = tr_prosperity_void_works }
+		uses_district_set = habitat
+		add = @bslot_building_hab_capital_tr_prosperity_void_works_add
+	}
+}
+bslot_from_origin = {
+	base = 0
+	# Subterranean origin
+	add = value:bslot_mining_districts_buildings
+}
+bslot_from_deposits = {
+	base = 0
+	modifier = {
+		is_scope_type = planet
+		has_deposit = d_venomous_insects
+		add = @bslot_d_venomous_insects_add
+	}
+	modifier = {
+		is_scope_type = planet
+		has_deposit = d_rotten_soil
+		add = @bslot_d_rotten_soil_add
+	}
+}
+bslot_from_pc = {
+	base = 0
+	modifier = {
+		is_scope_type = planet
+		uncapped_districts = yes
+		add = @buildings_uncapped
+	}
+	modifier = {
+		is_scope_type = planet
+		has_global_flag = ariphaos_unofficial_patch_installed
+		is_planet_class = pc_city
+		add = @buildings_ecu_ari
+	}
+}
+bslot_from_edicts = {
+	base = 0
+	modifier = {
+		is_scope_type = planet
+		exists = owner
+		owner = { has_edict = architectonic_base }
+		add = @buildings_edict_architectonic_base
+	}
+	modifier = {
+		is_scope_type = planet
+		exists = owner
+		owner = { has_edict = architectonic_med }
+		add = @buildings_edict_architectonic_med
+	}
+	modifier = {
+		is_scope_type = planet
+		exists = owner
+		owner = { has_edict = architectonic_max }
+		add = @buildings_edict_architectonic_max
+	}
+}
+
+bslot_capacity = {
+	base = 0
+	add = 1 # Adjust for capital building
+	# Sub Origin
+	add = value:bslot_from_origin
+	# Infrastructure technology
+	add = value:bslot_from_tech
+	# Planetary housing district
+	add = value:bslot_from_housing
+	# Functional Architecture / Constructobot civic, Agrarian Idyll civic, Masterful Crafters / Mastercraft Inc, Voidborne ascension perk, Traditions
+	add = value:bslot_from_cta
+
+	# Orbital Assembly Complex
+	add = value:bslot_from_holding
+	# Dimensional Manipulation Device
+	add = value:bslot_from_demesne
+	# Capitals
+	add = value:bslot_from_capital
+	# Deposits
+	add = value:bslot_from_deposits
+	# Planet class
+	add = value:bslot_from_pc
+	# Edicts
+	add = value:bslot_from_edicts
+	modifier = {
+		is_scope_type = planet
+		NOT = { has_owner = yes }
+		mult = 0
+	}
+}

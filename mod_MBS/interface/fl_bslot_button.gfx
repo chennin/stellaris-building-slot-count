@@ -1,0 +1,8 @@
+#
+spriteTypes = {
+        spriteType = {
+                name = "GFX_fl_button_48_24"
+                texturefile = "gfx/interface/transparent_48_24.dds"
+        }
+
+}

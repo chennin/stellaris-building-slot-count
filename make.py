@@ -44,6 +44,7 @@ other_mods = [
   { "name": "UIOD", "num": 1623423360 },
   { "name": "BPV", "num": 1587178040 },
   { "name": "PDPV", "num": 1866576239 },
+  { "name": "MBS", "num": 1598174269 },
 ]
 min_uncapped = 0
 bslot_display = """
@@ -701,6 +702,8 @@ for mod in other_mods:
              testargs = {},
              genargs = { "mod_name": mod["name"] },
   )
+  if not os.path.exists( "{}/{}".format(mod_dir, "thumbnail.png") ):
+    print("Warn: missing {}/thumbnail.png".format(mod_dir))
 
 # Make steamcmd.txt
 alldirs = copy.copy(other_mods)
@@ -719,6 +722,10 @@ for mod in alldirs:
   name = f"{MOD_NAME}"
   if mod["name"] != "":
     name += " - {}".format(mod["name"])
+  if not os.path.exists( os.path.dirname(outfile) ):
+    os.makedirs( os.path.dirname(outfile), exist_ok=True )
+  if not os.path.exists( "{}/{}".format( os.path.dirname(outfile), "loadorder.txt") ):
+    print("Warn: missing {}/loadorder.txt".format( os.path.dirname(outfile) ))
   if not os.path.exists(outfile):
     shutil.copy("steamcmd-template.txt", outfile)
   file = open(outfile, 'r')
