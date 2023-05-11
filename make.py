@@ -44,6 +44,7 @@ other_mods = [
   { "name": "UIOD", "num": 1623423360 },
   { "name": "BPV", "num": 1587178040 },
   { "name": "PDPV", "num": 1866576239 },
+  { "name": "UIOD_374", "num": "2972235848" },
 ]
 min_uncapped = 0
 bslot_display = """
