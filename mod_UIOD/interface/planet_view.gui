@@ -2,7 +2,6 @@
 @fl_pos_UIOD_x = -60
 @fl_pos_UIOD_y = 5
 @fl_font_UIOD = font_text_16
-@tab_height = -2
 @sidebar_list_h = 861
 @sidebar_list_h_construction = 821
 @sidebar_w = 450
@@ -4171,25 +4170,30 @@ guiTypes = {
 			quadTextureSprite = GFX_tiled_window_transparent
 			position = {
 				x = 0
-				y = @tab_height
+				y = 0
 			}
 			orientation = lower_left
 			size = {
-				x = 563
+				x = 704
 				y = 42
 			}
 			oversound = no_sound
 		}
 		buttonType = {
 			name = summary_tab
-			quadTextureSprite = GFX_tab_1_inactive
+			quadTextureSprite = GFX_ui_tab_1_long_inactive
 			position = {
-				x = -20
-				y = @tab_height
+				x = 0
+				y = 0
 			}
 			orientation = lower_left
+			buttonFont = font_text_16
 			buttonText = PLANET_TAB
-			buttonFont = font_text_14
+			borderSize = {
+				x = 20
+				y = 0
+			}
+			multiline = yes
 			clicksound = tab_click
 			shortcut = z
 			oversound = no_sound
@@ -4197,14 +4201,19 @@ guiTypes = {
 		}
 		buttonType = {
 			name = summary_tab_active
-			quadTextureSprite = GFX_tab_1_active
+			quadTextureSprite = GFX_ui_tab_1_long_active
 			position = {
-				x = -20
-				y = @tab_height
+				x = 0
+				y = 0
 			}
 			orientation = lower_left
+			buttonFont = font_text_16
 			buttonText = PLANET_TAB
-			buttonFont = font_text_14
+			borderSize = {
+				x = 20
+				y = 0
+			}
+			multiline = yes
 			clicksound = tab_click
 			shortcut = z
 			oversound = no_sound
@@ -4212,14 +4221,19 @@ guiTypes = {
 		}
 		buttonType = {
 			name = population_tab
-			quadTextureSprite = GFX_tab_2_inactive
+			quadTextureSprite = GFX_ui_tab_2_long_inactive
 			position = {
-				x = 109
-				y = @tab_height
+				x = 155
+				y = 0
 			}
 			orientation = lower_left
+			buttonFont = font_text_16
 			buttonText = POPULATION_TAB
-			buttonFont = font_text_14
+			borderSize = {
+				x = 20
+				y = 0
+			}
+			multiline = yes
 			clicksound = tab_click
 			shortcut = x
 			oversound = no_sound
@@ -4227,14 +4241,19 @@ guiTypes = {
 		}
 		buttonType = {
 			name = population_tab_active
-			quadTextureSprite = GFX_tab_2_active
+			quadTextureSprite = GFX_ui_tab_2_long_active
 			position = {
-				x = 109
-				y = @tab_height
+				x = 155
+				y = 0
 			}
 			orientation = lower_left
+			buttonFont = font_text_16
 			buttonText = POPULATION_TAB
-			buttonFont = font_text_14
+			borderSize = {
+				x = 20
+				y = 0
+			}
+			multiline = yes
 			clicksound = tab_click
 			shortcut = x
 			oversound = no_sound
@@ -4242,14 +4261,19 @@ guiTypes = {
 		}
 		buttonType = {
 			name = armies_tab
-			quadTextureSprite = GFX_tab_2_inactive
+			quadTextureSprite = GFX_ui_tab_2_long_inactive
 			position = {
-				x = 245
-				y = @tab_height
+				x = 330
+				y = 0
 			}
 			orientation = lower_left
+			buttonFont = font_text_16
 			buttonText = GROUND_COMBAT_TAB
-			buttonFont = font_text_14
+			borderSize = {
+				x = 20
+				y = 0
+			}
+			multiline = yes
 			clicksound = tab_click
 			shortcut = c
 			oversound = no_sound
@@ -4257,14 +4281,19 @@ guiTypes = {
 		}
 		buttonType = {
 			name = armies_tab_active
-			quadTextureSprite = GFX_tab_2_active
+			quadTextureSprite = GFX_ui_tab_2_long_active
 			position = {
-				x = 245
-				y = @tab_height
+				x = 330
+				y = 0
 			}
 			orientation = lower_left
+			buttonFont = font_text_16
 			buttonText = GROUND_COMBAT_TAB
-			buttonFont = font_text_14
+			borderSize = {
+				x = 20
+				y = 0
+			}
+			multiline = yes
 			clicksound = tab_click
 			shortcut = c
 			oversound = no_sound
@@ -4272,14 +4301,19 @@ guiTypes = {
 		}
 		buttonType = {
 			name = corporate_tab
-			quadTextureSprite = GFX_tab_2_inactive
+			quadTextureSprite = GFX_ui_tab_2_long_inactive
 			position = {
-				x = 381
-				y = @tab_height
+				x = 505
+				y = 0
 			}
 			orientation = lower_left
+			buttonFont = font_text_16
 			buttonText = CORPORATE_TAB
-			buttonFont = font_text_14
+			borderSize = {
+				x = 20
+				y = 0
+			}
+			multiline = yes
 			clicksound = tab_click
 			shortcut = v
 			oversound = no_sound
@@ -4287,14 +4321,19 @@ guiTypes = {
 		}
 		buttonType = {
 			name = corporate_tab_active
-			quadTextureSprite = GFX_tab_2_active
+			quadTextureSprite = GFX_ui_tab_2_long_active
 			position = {
-				x = 381
-				y = @tab_height
+				x = 505
+				y = 0
 			}
 			orientation = lower_left
+			buttonFont = font_text_16
 			buttonText = CORPORATE_TAB
-			buttonFont = font_text_14
+			borderSize = {
+				x = 20
+				y = 0
+			}
+			multiline = yes
 			clicksound = tab_click
 			shortcut = v
 			oversound = no_sound

@@ -268,7 +268,7 @@ guiTypes = {
 			alwaysTransparent = yes
 		}
 		containerWindowType = {
-			name = title_governor
+			name = governor_title_bg
 			size = {
 				width = 0
 				height = 0
@@ -278,7 +278,7 @@ guiTypes = {
 				y = 0
 			}
 			background = {
-				name = title_governor
+				name = governor_title_bg
 				spriteType = GFX_invisible
 				alwaysTransparent = yes
 			}
@@ -297,156 +297,28 @@ guiTypes = {
 			}
 		}
 		containerWindowType = {
-			name = no_governor_window
-			size = {
-				width = 358
-				height = 40
-			}
+			name = governor_window
 			position = {
-				x = 106
-				y = 237
+				x = 25
+				y = 165
+			}
+			size = {
+				width = 250
+				height = 105
 			}
 			clipping = no
-			background = {
-				name = governor_background
-				spriteType = GFX_invisible
-			}
-			iconType = {
-				name = trade_value_background
-				spriteType = GFX_ui_planet_overlay_governor
-				position = {
-					x = -1
-					y = -1
-				}
-			}
-			instantTextBoxType = {
-				name = no_governor
-				font = malgun_goth_24
-				position = {
-					x = 10
-					y = 7
-				}
-				text = PLANETVIEW_NO_GOVERNOR_TITLE
-				maxWidth = 338
-				maxHeight = 20
-				fixedSize = yes
-				format = center
-				text_color_code = Y
-				alwaysTransparent = yes
-			}
-			buttonType = {
-				name = change_governor
-				quadTextureSprite = GFX_invisible
-				size = {
-					x = 358
-					y = 40
-				}
-				position = {
-					x = 0
-					y = 0
-				}
-				shortcut = G
-			}
 		}
 		containerWindowType = {
-			name = governor_window
-			size = {
-				width = 358
-				height = 40
-			}
+			name = sector_governor_window
 			position = {
-				x = 106
-				y = 237
+				x = 92
+				y = 165
+			}
+			size = {
+				width = 100
+				height = 105
 			}
 			clipping = no
-			background = {
-				name = governor_background
-				spriteType = GFX_invisible
-			}
-			iconType = {
-				name = trade_value_background
-				spriteType = GFX_ui_planet_overlay_governor
-				position = {
-					x = -1
-					y = -1
-				}
-			}
-			containerWindowType = {
-				name = portrait
-				size = {
-					width = 197
-					height = 228
-				}
-				position = {
-					x = -88
-					y = 0
-				}
-				orientation = lower_left
-				origo = lower_left
-				clipping = yes
-				background = {
-					name = portrait_background
-					spriteType = GFX_invisible
-				}
-				iconType = {
-					name = portrait
-					quadTextureSprite = GFX_ui_planet_governor_mask_large
-					position = {
-						x = -88
-						y = -228
-					}
-					orientation = lower_left
-					scale = 0.60
-					alwaysTransparent = yes
-				}
-			}
-			buttonType = {
-				name = change_governor
-				quadTextureSprite = GFX_invisible
-				size = {
-					x = 197
-					y = 194
-				}
-				position = {
-					x = -88
-					y = -160
-				}
-				shortcut = G
-			}
-			instantTextBoxType = {
-				name = governor_name
-				font = cg_16b
-				position = {
-					x = 36
-					y = 12
-				}
-				text = "Bob Bobb"
-				maxWidth = 150
-				maxHeight = 20
-				fixedSize = yes
-				format = left
-			}
-			iconType = {
-				name = governor_skill
-				spriteType = GFX_leader_skill
-				position = {
-					x = 5
-					y = 10
-				}
-				frame = 5
-			}
-			overlappingElementsBoxType = {
-				name = traits
-				position = {
-					x = 200
-					y = 5
-				}
-				size = {
-					x = 155
-					y = 16
-				}
-				format = right
-			}
 		}
 		containerWindowType = {
 			name = planet_class
@@ -568,6 +440,15 @@ guiTypes = {
 					x = 6
 					y = 2
 				}
+			}
+			iconType = {
+				name = governance_skill
+				spriteType = GFX_leader_skill
+				position = {
+					x = 4
+					y = 18
+				}
+				scale = 0.8
 			}
 			instantTextBoxType = {
 				name = colony_type_text
@@ -769,37 +650,6 @@ guiTypes = {
 				font = cg_16b
 				oversound = mouse_over
 				shortcut = I
-			}
-			containerWindowType = {
-				name = colonizing_planet_window
-				size = {
-					width = 150
-					height = 220
-				}
-				position = {
-					x = 0
-					y = 85
-				}
-				instantTextBoxType = {
-					name = colonizing_planet_label
-					font = malgun_goth_24
-					text = COLONIZING_PLANET
-					position = {
-						x = 0
-						y = 20
-					}
-					maxWidth = 275
-					maxHeight = 20
-					format = center
-				}
-				iconType = {
-					name = colonization_progress
-					spriteType = GFX_colonization_progressbar
-					position = {
-						x = 22
-						y = 50
-					}
-				}
 			}
 			containerWindowType = {
 				name = planet_stability
@@ -1073,6 +923,43 @@ guiTypes = {
 						}
 						format = left
 					}
+				}
+			}
+			containerWindowType = {
+				name = colonizing_planet_window
+				size = {
+					width = 250
+					height = 74
+				}
+				position = {
+					x = 10
+					y = 90
+				}
+				background = {
+					name = colonizing_planet_background
+					spriteType = GFX_invisible
+				}
+				instantTextBoxType = {
+					name = colonizing_planet_label
+					font = malgun_goth_24
+					text = COLONIZING_PLANET
+					position = {
+						x = 0
+						y = 12
+					}
+					maxWidth = 250
+					maxHeight = 20
+					format = center
+					alwaysTransparent = yes
+				}
+				iconType = {
+					name = colonization_progress
+					spriteType = GFX_colonization_progressbar
+					position = {
+						x = 12
+						y = 42
+					}
+					alwaysTransparent = yes
 				}
 			}
 		}
@@ -2102,6 +1989,16 @@ guiTypes = {
 						orientation = upper_right
 						quadTextureSprite = GFX_button_sector_new
 					}
+					buttonType = {
+						name = sector_edit_button
+						position = {
+							x = -78
+							y = 6
+						}
+						orientation = upper_right
+						quadTextureSprite = GFX_edit_sectors
+						pdx_tooltip = EDIT_SECTOR_BUTTON
+					}
 					instantTextBoxType = {
 						name = sector_name
 						font = malgun_goth_24
@@ -2114,6 +2011,7 @@ guiTypes = {
 						maxHeight = 24
 						fixedSize = yes
 						format = left
+						text_color_code = E
 						alwaysTransparent = yes
 					}
 					instantTextBoxType = {
@@ -2133,15 +2031,12 @@ guiTypes = {
 					buttonType = {
 						name = open_sector_view
 						position = {
-							x = 6
-							y = 6
+							x = 4
+							y = 4
 						}
-						size = {
-							x = 35
-							y = 35
-						}
-						quadTextureSprite = GFX_button_open_sector_view
-						pdx_tooltip = PLANET_LIST
+						spriteType = GFX_sector_cap_icon
+						pdx_tooltip = OPEN_EMPIRE_VIEW_SECTOR
+						scale = 0.8
 					}
 				}
 				containerWindowType = {
@@ -2925,72 +2820,12 @@ guiTypes = {
 					}
 					size = {
 						width = 212
-						height = 250
-					}
-					margin = {
-						top = 5
-						right = 5
-						bottom = 5
-						left = 5
+						height = 105
 					}
 					clipping = yes
 					background = {
-						name = portrait_background
+						name = leader_background
 						spriteType = GFX_tiles_dark_area_cut_8
-					}
-					buttonType = {
-						name = bg
-						quadTextureSprite = GFX_leader_bg_general
-						position = {
-							x = 0
-							y = 0
-						}
-						scale = 0.63
-					}
-					iconType = {
-						name = portrait
-						quadTextureSprite = GFX_portrait_character
-						position = {
-							x = -88
-							y = -239
-						}
-						orientation = lower_left
-						scale = 0.63
-						alwaysTransparent = yes
-					}
-					containerWindowType = {
-						name = header_background
-						position = {
-							x = 3
-							y = 3
-						}
-						size = {
-							width = 196
-							height = 28
-						}
-						background = {
-							name = header_background
-							spriteType = GFX_tiles_dark_area_cut_8
-							alwaysTransparent = yes
-						}
-					}
-					iconType = {
-						name = name_underline
-						spriteType = GFX_line_short
-						position = {
-							x = 5
-							y = 17
-						}
-						alwaysTransparent = yes
-					}
-					iconType = {
-						name = skill
-						spriteType = GFX_leader_skill
-						position = {
-							x = -38
-							y = 27
-						}
-						orientation = upper_right
 					}
 				}
 				instantTextBoxType = {
@@ -3125,74 +2960,14 @@ guiTypes = {
 					}
 					size = {
 						width = 212
-						height = 250
-					}
-					margin = {
-						top = 5
-						right = 5
-						bottom = 5
-						left = 5
+						height = 105
 					}
 					orientation = upper_right
 					origo = upper_right
 					clipping = yes
 					background = {
-						name = portrait_background
+						name = leader_background
 						spriteType = GFX_tiles_dark_area_cut_8
-					}
-					buttonType = {
-						name = bg
-						quadTextureSprite = GFX_leader_bg_general
-						position = {
-							x = 0
-							y = 0
-						}
-						scale = 0.63
-					}
-					iconType = {
-						name = portrait
-						quadTextureSprite = GFX_portrait_character
-						position = {
-							x = -88
-							y = -239
-						}
-						orientation = lower_left
-						scale = 0.63
-						alwaysTransparent = yes
-					}
-					containerWindowType = {
-						name = header_background
-						position = {
-							x = 3
-							y = 3
-						}
-						size = {
-							width = 196
-							height = 28
-						}
-						background = {
-							name = header_background
-							spriteType = GFX_tiles_dark_area_cut_8
-							alwaysTransparent = yes
-						}
-					}
-					iconType = {
-						name = name_underline
-						spriteType = GFX_line_short
-						position = {
-							x = 5
-							y = 17
-						}
-						alwaysTransparent = yes
-					}
-					iconType = {
-						name = skill
-						spriteType = GFX_leader_skill
-						position = {
-							x = -38
-							y = 27
-						}
-						orientation = upper_right
 					}
 				}
 				instantTextBoxType = {
@@ -3452,7 +3227,7 @@ guiTypes = {
 						x = 232
 						y = 72
 					}
-					spriteType = GFX_standard_button_116_34
+					spriteType = GFX_button_116_24
 					buttonFont = cg_16b
 					text = RECRUIT
 					pdx_tooltip = RECRUIT_INFO
@@ -3465,9 +3240,9 @@ guiTypes = {
 					name = embark_all_button
 					position = {
 						x = 232
-						y = 112
+						y = 102
 					}
-					spriteType = GFX_standard_button_116_34
+					spriteType = GFX_button_116_24
 					buttonFont = cg_16b
 					text = PLANET_VIEW_EMBARK_ALL
 					pdx_tooltip = PLANET_VIEW_EMBARK_INFO
@@ -3534,6 +3309,30 @@ guiTypes = {
 					format = left
 					alwaysTransparent = yes
 					pdx_tooltip = GARRISON_ARMY
+				}
+				instantTextBoxType = {
+					name = deploy_in_orbit_text
+					font = cg_16b
+					text = DEPLOY_IN_ORBIT
+					position = {
+						x = 205
+						y = 138
+					}
+					maxWidth = 120
+					maxHeight = 30
+					fixedSize = yes
+					format = right
+					vertical_alignment = center
+					pdx_tooltip = DEPLOY_IN_ORBIT_DESC
+				}
+				checkboxType = {
+					name = deploy_in_orbit_checkbox
+					quadTextureSprite = GFX_checkbox_20_20_01
+					position = {
+						x = 330
+						y = 138
+					}
+					pdx_tooltip = DEPLOY_IN_ORBIT_DESC
 				}
 				containerWindowType = {
 					name = planet_armies
@@ -3612,210 +3411,19 @@ guiTypes = {
 					}
 				}
 				containerWindowType = {
-					name = no_general_window
+					name = general_portrait_container
 					position = {
 						x = 379
 						y = 77
 					}
 					size = {
 						width = 212
-						height = 250
+						height = 105
 					}
+					clipping = yes
 					background = {
-						name = general_background
+						name = leader_background
 						spriteType = GFX_tiles_dark_area_cut_8
-					}
-					buttonType = {
-						name = bg
-						quadTextureSprite = GFX_leader_bg_general
-						position = {
-							x = 5
-							y = 6
-						}
-						scale = 0.63
-						alwaysTransparent = yes
-					}
-					containerWindowType = {
-						name = text_background
-						position = {
-							x = 15
-							y = 65
-						}
-						size = {
-							width = 182
-							height = 48
-						}
-						background = {
-							name = text_background
-							spriteType = GFX_tiles_dark_area_cut_8
-							alwaysTransparent = yes
-						}
-					}
-					instantTextBoxType = {
-						name = no_leader_desc
-						position = {
-							x = 20
-							y = 76
-						}
-						font = malgun_goth_24
-						text = FLEETVIEW_NO_LEADER
-						maxWidth = 172
-						maxHeight = 24
-						text_color_code = R
-						format = center
-						vertical_alignment = center
-						alwaysTransparent = yes
-					}
-					buttonType = {
-						name = change_general
-						quadTextureSprite = GFX_invisible
-						position = {
-							x = 0
-							y = 0
-						}
-						size = {
-							x = 212
-							y = 250
-						}
-						shortcut = G
-					}
-				}
-				containerWindowType = {
-					name = general_window
-					position = {
-						x = 379
-						y = 77
-					}
-					size = {
-						width = 212
-						height = 250
-					}
-					clipping = no
-					background = {
-						name = general_background
-						spriteType = GFX_tiles_dark_area_cut_8
-					}
-					buttonType = {
-						name = bg
-						quadTextureSprite = GFX_leader_bg_general
-						position = {
-							x = 5
-							y = 6
-						}
-						scale = 0.63
-						alwaysTransparent = yes
-					}
-					containerWindowType = {
-						name = portrait
-						size = {
-							width = 202
-							height = 240
-						}
-						position = {
-							x = 5
-							y = 5
-						}
-						clipping = yes
-						iconType = {
-							name = portrait
-							quadTextureSprite = GFX_portrait_character
-							position = {
-								x = -88
-								y = -239
-							}
-							orientation = lower_left
-							scale = 0.63
-							alwaysTransparent = yes
-						}
-					}
-					containerWindowType = {
-						name = header_background
-						position = {
-							x = 8
-							y = 8
-						}
-						size = {
-							width = 196
-							height = 46
-						}
-						background = {
-							name = header_background
-							spriteType = GFX_tiles_dark_area_cut_8
-							alwaysTransparent = yes
-						}
-					}
-					instantTextBoxType = {
-						name = general_name
-						position = {
-							x = 5
-							y = 10
-						}
-						font = cg_16b
-						text = "Bob Bobb"
-						maxWidth = 202
-						maxHeight = 16
-						fixedSize = yes
-						format = center
-						alwaysTransparent = yes
-					}
-					buttonType = {
-						name = change_general
-						quadTextureSprite = GFX_invisible
-						position = {
-							x = 0
-							y = 0
-						}
-						size = {
-							x = 212
-							y = 250
-						}
-						shortcut = G
-					}
-					iconType = {
-						name = general_skill
-						spriteType = GFX_leader_skill
-						position = {
-							x = 14
-							y = 28
-						}
-					}
-					iconType = {
-						name = general_experience
-						spriteType = GFX_ui_progressbar_thick
-						position = {
-							x = 42
-							y = 27
-						}
-					}
-					containerWindowType = {
-						name = footer_background
-						position = {
-							x = 8
-							y = -41
-						}
-						size = {
-							width = 196
-							height = 33
-						}
-						orientation = lower_left
-						background = {
-							name = footer_background
-							spriteType = GFX_tiles_dark_area_cut_8
-							alwaysTransparent = yes
-						}
-					}
-					overlappingElementsBoxType = {
-						name = traits
-						position = {
-							x = 10
-							y = -39
-						}
-						size = {
-							x = 192
-							y = 30
-						}
-						orientation = lower_left
-						format = left
 					}
 				}
 				containerWindowType = {
@@ -7862,6 +7470,7 @@ guiTypes = {
 			maxHeight = 20
 			fixedSize = yes
 			format = left
+			vertical_alignment = center
 		}
 		instantTextBoxType = {
 			name = army_species
@@ -7875,6 +7484,7 @@ guiTypes = {
 			maxHeight = 20
 			fixedSize = yes
 			format = left
+			vertical_alignment = center
 		}
 		instantTextBoxType = {
 			name = army_cost
@@ -7930,7 +7540,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = army_name
-			font = malgun_goth_24
+			font = cg_16b
 			text = "Army Name"
 			position = {
 				x = 24
@@ -7940,6 +7550,7 @@ guiTypes = {
 			maxHeight = 20
 			fixedSize = yes
 			format = left
+			vertical_alignment = center
 		}
 		instantTextBoxType = {
 			name = army_species
@@ -7953,6 +7564,7 @@ guiTypes = {
 			maxHeight = 20
 			fixedSize = yes
 			format = left
+			vertical_alignment = center
 		}
 		instantTextBoxType = {
 			name = army_power
@@ -7967,6 +7579,7 @@ guiTypes = {
 			fixedSize = yes
 			format = left
 			orientation = upper_right
+			vertical_alignment = center
 			alwaysTransparent = yes
 		}
 		instantTextBoxType = {
@@ -7982,6 +7595,7 @@ guiTypes = {
 			fixedSize = yes
 			format = left
 			orientation = upper_right
+			vertical_alignment = center
 			alwaysTransparent = yes
 		}
 		buttonType = {

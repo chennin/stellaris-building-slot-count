@@ -50,7 +50,7 @@
 #
 @bslot_district_storage_add = 1
 #
-@bslot_claire_district_crashed_slaver_ship_add = 0.75
+@bslot_claire_district_crashed_slaver_ship_add = 1.5
 @bslot_claire_district_city_add = 2
 @bslot_claire_district_industrial_is_crafter_empire_mult = 0.68
 #
