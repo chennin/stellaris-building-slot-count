@@ -214,13 +214,13 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = sector_governor_window
-			position = {
-				x = 10
-				y = 121
-			}
 			size = {
 				width = 253
 				height = 152
+			}
+			position = {
+				x = 10
+				y = 121
 			}
 			clipping = no
 			background = {
@@ -3428,7 +3428,7 @@ guiTypes = {
 						width = 212
 						height = 250
 					}
-					clipping = yes
+					clipping = no
 					background = {
 						name = general_background
 						spriteType = GFX_tiles_dark_area_cut_8
