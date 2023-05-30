@@ -3637,11 +3637,11 @@ guiTypes = {
 					font = font_text_14
 					text = DEPLOY_IN_ORBIT
 					position = {
-						x = 307
+						x = 457
 						y = 169
 					}
-					maxWidth = 300
-					maxHeight = 30
+					maxWidth = 150
+					maxHeight = 32
 					fixedSize = yes
 					format = right
 					vertical_alignment = center
@@ -3655,6 +3655,30 @@ guiTypes = {
 						y = 169
 					}
 					pdx_tooltip = DEPLOY_IN_ORBIT_DESC
+				}
+				instantTextBoxType = {
+					name = include_in_army_builder_text
+					font = font_text_14
+					text = ARMY_BUILDER_CHECKBOX
+					position = {
+						x = 272
+						y = 169
+					}
+					maxWidth = 185
+					maxHeight = 32
+					fixedSize = yes
+					format = left
+					vertical_alignment = center
+					pdx_tooltip = INCLUDE_IN_SECTOR_BUILDER_DESC
+				}
+				checkboxType = {
+					name = army_builder_checkbox
+					quadTextureSprite = GFX_checkbox_20_20_01
+					position = {
+						x = 238
+						y = 169
+					}
+					pdx_tooltip = INCLUDE_IN_SECTOR_BUILDER_DESC
 				}
 				containerWindowType = {
 					name = planet_armies
