@@ -5729,7 +5729,11 @@ guiTypes = {
 						x = @sidebar_inner_w
 						y = @sidebar_list_h
 					}
-					scrollbarType = standardlistbox_slider
+					scrollbarType = standardlistbox_slider_thick
+					offset = {
+						x = -3
+						y = 0
+					}
 					borderSize = {
 						x = 0
 						y = 0
@@ -6395,7 +6399,7 @@ guiTypes = {
 			quadTextureSprite = GFX_checkbox_20_20_01
 			position = {
 				x = -40
-				y = 2
+				y = 3
 			}
 			orientation = upper_right
 		}
@@ -8493,11 +8497,11 @@ guiTypes = {
 			containerWindowType = {
 				name = holdings_value_container
 				size = {
-					width = 78
+					width = 88
 					height = 48
 				}
 				position = {
-					x = 10
+					x = 5
 					y = 84
 				}
 				background = {
@@ -8508,19 +8512,19 @@ guiTypes = {
 					name = holdings_value_icon
 					spriteType = GFX_resource_energy_large
 					position = {
-						x = 2
-						y = 6
+						x = -2
+						y = 8
 					}
 				}
 				instantTextBoxType = {
 					name = holdings_value_amount
-					font = font_header_20
+					font = font_text_18
 					position = {
-						x = 28
+						x = 25
 						y = 0
 					}
 					text = 5
-					maxWidth = 50
+					maxWidth = 62
 					maxHeight = 48
 					fixedSize = yes
 					format = center
