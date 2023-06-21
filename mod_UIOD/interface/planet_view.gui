@@ -198,12 +198,12 @@ guiTypes = {
 		containerWindowType = {
 			name = governor_window_background
 			size = {
-				width = 253
-				height = 253
+				width = 254
+				height = 254
 			}
 			position = {
 				x = 10
-				y = 20
+				y = 19
 			}
 			clipping = no
 			background = {
@@ -213,35 +213,35 @@ guiTypes = {
 			}
 		}
 		containerWindowType = {
-			name = sector_governor_window
+			name = governor_window
 			size = {
-				width = 253
-				height = 152
+				width = 254
+				height = 254
 			}
 			position = {
 				x = 10
-				y = 121
+				y = 19
 			}
 			clipping = no
 			background = {
-				name = sector_governor_window
+				name = governor_window
 				spriteType = GFX_invisible
 				alwaysTransparent = yes
 			}
 		}
 		containerWindowType = {
-			name = governor_window
+			name = sector_governor_window
 			size = {
-				width = 253
-				height = 253
+				width = 254
+				height = 100
 			}
 			position = {
 				x = 10
-				y = 20
+				y = 177
 			}
 			clipping = no
 			background = {
-				name = governor_window
+				name = sector_governor_window
 				spriteType = GFX_invisible
 				alwaysTransparent = yes
 			}
@@ -322,7 +322,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = colony_rename_button
-			quadTextureSprite = gfx_transparency_button
+			quadTextureSprite = GFX_invisible
 			size = {
 				x = 340
 				y = 32
@@ -3071,7 +3071,7 @@ guiTypes = {
 					}
 					size = {
 						width = 212
-						height = 250
+						height = 254
 					}
 					margin = {
 						top = 5
@@ -3203,7 +3203,7 @@ guiTypes = {
 					}
 					size = {
 						width = 212
-						height = 250
+						height = 254
 					}
 					margin = {
 						top = 5
@@ -3426,7 +3426,7 @@ guiTypes = {
 					}
 					size = {
 						width = 212
-						height = 250
+						height = 254
 					}
 					clipping = no
 					background = {
@@ -4208,7 +4208,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = tabs_transparent_bg
-			quadTextureSprite = GFX_tiled_window_transparent
+			quadTextureSprite = GFX_invisible
 			position = {
 				x = 0
 				y = 0
