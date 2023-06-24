@@ -2847,7 +2847,7 @@ guiTypes = {
 					}
 					size = {
 						width = 212
-						height = 105
+						height = 254
 					}
 					clipping = yes
 					background = {
@@ -2987,7 +2987,7 @@ guiTypes = {
 					}
 					size = {
 						width = 212
-						height = 105
+						height = 254
 					}
 					orientation = upper_right
 					origo = upper_right
@@ -3361,6 +3361,30 @@ guiTypes = {
 					}
 					pdx_tooltip = DEPLOY_IN_ORBIT_DESC
 				}
+				instantTextBoxType = {
+					name = include_in_army_builder_text
+					font = font_text_14
+					text = ARMY_BUILDER_CHECKBOX
+					position = {
+						x = 85
+						y = 168
+					}
+					maxWidth = 240
+					maxHeight = 30
+					fixedSize = yes
+					format = right
+					vertical_alignment = center
+					pdx_tooltip = INCLUDE_IN_SECTOR_BUILDER_DESC
+				}
+				checkboxType = {
+					name = army_builder_checkbox
+					quadTextureSprite = GFX_checkbox_20_20_01
+					position = {
+						x = 330
+						y = 168
+					}
+					pdx_tooltip = INCLUDE_IN_SECTOR_BUILDER_DESC
+				}
 				containerWindowType = {
 					name = planet_armies
 					size = {
@@ -3369,7 +3393,7 @@ guiTypes = {
 					}
 					position = {
 						x = 20
-						y = 167
+						y = 197
 					}
 					background = {
 						name = build_queue_background
@@ -3397,7 +3421,7 @@ guiTypes = {
 						}
 						size = {
 							x = 332
-							y = 520
+							y = 490
 						}
 						borderSize = {
 							x = 0
@@ -3445,7 +3469,7 @@ guiTypes = {
 					}
 					size = {
 						width = 212
-						height = 250
+						height = 254
 					}
 					clipping = no
 					background = {
