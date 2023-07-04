@@ -3363,7 +3363,7 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = include_in_army_builder_text
-					font = font_text_14
+					font = cg_16b
 					text = ARMY_BUILDER_CHECKBOX
 					position = {
 						x = 85
