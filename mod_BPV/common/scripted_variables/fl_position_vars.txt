@@ -5,8 +5,8 @@
 @fl_pos_PDPV_x = -72
 @fl_pos_PDPV_y = 15
 @fl_font_PDPV = "cg_16b"
-@fl_pos_UIOD_x = -60
-@fl_pos_UIOD_y = 5
+@fl_pos_UIOD_x = -65
+@fl_pos_UIOD_y = 14
 @fl_font_UIOD = "font_text_16"
 @fl_pos_BPV_x = -60
 @fl_pos_BPV_y = 8

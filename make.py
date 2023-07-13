@@ -201,6 +201,12 @@ def process_planet_view(inlist, outlist, mod_name) :
                   for ele4 in ele3.getElements("containerWindowType"):
                     if ele4.getValue("name") == "title_buildings":
                       ele4.subelements.extend(bslot_display_cw)
+                      break
+                    elif ele4.getValue("name") == "buildings_background":
+                      for ele5 in ele4.getElements("containerWindowType"):
+                        if ele5.getValue("name") == "title_buildings": # UIOD started nesting
+                          ele5.subelements.extend(bslot_display_cw)
+                          break
     outlist.append(gt)
   return outlist
 
