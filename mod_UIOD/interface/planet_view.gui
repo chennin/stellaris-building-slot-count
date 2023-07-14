@@ -1619,7 +1619,7 @@ guiTypes = {
 					name = planet_primitives_window
 					size = {
 						width = 429
-						height = 379
+						height = 423
 					}
 					position = {
 						x = 358
@@ -1655,7 +1655,7 @@ guiTypes = {
 						}
 						iconType = {
 							name = header_line
-							spriteType = GFX_ui_line_center_tiny
+							spriteType = GFX_line_center_short
 							position = {
 								x = 0
 								y = 29
@@ -1688,7 +1688,7 @@ guiTypes = {
 							y = 15
 						}
 						maxWidth = 399
-						maxHeight = 349
+						maxHeight = 393
 						format = left
 						text_color_code = L
 						scrollbarType = standardlistbox_slider_thick_small
@@ -1697,12 +1697,12 @@ guiTypes = {
 				containerWindowType = {
 					name = planetary_resources
 					size = {
-						width = 369
+						width = 429
 						height = -10
 					}
 					position = {
 						x = 358
-						y = 712
+						y = 756
 					}
 					background = {
 						name = output_background
@@ -1711,7 +1711,7 @@ guiTypes = {
 					containerWindowType = {
 						name = planet_production_bg
 						size = {
-							width = 170
+							width = 200
 							height = -10
 						}
 						position = {
@@ -1738,7 +1738,7 @@ guiTypes = {
 					containerWindowType = {
 						name = planet_deficit_bg
 						size = {
-							width = 170
+							width = 200
 							height = -10
 						}
 						position = {
@@ -1772,7 +1772,7 @@ guiTypes = {
 							x = 5
 							y = 0
 						}
-						maxWidth = 180
+						maxWidth = 210
 						maxHeight = 42
 						fixedSize = yes
 						format = center
@@ -1784,10 +1784,10 @@ guiTypes = {
 						text = 10
 						position = {
 							x = 15
-							y = 52
+							y = 50
 						}
-						maxWidth = 160
-						maxHeight = 151
+						maxWidth = 190
+						maxHeight = 107
 						fixedSize = yes
 						format = center
 						scrollbarType = standardlistbox_slider_thick_small
@@ -1797,11 +1797,11 @@ guiTypes = {
 						font = font_text_18
 						text = PLANETARY_DEFICIT
 						position = {
-							x = -185
+							x = -215
 							y = 0
 						}
 						orientation = upper_right
-						maxWidth = 180
+						maxWidth = 210
 						maxHeight = 42
 						fixedSize = yes
 						format = center
@@ -1812,12 +1812,12 @@ guiTypes = {
 						font = font_text_16
 						text = 10
 						position = {
-							x = -175
-							y = 52
+							x = -205
+							y = 50
 						}
 						orientation = upper_right
-						maxWidth = 160
-						maxHeight = 151
+						maxWidth = 190
+						maxHeight = 107
 						fixedSize = yes
 						format = center
 						scrollbarType = standardlistbox_slider_thick_small
@@ -1867,14 +1867,15 @@ guiTypes = {
 					name = buildings_background
 					position = {
 						x = -10
-						y = 414
+						y = 278
 					}
 					size = {
-						width = 355
+						width = 295
 						height = -10
 					}
 					orientation = upper_right
 					origo = upper_right
+					clipping = no
 					background = {
 						name = buildings_box_background
 						spriteType = GFX_tiles_dark_area_cut_8
@@ -1887,7 +1888,7 @@ guiTypes = {
 						}
 						position = {
 							x = 0
-							y = 0
+							y = -47
 						}
 						iconType = {
 							name = hex_bg
@@ -1915,11 +1916,11 @@ guiTypes = {
 							font = font_header_20
 							text = BUILDINGS_TITLE
 							position = {
-								x = -125
+								x = -140
 								y = 0
 							}
 							orientation = center_up
-							maxWidth = 250
+							maxWidth = 280
 							maxHeight = 48
 							fixedSize = yes
 							format = center
@@ -1942,35 +1943,32 @@ guiTypes = {
 				gridBoxType = {
 					name = buildings_box
 					position = {
-						x = -363
-						y = 464
+						x = -303
+						y = 280
 					}
 					orientation = upper_right
 					size = {
-						width = 352
-						height = 220
+						width = 292
+						height = -10
 					}
-					format = CENTERED_UP
+					format = UPPER_LEFT
 					slotSize = {
-						width = 58
-						height = 58
+						width = 73
+						height = 72
 					}
 					add_horizontal = yes
-					max_slots_horizontal = 6
-					max_slots_vertical = 8
+					max_slots_horizontal = 4
 				}
 				containerWindowType = {
 					name = designation_info
 					size = {
-						width = 355
+						width = 429
 						height = 116
 					}
 					position = {
-						x = -10
-						y = 288
+						x = 358
+						y = 414
 					}
-					orientation = upper_right
-					origo = upper_right
 					background = {
 						name = designation_info_background
 						spriteType = GFX_dark_area_cut_light
@@ -1978,15 +1976,13 @@ guiTypes = {
 					containerWindowType = {
 						name = designation_button_container
 						size = {
-							width = 345
+							width = -5
 							height = 54
 						}
 						position = {
-							x = -5
+							x = 5
 							y = 5
 						}
-						orientation = upper_right
-						origo = upper_right
 						background = {
 							name = designation_button_bg_art
 							quadTextureSprite = GFX_invisible
@@ -1995,7 +1991,7 @@ guiTypes = {
 							name = designation_button
 							quadTextureSprite = GFX_ui_button_green
 							size = {
-								x = 345
+								x = 419
 								y = 54
 							}
 						}
@@ -2055,15 +2051,13 @@ guiTypes = {
 					containerWindowType = {
 						name = automation_button_container
 						size = {
-							width = 345
+							width = -5
 							height = 54
 						}
 						position = {
-							x = -5
-							y = -5
+							x = 5
+							y = 59
 						}
-						orientation = lower_right
-						origo = lower_right
 						background = {
 							name = automation_buttons_bg_art
 							quadTextureSprite = GFX_invisible
@@ -2072,7 +2066,7 @@ guiTypes = {
 							name = automated_development_button
 							spriteType = GFX_ui_button_green
 							size = {
-								x = 345
+								x = 419
 								y = 54
 							}
 						}
@@ -2115,7 +2109,7 @@ guiTypes = {
 				containerWindowType = {
 					name = sector_info
 					size = {
-						width = 369
+						width = 429
 						height = 116
 					}
 					position = {
@@ -2223,12 +2217,12 @@ guiTypes = {
 				containerWindowType = {
 					name = build_queue
 					size = {
-						width = 369
-						height = 288
+						width = 429
+						height = 206
 					}
 					position = {
 						x = 358
-						y = 414
+						y = 540
 					}
 					background = {
 						name = build_queue_background
@@ -2250,10 +2244,11 @@ guiTypes = {
 						font = font_header_20
 						text = QUEUE
 						position = {
-							x = 10
+							x = -170
 							y = 10
 						}
-						maxWidth = 349
+						orientation = center_up
+						maxWidth = 340
 						maxHeight = 20
 						fixedSize = yes
 						format = center
@@ -2267,14 +2262,14 @@ guiTypes = {
 						}
 						size = {
 							x = 409
-							y = 235
+							y = 153
 						}
 						scrollbarType = standardlistbox_slider_thick
 						offset = {
 							x = -3
 							y = 0
 						}
-						spacing = 6
+						spacing = 5
 					}
 				}
 			}
@@ -3937,11 +3932,11 @@ guiTypes = {
 					smoothListBoxType = {
 						name = build_queue
 						position = {
-							x = 40
+							x = 10
 							y = 44
 						}
 						size = {
-							x = 349
+							x = 409
 							y = 442
 						}
 						borderSize = {
@@ -7639,7 +7634,7 @@ guiTypes = {
 		}
 	}
 	containerWindowType = {
-		@slotSize = 56
+		@slotSize = 72
 		name = planet_building_entry
 		size = {
 			width = @slotSize
@@ -7648,7 +7643,11 @@ guiTypes = {
 		buttonType = {
 			name = locked_building_button
 			spriteType = GFX_ui_planet_locked_slot
-			scale = 0.7
+			position = {
+				x = 0
+				y = 0
+			}
+			scale = 0.9
 			clicksound = menu_slide_open
 		}
 		iconType = {
@@ -7656,7 +7655,7 @@ guiTypes = {
 			spriteType = GFX_building_bg
 			orientation = center
 			centerPosition = yes
-			scale = 0.62
+			scale = 0.78
 			alwaysTransparent = yes
 		}
 		iconType = {
@@ -7664,7 +7663,7 @@ guiTypes = {
 			spriteType = GFX_ui_planet_building_slot
 			orientation = center
 			centerPosition = yes
-			scale = 0.7
+			scale = 0.9
 		}
 		iconType = {
 			name = building_icon
@@ -7675,7 +7674,7 @@ guiTypes = {
 			}
 			orientation = center
 			centerPosition = yes
-			scale = 0.6
+			scale = 0.75
 			alwaysTransparent = yes
 		}
 		iconType = {
@@ -7687,7 +7686,7 @@ guiTypes = {
 			}
 			orientation = center
 			centerPosition = yes
-			scale = 0.6
+			scale = 0.75
 			alwaysTransparent = yes
 		}
 		iconType = {
@@ -7700,10 +7699,6 @@ guiTypes = {
 		buttonType = {
 			name = open_building_button
 			quadTextureSprite = GFX_button_light
-			position = {
-				x = 0
-				y = 0
-			}
 			size = {
 				x = @slotSize
 				y = @slotSize
@@ -7715,7 +7710,7 @@ guiTypes = {
 			spriteType = GFX_selected_building
 			orientation = center
 			centerPosition = yes
-			scale = 0.53
+			scale = 0.68
 			alwaysTransparent = yes
 		}
 		buttonType = {
@@ -7726,18 +7721,18 @@ guiTypes = {
 				y = 3
 			}
 			clicksound = queuing_building
-			scale = 0.65
+			scale = 0.80
 		}
 		iconType = {
 			name = disabled_building
 			spriteType = GFX_disabled_building
 			position = {
-				x = -23
-				y = -22
+				x = -28
+				y = -27
 			}
 			orientation = lower_right
-			scale = 0.65
 			alwaysTransparent = yes
+			scale = 0.8
 		}
 	}
 	containerWindowType = {
@@ -8228,7 +8223,7 @@ guiTypes = {
 			y = 0
 		}
 		size = {
-			width = 349
+			width = 409
 			height = 34
 		}
 		clipping = no
@@ -8238,7 +8233,7 @@ guiTypes = {
 		}
 		iconType = {
 			name = progressbar
-			spriteType = GFX_ui_progressbar_285
+			spriteType = GFX_ui_progressbar_345
 			position = {
 				x = 0
 				y = 0
@@ -8246,13 +8241,13 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = title
-			font = font_text_14
+			font = font_text_18
 			text = ""
 			position = {
 				x = 5
 				y = 0
 			}
-			maxWidth = 210
+			maxWidth = 270
 			maxHeight = 34
 			fixedSize = yes
 			format = left
@@ -8261,10 +8256,10 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = time
-			font = font_text_14
+			font = font_text_18
 			text = "Time left: 1 day"
 			position = {
-				x = 200
+				x = 260
 				y = 0
 			}
 			maxWidth = 80
@@ -8299,7 +8294,7 @@ guiTypes = {
 				y = -1
 			}
 			size = {
-				x = 287
+				x = 347
 				y = 36
 			}
 			clicksound = back_click
@@ -8489,7 +8484,7 @@ guiTypes = {
 					name = buildings_box
 					position = {
 						x = 4
-						y = 4
+						y = 18
 					}
 					size = {
 						width = 146
@@ -8497,11 +8492,11 @@ guiTypes = {
 					}
 					format = UPPER_LEFT
 					slotSize = {
-						width = 58
-						height = 58
+						width = 73
+						height = 72
 					}
 					add_horizontal = yes
-					max_slots_horizontal = 4
+					max_slots_horizontal = 3
 					max_slots_vertical = 3
 				}
 			}
