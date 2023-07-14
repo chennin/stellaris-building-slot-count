@@ -1697,7 +1697,7 @@ guiTypes = {
 				containerWindowType = {
 					name = planetary_resources
 					size = {
-						width = 429
+						width = 369
 						height = -10
 					}
 					position = {
@@ -1711,7 +1711,7 @@ guiTypes = {
 					containerWindowType = {
 						name = planet_production_bg
 						size = {
-							width = 200
+							width = 170
 							height = -10
 						}
 						position = {
@@ -1738,7 +1738,7 @@ guiTypes = {
 					containerWindowType = {
 						name = planet_deficit_bg
 						size = {
-							width = 200
+							width = 170
 							height = -10
 						}
 						position = {
@@ -1772,7 +1772,7 @@ guiTypes = {
 							x = 5
 							y = 0
 						}
-						maxWidth = 210
+						maxWidth = 180
 						maxHeight = 42
 						fixedSize = yes
 						format = center
@@ -1786,7 +1786,7 @@ guiTypes = {
 							x = 15
 							y = 52
 						}
-						maxWidth = 190
+						maxWidth = 160
 						maxHeight = 151
 						fixedSize = yes
 						format = center
@@ -1797,11 +1797,11 @@ guiTypes = {
 						font = font_text_18
 						text = PLANETARY_DEFICIT
 						position = {
-							x = -215
+							x = -185
 							y = 0
 						}
 						orientation = upper_right
-						maxWidth = 210
+						maxWidth = 180
 						maxHeight = 42
 						fixedSize = yes
 						format = center
@@ -1812,11 +1812,11 @@ guiTypes = {
 						font = font_text_16
 						text = 10
 						position = {
-							x = -205
+							x = -175
 							y = 52
 						}
 						orientation = upper_right
-						maxWidth = 190
+						maxWidth = 160
 						maxHeight = 151
 						fixedSize = yes
 						format = center
@@ -1870,7 +1870,7 @@ guiTypes = {
 						y = 414
 					}
 					size = {
-						width = 295
+						width = 355
 						height = -10
 					}
 					orientation = upper_right
@@ -1942,12 +1942,12 @@ guiTypes = {
 				gridBoxType = {
 					name = buildings_box
 					position = {
-						x = -303
+						x = -363
 						y = 464
 					}
 					orientation = upper_right
 					size = {
-						width = 292
+						width = 352
 						height = 220
 					}
 					format = CENTERED_UP
@@ -1956,13 +1956,13 @@ guiTypes = {
 						height = 58
 					}
 					add_horizontal = yes
-					max_slots_horizontal = 4
+					max_slots_horizontal = 6
 					max_slots_vertical = 8
 				}
 				containerWindowType = {
 					name = designation_info
 					size = {
-						width = 295
+						width = 355
 						height = 116
 					}
 					position = {
@@ -1978,7 +1978,7 @@ guiTypes = {
 					containerWindowType = {
 						name = designation_button_container
 						size = {
-							width = 285
+							width = 345
 							height = 54
 						}
 						position = {
@@ -1995,7 +1995,7 @@ guiTypes = {
 							name = designation_button
 							quadTextureSprite = GFX_ui_button_green
 							size = {
-								x = 285
+								x = 345
 								y = 54
 							}
 						}
@@ -2055,7 +2055,7 @@ guiTypes = {
 					containerWindowType = {
 						name = automation_button_container
 						size = {
-							width = 285
+							width = 345
 							height = 54
 						}
 						position = {
@@ -2072,7 +2072,7 @@ guiTypes = {
 							name = automated_development_button
 							spriteType = GFX_ui_button_green
 							size = {
-								x = 285
+								x = 345
 								y = 54
 							}
 						}
@@ -2115,7 +2115,7 @@ guiTypes = {
 				containerWindowType = {
 					name = sector_info
 					size = {
-						width = 429
+						width = 369
 						height = 116
 					}
 					position = {
@@ -2223,7 +2223,7 @@ guiTypes = {
 				containerWindowType = {
 					name = build_queue
 					size = {
-						width = 429
+						width = 369
 						height = 288
 					}
 					position = {
@@ -2253,7 +2253,7 @@ guiTypes = {
 							x = 10
 							y = 10
 						}
-						maxWidth = 409
+						maxWidth = 349
 						maxHeight = 20
 						fixedSize = yes
 						format = center
@@ -2268,10 +2268,6 @@ guiTypes = {
 						size = {
 							x = 409
 							y = 235
-						}
-						borderSize = {
-							x = 0
-							y = 0
 						}
 						scrollbarType = standardlistbox_slider_thick
 						offset = {
@@ -3941,11 +3937,11 @@ guiTypes = {
 					smoothListBoxType = {
 						name = build_queue
 						position = {
-							x = 10
+							x = 40
 							y = 44
 						}
 						size = {
-							x = 409
+							x = 349
 							y = 442
 						}
 						borderSize = {
@@ -8232,7 +8228,7 @@ guiTypes = {
 			y = 0
 		}
 		size = {
-			width = 409
+			width = 349
 			height = 34
 		}
 		clipping = no
@@ -8242,32 +8238,33 @@ guiTypes = {
 		}
 		iconType = {
 			name = progressbar
-			spriteType = GFX_ui_progressbar_345
+			spriteType = GFX_ui_progressbar_285
 			position = {
 				x = 0
-				y = -1
+				y = 0
 			}
 		}
 		instantTextBoxType = {
 			name = title
-			font = font_text_18
+			font = font_text_14
 			text = ""
 			position = {
 				x = 5
 				y = 0
 			}
-			maxWidth = 270
+			maxWidth = 210
 			maxHeight = 34
 			fixedSize = yes
 			format = left
 			vertical_alignment = center
+			alwaysTransparent = yes
 		}
 		instantTextBoxType = {
 			name = time
-			font = font_text_18
+			font = font_text_14
 			text = "Time left: 1 day"
 			position = {
-				x = 260
+				x = 200
 				y = 0
 			}
 			maxWidth = 80
@@ -8275,34 +8272,7 @@ guiTypes = {
 			fixedSize = yes
 			format = right
 			vertical_alignment = center
-		}
-		instantTextBoxType = {
-			name = name
-			font = font_text_14
-			text = ""
-			position = {
-				x = 36
-				y = 0
-			}
-			maxWidth = 164
-			maxHeight = 20
-			fixedSize = yes
-			format = left
 			alwaysTransparent = yes
-			text_color_code = E
-		}
-		buttonType = {
-			name = cancel_button
-			position = {
-				x = -1
-				y = -1
-			}
-			size = {
-				x = 347
-				y = 36
-			}
-			quadTextureSprite = GFX_button_light
-			clicksound = back_click
 		}
 		containerWindowType = {
 			name = priority_buttons_bg
@@ -8320,6 +8290,19 @@ guiTypes = {
 				quadTextureSprite = GFX_planet_bg_tile_frame
 				alwaysTransparent = yes
 			}
+		}
+		buttonType = {
+			name = cancel_button
+			quadTextureSprite = GFX_button_light
+			position = {
+				x = -1
+				y = -1
+			}
+			size = {
+				x = 287
+				y = 36
+			}
+			clicksound = back_click
 		}
 		buttonType = {
 			name = priority_upwards
