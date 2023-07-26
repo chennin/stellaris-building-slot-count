@@ -1301,7 +1301,7 @@ guiTypes = {
 						}
 						size = {
 							width = 265
-							height = 742
+							height = 1060
 						}
 						format = UPPER_LEFT
 						slotsize = {
