@@ -18,18 +18,20 @@
 @buildings_edict_architectonic_max = 8
 #
 @bslot_district_farming_civic_agrarian_idyll_mult = 0.25
-@bslot_district_mining_uncapped_origin_subterranean_mult = 0.34
+@bslot_district_mining_uncapped_always_mult = 1
 #
 @bslot_district_crashed_slaver_ship_add = 0.75
 @bslot_district_city_add = 1
 @bslot_district_industrial_is_crafter_empire_mult = 0.34
 #
+@bslot_paradisiacal_habitat_science_add = 10
+@bslot_paradisiacal_habitat_energy_add = 10
+@bslot_paradisiacal_habitat_mining_add = 10
+#
 @bslot_district_orders_demesne_d_dimensional_manipulation_device_mult = 0.5
 #
 @bslot_orbital_ring_habitation_holding_orbital_assembly_complex_mult = 0.5
 #
-@bslot_building_hab_capital_ap_voidborn_add = 1
-@bslot_building_hab_capital_tr_prosperity_void_works_add = 1
 @bslot_building_resort_capital_add = 5
 @bslot_building_resort_major_capital_add = 11
 @bslot_building_slave_capital_add = 5

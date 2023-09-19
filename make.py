@@ -29,9 +29,9 @@ cwp.workshop_path = os.path.expanduser( os.path.expandvars( "~/stellaris-worksho
 cwp.mod_docs_path = os.path.expanduser( os.path.expandvars( "~/stellaris-mod" ) )
 cwp.vanilla_path = os.path.expanduser( os.path.expandvars( "~/stellaris-game" ) )
 
-MOD_NAME = "Show Building Slot Capacity"
+MOD_NAME = "Show Building Slot Capacity [3.9 beta]"
 VERSION = "5"
-SUPPORTED_VERSION = "3.8.4"
+SUPPORTED_VERSION = "3.9.1"
 # 3 = unlisted, 2 = hidden, 1 = friends, 0 = public
 VISIBILITY = 0
 
@@ -144,7 +144,7 @@ def process_uncapped_vars(inlist, outlist):
   global min_uncapped
   vals = []
   for pc in inlist:
-    if pc.name in [ "pc_machine", "pc_hive", "pc_ringworld_habitable" ]:
+    if pc.name in [ "pc_machine", "pc_hive", "pc_ringworld_habitable",]:
       for ele in pc.getElements("modifier"):
         if ele.hasAttribute("planet_max_buildings_add"):
           vals.append( int(ele.getValue("planet_max_buildings_add")) )
@@ -217,17 +217,17 @@ def test_planet_view(inlist):
 
 def test_recurse(ele, test, found, val):
 #  print(f"{ele}")
-#  print(f"{ele.name} {ele.value}")
+#  print(f"    Got {ele.name} {ele.value}")
   if found == True and val != 0:
     return (found, val)
   if test["testleft"] == ele.name and test["testright"] == ele.value:
     found = True
-#    print("->> setting Found = True")
+#    print("    ->> setting Found = True")
   elif test["keywanted"] == ele.name:
     val = ele.value
-#    print(f"->> setting val = {val}")
+#    print(f"    ->> setting val = {val}")
   if ele.hasSubelements():
-#    print("recursing")
+#    print("    recursing")
     for sele in ele.subelements:
       (found, val) = test_recurse(sele, test, found, val)
   return (found, val)
@@ -237,13 +237,19 @@ def test_recurse(ele, test, found, val):
 def look_in_block(inlist, outlist, tests):
   for outer in inlist:
     for test in tests:
+#      print(f'Outer checking {outer.name} = {test["outmostblock"]}')
       if test["outmostblock"] == outer.name:
         found = False
         val = 0
         for ele in outer.subelements:
-          if test["innerblock"] == ele.name:
+#          print(f'  Inner checking {ele.name} = {test["innerblock"]}')
+          if ele.name == test["keywanted"]:
+            found = True
+            val = ele.value
+          elif test["innerblock"] == ele.name:
               (found, val) = test_recurse(ele, test, found, val)
         if found == True and val != 0:
+#          print(f'  Found {val}')
           name = test["testright"]
           if name == "yes":
             name = test["testleft"]
@@ -310,8 +316,8 @@ process_file(f"{cwp.vanilla_path}/common/districts/02_rural_districts.txt",
                {
                "outmostblock": "district_mining_uncapped",
                "innerblock": "triggered_planet_modifier",
-               "testleft": "has_origin",
-               "testright": "origin_subterranean",
+               "testleft": "always",
+               "testright": "yes",
                "keywanted": "planet_max_buildings_add",
                "prefix": "bslot_", "suffix": "_mult"
                } ]
@@ -354,6 +360,39 @@ process_file(f"{cwp.vanilla_path}/common/districts/00_urban_districts.txt",
                },
               ] }
 )
+process_file(f"{cwp.vanilla_path}/common/static_modifiers/18_static_modifiers_first_contact_dlc.txt", 
+             files["SCRIPTED_VAR_FILENAME"],
+             look_in_block,
+             success_len,
+             testargs = { "expected": 3 },
+
+             genargs =  { "tests": [ 
+               {
+               "outmostblock": "paradisiacal_habitat_science",
+               "innerblock": None,
+               "testleft": None,
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_", "suffix": "add"
+               },
+               {
+               "outmostblock": "paradisiacal_habitat_energy",
+               "innerblock": None,
+               "testleft": None,
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_", "suffix": "add"
+               },
+               {
+               "outmostblock": "paradisiacal_habitat_mining",
+               "innerblock": None,
+               "testleft": None,
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_", "suffix": "add"
+               },
+              ] }
+)
 process_file(f"{cwp.vanilla_path}/common/districts/00_special_districts.txt", 
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
@@ -390,7 +429,7 @@ process_file(f"{cwp.vanilla_path}/common/buildings/00_capital_buildings.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
              success_len,
-             testargs = { "expected": 7 },
+             testargs = { "expected": 5 },
              genargs =  { "tests": [ 
                { 
                "outmostblock": "building_imperial_capital",
@@ -431,22 +470,6 @@ process_file(f"{cwp.vanilla_path}/common/buildings/00_capital_buildings.txt",
                "testright": None,
                "keywanted": "planet_max_buildings_add",
                "prefix": "bslot_", "suffix": "add"
-               },
-               { 
-               "outmostblock": "building_hab_capital",
-               "innerblock": "triggered_planet_modifier",
-               "testleft": "has_ascension_perk",
-               "testright": "ap_voidborn",
-               "keywanted": "planet_max_buildings_add",
-               "prefix": "bslot_", "suffix": "_add"
-               },
-               { 
-               "outmostblock": "building_hab_capital",
-               "innerblock": "triggered_planet_modifier",
-               "testleft": "has_active_tradition",
-               "testright": "tr_prosperity_void_works",
-               "keywanted": "planet_max_buildings_add",
-               "prefix": "bslot_", "suffix": "_add"
                },
              ] }
 )

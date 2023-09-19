@@ -156,7 +156,7 @@ bslot_mining_districts_buildings = {
 		}
 		mode = add
 	}
-	mult = @bslot_district_mining_uncapped_origin_subterranean_mult
+	mult = @bslot_district_mining_uncapped_always_mult
 	floor = yes
 }
 bslot_from_holding = {
@@ -274,13 +274,6 @@ bslot_from_cta = {
 		}
 		add = @bslot_civic_functional_architecture_add
 	}
-	# Voidborne ascension perk 
-	modifier = {
-		exists = owner
-		owner = { has_ascension_perk = ap_voidborn }
-		uses_district_set = habitat
-		add = @bslot_building_hab_capital_ap_voidborn_add
-	}
 	# Agrarian Idyll civic
 	add = value:bslot_farming_districts_buildings
 
@@ -292,13 +285,6 @@ bslot_from_cta = {
 		exists = owner
 		owner = { has_active_tradition = tr_adaptability_adaptive_ecology }
 		add = @bslot_tr_adaptability_adaptive_ecology_add
-	}
-	# Modular Superstructures tradition
-	modifier = {
-		exists = owner
-		owner = { has_active_tradition = tr_prosperity_void_works }
-		uses_district_set = habitat
-		add = @bslot_building_hab_capital_tr_prosperity_void_works_add
 	}
 }
 bslot_from_origin = {
