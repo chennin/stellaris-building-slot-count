@@ -44,6 +44,10 @@ defined_text = {
         value = value:bslot_from_demesne
 }
 defined_text = {
+        name = fl_building_from_demesne_device
+        value = value:bslot_from_demesne_device
+}
+defined_text = {
         name = fl_building_from_deposits
         value = value:bslot_from_deposits
 }
@@ -121,6 +125,12 @@ defined_text = {
         inline_script = {
                 script = fl_sloc_one_or_more
                 KEY = demesne
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = demesne_device
         }
 }
 defined_text = {

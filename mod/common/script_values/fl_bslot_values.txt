@@ -189,7 +189,24 @@ bslot_from_demesne = {
 	complex_trigger_modifier = {
 		potential = {
 			is_scope_type = planet
+			has_district = district_orders_demesne
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_orders_demesne
+		}
+		mode = add
+	}
+	mult = @bslot_district_orders_demesne_mult
+	floor = yes
+}
+bslot_from_demesne_device = {
+	base = 0
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
 			has_deposit = d_dimensional_manipulation_device
+			has_district = district_orders_demesne
 		}
 		trigger = num_districts
 		parameters = {

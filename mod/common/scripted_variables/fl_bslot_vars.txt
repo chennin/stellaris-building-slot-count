@@ -30,6 +30,8 @@
 #
 @bslot_district_orders_demesne_d_dimensional_manipulation_device_mult = 0.5
 #
+@bslot_district_orders_demesne_mult = 0.50
+#
 @bslot_orbital_ring_habitation_holding_orbital_assembly_complex_mult = 0.5
 #
 @bslot_building_resort_capital_add = 5
