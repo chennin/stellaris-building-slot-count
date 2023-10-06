@@ -29,6 +29,28 @@ bslot_num_constructing = {
 		mode = subtract
 	}
 }
+bslot_from_orbitals = {
+	base = 0
+	modifier = {
+		is_scope_type = planet
+		has_deposit = d_system_resources
+		add = 0.50
+	}
+	modifier = {
+		is_scope_type = planet
+		has_deposit = d_system_resources
+		has_planet_flag = advanced_habitat
+		add = 0.25
+	}
+	modifier = {
+		is_scope_type = planet
+		has_deposit = d_system_resources
+		has_planet_flag = advanced_habitat_2
+		add = 0.25
+	}
+	mult = solar_system.value:num_major_and_minor_orbitals_class|CLASS|generic|
+	floor = yes
+}
 bslot_from_housing = {
 	base = 0
 	complex_trigger_modifier = {
@@ -57,6 +79,15 @@ bslot_from_housing = {
 		}
 		mode = add
 		mult = @bslot_district_city_add
+	}
+	complex_trigger_modifier = {
+		potential = { is_scope_type = planet }
+		trigger = num_districts
+		parameters = {
+			type = district_hab_housing
+		}
+		mode = add
+		mult = 0.50
 	}
 	complex_trigger_modifier = {
 		potential = { is_scope_type = planet }
@@ -107,7 +138,7 @@ bslot_farming_districts_buildings = {
 	mult = @bslot_district_farming_civic_agrarian_idyll_mult
 	floor = yes
 }
-bslot_industrial_districts_buildings = {
+bslot_industrial_districts_civics = {
 	base = 0
 	complex_trigger_modifier = {
 		potential = {
@@ -122,8 +153,23 @@ bslot_industrial_districts_buildings = {
 			type = district_industrial
 		}
 		mode = add
+		mult = @bslot_district_industrial_is_crafter_empire_mult
 	}
-	mult = @bslot_district_industrial_is_crafter_empire_mult
+	floor = yes
+}
+bslot_from_industrial_districts_buildings = {
+	base = 0
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_hab_industrial
+		}
+		mode = add
+		mult = 0.25
+	}
 	floor = yes
 }
 bslot_mining_districts_buildings = {
@@ -295,7 +341,7 @@ bslot_from_cta = {
 	add = value:bslot_farming_districts_buildings
 
 	# Masterful Crafters / Mastercraft Inc
-	add = value:bslot_industrial_districts_buildings
+	add = value:bslot_industrial_districts_civics
 
 	# Adaptive Ecology tradition 
 	modifier = {
@@ -303,11 +349,109 @@ bslot_from_cta = {
 		owner = { has_active_tradition = tr_adaptability_adaptive_ecology }
 		add = @bslot_tr_adaptability_adaptive_ecology_add
 	}
+	# Voidborn
+	add = value:bslot_from_voidborn
 }
 bslot_from_origin = {
 	base = 0
 	# Subterranean origin
 	add = value:bslot_mining_districts_buildings
+	# Void Dweller
+	add = value:bslot_from_void_dwellers
+}
+bslot_from_void_dwellers = {
+	base = 0
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+			owner = {
+				has_origin = origin_void_dwellers
+			}
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_hab_science
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+			owner = {
+				has_origin = origin_void_dwellers
+			}
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_hab_energy
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+			owner = {
+				has_origin = origin_void_dwellers
+			}
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_hab_mining
+		}
+		mode = add
+	}
+	mult = owner.modifier:habitat_districts_building_slots_add
+	floor = yes
+}
+bslot_from_voidborn = {
+	base = 0
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_voidborn
+			}
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_hab_science
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_voidborn
+			}
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_hab_energy
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		potential = {
+			is_scope_type = planet
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_voidborn
+			}
+		}
+		trigger = num_districts
+		parameters = {
+			type = district_hab_mining
+		}
+		mode = add
+	}
+	mult = owner.modifier:habitat_districts_building_slots_add
+	floor = yes
 }
 bslot_from_deposits = {
 	base = 0
@@ -365,9 +509,11 @@ bslot_capacity = {
 	add = value:bslot_from_origin
 	# Infrastructure technology
 	add = value:bslot_from_tech
+	# Orbitals
+	add = value:bslot_from_orbitals
 	# Planetary housing district
 	add = value:bslot_from_housing
-	# Functional Architecture / Constructobot civic, Agrarian Idyll civic, Masterful Crafters / Mastercraft Inc, Voidborne ascension perk, Traditions
+	# Functional Architecture / Constructobot civic, Agrarian Idyll civic, Masterful Crafters / Mastercraft Inc, Traditions
 	add = value:bslot_from_cta
 
 	# Orbital Assembly Complex
@@ -382,6 +528,8 @@ bslot_capacity = {
 	add = value:bslot_from_pc
 	# Edicts
 	add = value:bslot_from_edicts
+	# Industrial buildings (habs)
+	add = value:bslot_from_industrial_districts_buildings
 	modifier = {
 		is_scope_type = planet
 		NOT = { has_owner = yes }
