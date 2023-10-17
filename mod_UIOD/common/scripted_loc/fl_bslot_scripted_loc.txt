@@ -16,8 +16,16 @@ defined_text = {
         value = value:bslot_from_tech
 }
 defined_text = {
+        name = fl_building_from_orbitals
+        value = value:bslot_from_orbitals
+}
+defined_text = {
         name = fl_building_from_housing
         value = value:bslot_from_housing
+}
+defined_text = {
+        name = fl_building_from_industrial_districts_buildings
+        value = value:bslot_from_industrial_districts_buildings
 }
 defined_text = {
         name = fl_building_from_capital
@@ -42,6 +50,10 @@ defined_text = {
 defined_text = {
         name = fl_building_from_demesne
         value = value:bslot_from_demesne
+}
+defined_text = {
+        name = fl_building_from_demesne_device
+        value = value:bslot_from_demesne_device
 }
 defined_text = {
         name = fl_building_from_deposits
@@ -126,6 +138,12 @@ defined_text = {
 defined_text = {
         inline_script = {
                 script = fl_sloc_one_or_more
+                KEY = demesne_device
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
                 KEY = tech
         }
 }
@@ -150,7 +168,19 @@ defined_text = {
 defined_text = {
         inline_script = {
                 script = fl_sloc_one_or_more
+                KEY = industrial_districts_buildings
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
                 KEY = edicts
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = orbitals
         }
 }
 defined_text = {

@@ -1,6 +1,6 @@
-name="Show Building Slot Capacity - PDPV"
+name="Show Building Slot Capacity [beta for 3.9] - PDPV"
 version="5"
-supported_version="3.8.4"
+supported_version="3.9.2"
 tags={
         "Graphics"
 }

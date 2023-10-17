@@ -29,9 +29,9 @@ cwp.workshop_path = os.path.expanduser( os.path.expandvars( "~/stellaris-worksho
 cwp.mod_docs_path = os.path.expanduser( os.path.expandvars( "~/stellaris-mod" ) )
 cwp.vanilla_path = os.path.expanduser( os.path.expandvars( "~/stellaris-game" ) )
 
-MOD_NAME = "Show Building Slot Capacity [3.9 beta]"
+MOD_NAME = "Show Building Slot Capacity [beta for 3.9]"
 VERSION = "5"
-SUPPORTED_VERSION = "3.9.1"
+SUPPORTED_VERSION = "3.9.2"
 # 3 = unlisted, 2 = hidden, 1 = friends, 0 = public
 VISIBILITY = 0
 
@@ -399,17 +399,33 @@ process_file(f"{cwp.vanilla_path}/common/districts/00_special_districts.txt",
              success_len,
              testargs = { "expected": 1 },
 
-             genargs =  { "tests": [ { 
+             genargs =  { "tests": [
+               {
                "outmostblock": "district_orders_demesne",
                "innerblock": "triggered_planet_modifier",
                "testleft": "has_deposit",
                "testright": "d_dimensional_manipulation_device",
                "keywanted": "planet_max_buildings_add",
                "prefix": "bslot_", "suffix": "_mult"
-             } ] }
-#             genargs = { "test": [
-#                    ("district_orders_demesne", "has_deposit", "d_dimensional_manipulation_device")
-#             ] }
+               },
+             ] }
+)
+process_file(f"{cwp.vanilla_path}/common/districts/00_special_districts.txt",
+             files["SCRIPTED_VAR_FILENAME"],
+             look_in_block,
+             success_len,
+             testargs = { "expected": 1 },
+
+             genargs =  { "tests": [
+               {
+               "outmostblock": "district_orders_demesne",
+               "innerblock": "planet_modifier",
+               "testleft": "planet_modifier",
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_", "suffix": "mult"
+               },
+             ] }
 )
 process_file(f"{cwp.vanilla_path}/common/starbase_modules/00_orbital_ring_modules.txt", 
              files["SCRIPTED_VAR_FILENAME"],
