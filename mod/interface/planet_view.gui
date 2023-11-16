@@ -170,7 +170,7 @@ guiTypes = {
 				name = open_orbital_ring
 				quadTextureSprite = GFX_button_orbital_ring
 				position = {
-					x = 0
+					x = -19
 					y = 4
 				}
 				clicksound = click
@@ -213,7 +213,7 @@ guiTypes = {
 				name = move_capital
 				quadTextureSprite = GFX_fleet_action_button_move_capital
 				position = {
-					x = 173
+					x = 17
 					y = 4
 				}
 			}
@@ -221,7 +221,7 @@ guiTypes = {
 				name = zoom_to_planet_button
 				quadTextureSprite = GFX_fleetview_focus
 				position = {
-					x = 204
+					x = 205
 					y = 4
 				}
 				pdx_tooltip = ZOOM_TO_PLANET
@@ -5357,7 +5357,7 @@ guiTypes = {
 			font = cg_16b
 			text = "cost cost"
 			position = {
-				x = 70
+				x = 60
 				y = 68
 			}
 			maxWidth = 170
@@ -5370,7 +5370,7 @@ guiTypes = {
 			name = clear_blocker_deposit_icon
 			spriteType = GFX_deposit_unknown
 			position = {
-				x = 90
+				x = 85
 				y = 46
 			}
 			scale = 0.5
@@ -5379,8 +5379,8 @@ guiTypes = {
 			name = clear_blocker_button
 			spriteType = GFX_clear_blocker_button
 			position = {
-				x = 213
-				y = 33
+				x = 233
+				y = 53
 			}
 			scale = 0.65
 			clicksound = ui_demolish_building_district
