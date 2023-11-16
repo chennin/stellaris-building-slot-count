@@ -393,6 +393,23 @@ process_file(f"{cwp.vanilla_path}/common/static_modifiers/18_static_modifiers_fi
                },
               ] }
 )
+process_file(f"{cwp.vanilla_path}/common/static_modifiers/20_static_modifiers_astral_planes.txt",
+             files["SCRIPTED_VAR_FILENAME"],
+             look_in_block,
+             success_len,
+             testargs = { "expected": 1 },
+
+             genargs =  { "tests": [
+               {
+               "outmostblock": "procedural_space_modifier",
+               "innerblock": None,
+               "testleft": None,
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_", "suffix": "add"
+               },
+              ] }
+)
 process_file(f"{cwp.vanilla_path}/common/districts/00_special_districts.txt", 
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
@@ -521,6 +538,22 @@ process_file(f"{cwp.vanilla_path}/common/deposits/01_blocker_deposits.txt",
                },
                { 
                "outmostblock": "d_rotten_soil",
+               "innerblock": "planet_modifier",
+               "testleft": "planet_modifier",
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_", "suffix": "add"
+               },
+             ] }
+)
+process_file(f"{cwp.vanilla_path}/common/deposits/11_astral_planes_deposits.txt",
+             files["SCRIPTED_VAR_FILENAME"],
+             look_in_block,
+             success_len,
+             testargs = { "expected": 1 },
+             genargs =  { "tests": [
+               {
+               "outmostblock": "d_fractal_seed",
                "innerblock": "planet_modifier",
                "testleft": "planet_modifier",
                "testright": None,

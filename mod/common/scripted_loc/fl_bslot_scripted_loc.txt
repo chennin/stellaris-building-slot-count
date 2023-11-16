@@ -20,6 +20,10 @@ defined_text = {
         value = value:bslot_from_orbitals
 }
 defined_text = {
+        name = fl_building_from_empire_mods
+        value = value:bslot_from_empire_mods
+}
+defined_text = {
         name = fl_building_from_housing
         value = value:bslot_from_housing
 }
@@ -181,6 +185,12 @@ defined_text = {
         inline_script = {
                 script = fl_sloc_one_or_more
                 KEY = orbitals
+        }
+}
+defined_text = {
+        inline_script = {
+                script = fl_sloc_one_or_more
+                KEY = empire_mods
         }
 }
 defined_text = {
