@@ -39,14 +39,17 @@ bslot_from_orbitals = {
 	modifier = {
 		is_scope_type = planet
 		has_deposit = d_system_resources
-		has_planet_flag = advanced_habitat
+		has_tier2_capital = yes
 		add = 0.25
 	}
 	modifier = {
 		is_scope_type = planet
 		has_deposit = d_system_resources
-		has_planet_flag = advanced_habitat_2
-		add = 0.25
+		OR = {
+			has_tier3_capital = yes
+			has_imperial_capital = yes
+		}
+		add = 0.50
 	}
 	mult = solar_system.value:num_major_and_minor_orbitals_class|CLASS|generic|
 	floor = yes

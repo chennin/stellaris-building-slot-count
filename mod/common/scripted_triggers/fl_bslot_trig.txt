@@ -26,6 +26,7 @@ has_tier2_capital = {
 has_tier3_capital = {
 	OR = {
 		has_building = building_major_capital
+		has_building = building_hab_system_capital
 		has_building = building_machine_major_capital
 	}
 }

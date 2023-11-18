@@ -3,6 +3,7 @@ common/buildings/00_capital_buildings.txt                             building_c
 common/buildings/00_capital_buildings.txt                             building_deployment_post             planet_max_buildings_add  =  @buildings_t1
 common/buildings/00_capital_buildings.txt                             building_hab_capital                 planet_max_buildings_add  =  @buildings_t1
 common/buildings/00_capital_buildings.txt                             building_hab_major_capital           planet_max_buildings_add  =  @buildings_t2
+common/buildings/00_capital_buildings.txt                             building_hab_system_capital          planet_max_buildings_add  =  @buildings_t3
 common/buildings/00_capital_buildings.txt                             building_hive_capital                planet_max_buildings_add  =  @buildings_t2
 common/buildings/00_capital_buildings.txt                             building_hive_major_capital          planet_max_buildings_add  =  @buildings_t4
 common/buildings/00_capital_buildings.txt                             building_imperial_capital            planet_max_buildings_add  =  11
@@ -26,8 +27,9 @@ common/buildings/16_first_contact_buildings.txt                       building_l
 common/deposits/01_blocker_deposits.txt                               d_rotten_soil                        planet_max_buildings_add  =  -2
 common/deposits/01_blocker_deposits.txt                               d_venomous_insects                   planet_max_buildings_add  =  -1
 common/deposits/07_federations_deposits.txt                           d_system_resources                   planet_max_buildings_add  =  0.25
-common/deposits/07_federations_deposits.txt                           d_system_resources                   planet_max_buildings_add  =  0.25
 common/deposits/07_federations_deposits.txt                           d_system_resources                   planet_max_buildings_add  =  0.50
+common/deposits/07_federations_deposits.txt                           d_system_resources                   planet_max_buildings_add  =  0.50
+common/deposits/11_astral_planes_deposits.txt                         d_fractal_seed                       planet_max_buildings_add  =  1
 common/districts/00_special_districts.txt                             district_orders_demesne              planet_max_buildings_add  =  0.5
 common/districts/00_special_districts.txt                             district_orders_demesne              planet_max_buildings_add  =  0.50
 common/districts/00_urban_districts.txt                               district_city                        planet_max_buildings_add  =  1
@@ -51,6 +53,7 @@ common/starbase_modules/00_orbital_ring_modules.txt                   orbital_ri
 common/static_modifiers/18_static_modifiers_first_contact_dlc.txt     paradisiacal_habitat_energy          planet_max_buildings_add  =  10
 common/static_modifiers/18_static_modifiers_first_contact_dlc.txt     paradisiacal_habitat_mining          planet_max_buildings_add  =  10
 common/static_modifiers/18_static_modifiers_first_contact_dlc.txt     paradisiacal_habitat_science         planet_max_buildings_add  =  10
+common/static_modifiers/20_static_modifiers_astral_planes.txt         procedural_space_modifier            planet_max_buildings_add  =  1
 common/technology/00_soc_tech.txt                                     tech_planetary_infrastructure_1      planet_max_buildings_add  =  1
 common/technology/00_soc_tech.txt                                     tech_planetary_infrastructure_2      planet_max_buildings_add  =  1
 common/traditions/00_adaptability.txt                                 tr_adaptability_adaptive_ecology     planet_max_buildings_add  =  1
