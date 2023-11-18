@@ -1,9 +1,20 @@
 ﻿﻿# Show Building Slot Capacity 
 l_polish:
-  fl_num_building_long: "§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|0B$\n$building_constructed$: §W[This.fl_building_built_dyn]§![This.fl_building_constructing_dyn]\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_bslot_free_dyn]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital][This.fl_bslot_from_housing_dyn][This.fl_bslot_from_orbitals_dyn][This.fl_bslot_from_industrial_districts_buildings_dyn][This.fl_bslot_from_tech_dyn][This.fl_bslot_from_cta_dyn][This.fl_bslot_from_holding_dyn][This.fl_bslot_from_demesne_dyn][This.fl_bslot_from_demesne_device_dyn][This.fl_bslot_from_origin_dyn][This.fl_bslot_from_pc_dyn][This.fl_bslot_deposit_dyn][This.fl_bslot_from_edicts_dyn]"
+  fl_num_building_long: "§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|0B$\n$building_constructed$: §W[This.fl_building_built_dyn]§![This.fl_building_constructing_dyn]\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_bslot_free_dyn]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital][This.fl_bslot_from_housing_dyn][This.fl_bslot_from_orbitals_dyn][This.fl_bslot_from_industrial_districts_buildings_dyn][This.fl_bslot_from_tech_dyn][This.fl_bslot_from_cta_dyn][This.fl_bslot_from_empire_mods_dyn][This.fl_bslot_from_holding_dyn][This.fl_bslot_from_demesne_dyn][This.fl_bslot_from_demesne_device_dyn][This.fl_bslot_from_origin_dyn][This.fl_bslot_from_pc_dyn][This.fl_bslot_deposit_dyn][This.fl_bslot_from_edicts_dyn]"
   
-  fl_num_building_long_static: "DEBUG\n[This.fl_scope_is_planet]\n  This: [This.GetName]\n  Owner: [Owner.GetName]\nNum orbitals:\n  Generic: [solar_system.GetNumOrbitalsGeneric]\n  Mining: [solar_system.GetNumOrbitalsMining]\n  Science: [solar_system.GetNumOrbitalsScience]\n  Energy: [solar_system.GetNumOrbitalsEnergy]\n\n§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|0B$\n$building_constructed$: §W[This.fl_building_built_dyn]§!$fl_building_constructing$\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_building_free]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital]$fl_bslot_from_housing$$fl_bslot_from_orbitals$$fl_bslot_from_industrial_districts_buildings$$fl_bslot_from_tech$$fl_bslot_from_cta$$fl_bslot_from_holding$$fl_bslot_from_demesne$$fl_bslot_from_demesne_device$$fl_bslot_from_origin$$fl_bslot_from_pc$$fl_bslot_deposit_good$$fl_bslot_from_edicts$"
+  fl_num_building_long_static: "DEBUG\n[This.fl_scope_is_planet]\n  This: [This.GetName]\n  Owner: [Owner.GetName]\nNum orbitals:\n  Generic: [solar_system.GetNumOrbitalsGeneric]\n  Mining: [solar_system.GetNumOrbitalsMining]\n  Science: [solar_system.GetNumOrbitalsScience]\n  Energy: [solar_system.GetNumOrbitalsEnergy]\n\n§S$planet_buildings$§!\n$MACHINE1_FLEET_Limit$: $fl_building_capacity_color$\n$VALUE_MAXIMUM$: $@MAX_PLANET_BUILDING_SLOTS|0B$\n$building_constructed$: §W[This.fl_building_built_dyn]§!$fl_building_constructing$\n$OUTLINER_PLANET_CONSTRUCTION_AVAILABLE$: [This.fl_building_free]\n$SEPARATOR$\n§S$MOD_PLANET_MAX_BUILDINGS_ADD$§!\n$CAPITAL$: 1 $PLUS$ [This.fl_building_from_capital]$fl_bslot_from_housing$$fl_bslot_from_orbitals$$fl_bslot_from_industrial_districts_buildings$$fl_bslot_from_tech$$fl_bslot_from_cta$$fl_bslot_from_empire_mods$$fl_bslot_from_holding$$fl_bslot_from_demesne$$fl_bslot_from_demesne_device$$fl_bslot_from_origin$$fl_bslot_from_pc$$fl_bslot_deposit_good$$fl_bslot_from_edicts$"
  
+#
+# Process for the dynamic tooltip (fl_num_building_long):
+#   SCRIPTED LOC (dynamic), inline script, checks if the value is > 0, static loc key (this file), static scripted loc
+#
+# Example names:
+# LOC KEY:        fl_bslot_from_empire_mods
+# SCRIPTED VALUE: bslot_from_empire_mods
+# INLINE SCRIPT:  KEY = empire_mods
+# SCRIPTED LOC (dynamic): fl_bslot_from_empire_mods_dyn
+# SCRIPTED LOC:   fl_building_from_empire_mods
+
   fl_button_text: "§Y[This.fl_bslot_free_dyn]§!"
   fl_building_capacity_color: "§Y[This.fl_building_capacity]§!"
   fl_building_capacity: "[This.fl_building_capacity]"
@@ -24,5 +35,6 @@ l_polish:
   fl_bslot_from_industrial_districts_buildings: "\n$district_industrial_plural$: [This.fl_building_from_industrial_districts_buildings]"
   fl_bslot_from_edicts: "\n$EDICTS$: [This.fl_building_from_edicts]"
   fl_bslot_from_orbitals: "\n$major_orbital_generic_plural$: [This.fl_building_from_orbitals]"
+  fl_bslot_from_empire_mods: "\n$COUNTRY_MODIFIERS$: [This.fl_building_from_empire_mods]"
   fl_scope_planet: "£trigger_yes£ Scope is $PLANET$"
   fl_scope_not_planet: "£trigger_no£ Scope is NOT $PLANET$"

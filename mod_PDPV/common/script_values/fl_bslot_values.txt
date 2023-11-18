@@ -453,6 +453,17 @@ bslot_from_voidborn = {
 	mult = owner.modifier:habitat_districts_building_slots_add
 	floor = yes
 }
+bslot_from_empire_mods = {
+	base = 0
+	modifier = {
+		exists = owner
+		owner = {
+			has_modifier = procedural_space_modifier
+		}
+		add = @bslot_procedural_space_modifier_add
+	}
+	floor = yes
+}
 bslot_from_deposits = {
 	base = 0
 	modifier = {
@@ -464,6 +475,11 @@ bslot_from_deposits = {
 		is_scope_type = planet
 		has_deposit = d_rotten_soil
 		add = @bslot_d_rotten_soil_add
+	}
+	modifier = {
+		is_scope_type = planet
+		has_deposit = d_fractal_seed
+		add = @bslot_d_fractal_seed_add
 	}
 }
 bslot_from_pc = {
@@ -530,6 +546,8 @@ bslot_capacity = {
 	add = value:bslot_from_edicts
 	# Industrial buildings (habs)
 	add = value:bslot_from_industrial_districts_buildings
+	# Empire modifier
+	add = value:bslot_from_empire_mods
 	modifier = {
 		is_scope_type = planet
 		NOT = { has_owner = yes }

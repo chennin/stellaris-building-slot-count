@@ -28,6 +28,8 @@
 @bslot_paradisiacal_habitat_energy_add = 10
 @bslot_paradisiacal_habitat_mining_add = 10
 #
+@bslot_procedural_space_modifier_add = 1
+#
 @bslot_district_orders_demesne_d_dimensional_manipulation_device_mult = 0.5
 #
 @bslot_district_orders_demesne_mult = 0.50
@@ -44,6 +46,8 @@
 #
 @bslot_d_venomous_insects_add = -1
 @bslot_d_rotten_soil_add = -2
+#
+@bslot_d_fractal_seed_add = 1
 #
 @bslot_tech_planetary_infrastructure_1_add = 1
 @bslot_tech_planetary_infrastructure_2_add = 1
