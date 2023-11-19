@@ -1,6 +1,6 @@
-name="Show Building Slot Capacity [beta for 3.9] - BPV"
+name="Show Building Slot Capacity - BPV"
 version="5"
-supported_version="3.9.3"
+supported_version="3.10.0"
 tags={
         "Graphics"
 }

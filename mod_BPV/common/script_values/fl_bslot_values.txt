@@ -39,14 +39,17 @@ bslot_from_orbitals = {
 	modifier = {
 		is_scope_type = planet
 		has_deposit = d_system_resources
-		has_planet_flag = advanced_habitat
+		has_tier2_capital = yes
 		add = 0.25
 	}
 	modifier = {
 		is_scope_type = planet
 		has_deposit = d_system_resources
-		has_planet_flag = advanced_habitat_2
-		add = 0.25
+		OR = {
+			has_tier3_capital = yes
+			has_imperial_capital = yes
+		}
+		add = 0.50
 	}
 	mult = solar_system.value:num_major_and_minor_orbitals_class|CLASS|generic|
 	floor = yes
@@ -453,6 +456,17 @@ bslot_from_voidborn = {
 	mult = owner.modifier:habitat_districts_building_slots_add
 	floor = yes
 }
+bslot_from_empire_mods = {
+	base = 0
+	modifier = {
+		exists = owner
+		owner = {
+			has_modifier = procedural_space_modifier
+		}
+		add = @bslot_procedural_space_modifier_add
+	}
+	floor = yes
+}
 bslot_from_deposits = {
 	base = 0
 	modifier = {
@@ -464,6 +478,11 @@ bslot_from_deposits = {
 		is_scope_type = planet
 		has_deposit = d_rotten_soil
 		add = @bslot_d_rotten_soil_add
+	}
+	modifier = {
+		is_scope_type = planet
+		has_deposit = d_fractal_seed
+		add = @bslot_d_fractal_seed_add
 	}
 }
 bslot_from_pc = {
@@ -530,6 +549,8 @@ bslot_capacity = {
 	add = value:bslot_from_edicts
 	# Industrial buildings (habs)
 	add = value:bslot_from_industrial_districts_buildings
+	# Empire modifier
+	add = value:bslot_from_empire_mods
 	modifier = {
 		is_scope_type = planet
 		NOT = { has_owner = yes }
