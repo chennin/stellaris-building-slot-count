@@ -1,3 +1,9 @@
+# Requirements
+
+Python: srctools
+
+[Diagraphers-Stellaris-Mods](https://github.com/kuyan-judith/Diagraphers-Stellaris-Mods)
+
 # Build
 
 `./make.py`
