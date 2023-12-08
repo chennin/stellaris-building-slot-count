@@ -41,9 +41,9 @@ files = {
   "ZZ_DEFINES": "mod/common/scripted_variables/zzzzzzzzzzzz_fl_bslot_define.txt",
 }
 other_mods = [
-  { "name": "UIOD", "num": 1623423360 },
-  { "name": "BPV", "num": 1587178040 },
-  { "name": "PDPV", "num": 1866576239 },
+  { "name": "UIOD", "num": 1623423360, "sbsc_sid": 2963495133 },
+  { "name": "BPV", "num": 1587178040, "sbsc_sid": 2963495085 },
+  { "name": "PDPV", "num": 1866576239, "sbsc_sid":2963495107 },
 ]
 min_uncapped = 0
 bslot_display = """
@@ -784,7 +784,7 @@ for mod in other_mods:
 
 # Make steamcmd.txt
 alldirs = copy.copy(other_mods)
-alldirs.append( { "name": "", "num": 0 })
+alldirs.append( { "name": "", "num": 0, "sbsc_sid": 2963495048 })
 desc = "New description."
 try:
   with open( "steamdesc.txt", "r" ) as descfile:
@@ -808,19 +808,20 @@ for mod in alldirs:
   file = open(outfile, 'r')
   steamcmdtxt = kv.parse(file, outfile)
   file.close()
-  newpath = "{}/{}".format(os.getcwd(), os.path.dirname(outfile) )
+  # Workshop files in workshop/mod*, but content files in mod*
+  newpath = "{}/{}".format(os.getcwd(), os.path.dirname(outfile).replace("workshop/", "") )
   witem = steamcmdtxt.find_block("workshopitem")
   witem["contentfolder"] = witem["contentfolder"].replace("FULLMODPATH", newpath)
   witem["previewfile"] = witem["previewfile"].replace("FULLMODPATH", newpath)
   witem["title"] = name
   witem["visibility"] = f"{VISIBILITY}"
+  if "publishedfileid" not in witem:
+    witem["publishedfileid"] = str(mod["sbsc_sid"])
   lofilename = "{}/{}".format( os.path.dirname( outfile ), "loadorder.txt" )
-#    print(lofilename)
   loadorder = "UNDEFINED"
   if os.path.isfile(lofilename):
     with open(lofilename, "r") as lofile:
       loadorder = lofile.read()
-#    print(loadorder)
   moddesc = desc.replace("%LOADORDER%", loadorder)
   moddesc = moddesc.replace('"', "'")
   witem["description"] = moddesc
