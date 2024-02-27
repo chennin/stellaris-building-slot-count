@@ -31,7 +31,7 @@ cwp.vanilla_path = os.path.expanduser( os.path.expandvars( "~/stellaris-game" ) 
 
 MOD_NAME = "Show Building Slot Capacity"
 VERSION = "5"
-SUPPORTED_VERSION = "3.10.4"
+SUPPORTED_VERSION = "3.11.1"
 # 3 = unlisted, 2 = hidden, 1 = friends, 0 = public
 VISIBILITY = 0
 
@@ -164,13 +164,11 @@ def process_ecu_vanilla(inlist, outlist):
   return outlist
 
 # Ecu Ari 1995601384
-def process_ecu_ariphaos(inlist, outlist):
-  for pc in inlist:
-    if pc.name in [ "pc_city" ]:
-      for ele in pc.getElements("modifier"):
-        if ele.hasAttribute("planet_max_buildings_add"):
-          ari_diff = int(ele.getValue("planet_max_buildings_add")) - min_uncapped
-          outlist.extend( cwp.stringToCW( f"@buildings_ecu_ari = {ari_diff}" ) )
+def process_var_ariphaos(inlist, outlist):
+    #@cap_planet_buildings
+  for ele in inlist:
+    if ele.name in [ "@cap_planet_buildings" ]:
+      outlist.extend( cwp.stringToCW( "@buildings_ecu_ari = {}".format( ele.value ) ) )
   return outlist
 
 # Claire Edicts 2949397716
@@ -286,9 +284,9 @@ process_file(f"{cwp.vanilla_path}/common/planet_classes/02_planet_classes_megaco
              process_ecu_vanilla,
              success_len,
              testargs = { "expected": 1 })
-process_file(f"{cwp.workshop_path}/1995601384/common/planet_classes/02_planet_classes_megacorp.txt",
+process_file(f"{cwp.workshop_path}/1995601384/common/scripted_variables/~~ariphaos_patch_overridable.txt",
              files["SCRIPTED_VAR_FILENAME"],
-             process_ecu_ariphaos,
+             process_var_ariphaos,
              success_len,
              testargs = { "expected": 1 }
 )
@@ -316,8 +314,8 @@ process_file(f"{cwp.vanilla_path}/common/districts/02_rural_districts.txt",
                {
                "outmostblock": "district_mining_uncapped",
                "innerblock": "triggered_planet_modifier",
-               "testleft": "always",
-               "testright": "yes",
+               "testleft": "exists",
+               "testright": "owner",
                "keywanted": "planet_max_buildings_add",
                "prefix": "bslot_", "suffix": "_mult"
                } ]
