@@ -138,6 +138,11 @@ def process_capital_vars(inlist, outlist):
 def success_len(inlist, expected):
   length = len(inlist)
   return (length == expected, f"List length {length} doesn't match expected {expected}")
+def legal_scripted_var(inlist, expected):
+  for ele in inlist:
+    if ele.value.startswith('@'):
+      return (False, f"Scripted value values cannot be other scripted values ({ele.name})")
+  return success_len(inlist, expected)
 
 # Usual uncapped
 def process_uncapped_vars(inlist, outlist):
@@ -270,36 +275,36 @@ clear_files()
 process_file(f"{cwp.vanilla_path}/common/buildings/00_capital_buildings.txt",
              files["SCRIPTED_VAR_FILENAME"],
              process_capital_vars,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 4 }
 )
 process_file(f"{cwp.vanilla_path}/common/planet_classes/00_planet_classes.txt", 
              files["SCRIPTED_VAR_FILENAME"],
              process_uncapped_vars,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 4 }
 )
 process_file(f"{cwp.vanilla_path}/common/planet_classes/02_planet_classes_megacorp.txt",
              files["SCRIPTED_VAR_FILENAME"],
              process_ecu_vanilla,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 })
 process_file(f"{cwp.workshop_path}/1995601384/common/scripted_variables/~~ariphaos_patch_overridable.txt",
              files["SCRIPTED_VAR_FILENAME"],
              process_var_ariphaos,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 }
 )
 process_file(f"{cwp.workshop_path}/2949397716/common/edicts/bs_edicts.txt",
              files["SCRIPTED_VAR_FILENAME"],
              process_edicts_claire,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 3 }
 )
 process_file(f"{cwp.vanilla_path}/common/districts/02_rural_districts.txt", 
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 2 },
 
              genargs =  { "tests": [
@@ -328,7 +333,7 @@ process_file(f"{cwp.vanilla_path}/common/districts/02_rural_districts.txt",
 process_file(f"{cwp.vanilla_path}/common/districts/00_urban_districts.txt", 
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 4 },
 
              genargs =  { "tests": [ 
@@ -369,7 +374,7 @@ process_file(f"{cwp.vanilla_path}/common/districts/00_urban_districts.txt",
 process_file(f"{cwp.vanilla_path}/common/static_modifiers/18_static_modifiers_first_contact_dlc.txt", 
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 3 },
 
              genargs =  { "tests": [ 
@@ -402,7 +407,7 @@ process_file(f"{cwp.vanilla_path}/common/static_modifiers/18_static_modifiers_fi
 process_file(f"{cwp.vanilla_path}/common/static_modifiers/20_static_modifiers_astral_planes.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 },
 
              genargs =  { "tests": [
@@ -419,7 +424,7 @@ process_file(f"{cwp.vanilla_path}/common/static_modifiers/20_static_modifiers_as
 process_file(f"{cwp.vanilla_path}/common/districts/00_special_districts.txt", 
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 },
 
              genargs =  { "tests": [
@@ -436,7 +441,7 @@ process_file(f"{cwp.vanilla_path}/common/districts/00_special_districts.txt",
 process_file(f"{cwp.vanilla_path}/common/districts/00_special_districts.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 },
 
              genargs =  { "tests": [
@@ -453,7 +458,7 @@ process_file(f"{cwp.vanilla_path}/common/districts/00_special_districts.txt",
 process_file(f"{cwp.vanilla_path}/common/starbase_modules/00_orbital_ring_modules.txt", 
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 },
              genargs =  { "tests": [ { 
                "outmostblock": "orbital_ring_habitation",
@@ -467,7 +472,7 @@ process_file(f"{cwp.vanilla_path}/common/starbase_modules/00_orbital_ring_module
 process_file(f"{cwp.vanilla_path}/common/buildings/00_capital_buildings.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 3 },
              genargs =  { "tests": [ 
                { 
@@ -499,7 +504,7 @@ process_file(f"{cwp.vanilla_path}/common/buildings/00_capital_buildings.txt",
 process_file(f"{cwp.vanilla_path}/common/buildings/13_fallen_empire_buildings.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 },
              genargs =  { "tests": [
                {
@@ -515,7 +520,7 @@ process_file(f"{cwp.vanilla_path}/common/buildings/13_fallen_empire_buildings.tx
 process_file(f"{cwp.vanilla_path}/common/deposits/01_blocker_deposits.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 2 },
              genargs =  { "tests": [ 
                { 
@@ -539,7 +544,7 @@ process_file(f"{cwp.vanilla_path}/common/deposits/01_blocker_deposits.txt",
 process_file(f"{cwp.vanilla_path}/common/deposits/11_astral_planes_deposits.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 },
              genargs =  { "tests": [
                {
@@ -555,7 +560,7 @@ process_file(f"{cwp.vanilla_path}/common/deposits/11_astral_planes_deposits.txt"
 process_file(f"{cwp.vanilla_path}/common/technology/00_soc_tech.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 2 },
              genargs =  { "tests": [ 
                { 
@@ -579,7 +584,7 @@ process_file(f"{cwp.vanilla_path}/common/technology/00_soc_tech.txt",
 process_file(f"{cwp.vanilla_path}/common/governments/civics/00_civics.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 },
              genargs =  { "tests": [ 
                { 
@@ -595,7 +600,7 @@ process_file(f"{cwp.vanilla_path}/common/governments/civics/00_civics.txt",
 process_file(f"{cwp.vanilla_path}/common/traditions/00_adaptability.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 },
              genargs =  { "tests": [ 
                { 
@@ -612,7 +617,7 @@ process_file(f"{cwp.vanilla_path}/common/traditions/00_adaptability.txt",
 process_file(f"{cwp.workshop_path}/2762644349/common/districts/storage_districts.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 },
              genargs =  { "tests": [ 
                { 
@@ -641,7 +646,7 @@ process_file(f"{cwp.vanilla_path}/common/defines/00_defines.txt",
 process_file(f"{cwp.workshop_path}/2949397716/common/districts/00_urban_districts.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 3 },
              genargs =  { "tests": [
                {
@@ -673,7 +678,7 @@ process_file(f"{cwp.workshop_path}/2949397716/common/districts/00_urban_district
 process_file(f"{cwp.workshop_path}/2949397716/common/districts/01_arcology_districts.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 },
              genargs =  { "tests": [
                {
@@ -689,7 +694,7 @@ process_file(f"{cwp.workshop_path}/2949397716/common/districts/01_arcology_distr
 process_file(f"{cwp.workshop_path}/2949397716/common/districts/03_habitat_districts.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 },
              genargs =  { "tests": [
                {
@@ -705,7 +710,7 @@ process_file(f"{cwp.workshop_path}/2949397716/common/districts/03_habitat_distri
 process_file(f"{cwp.workshop_path}/2949397716/common/districts/04_ringworld_districts.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
-             success_len,
+             legal_scripted_var,
              testargs = { "expected": 1 },
              genargs =  { "tests": [
                {
