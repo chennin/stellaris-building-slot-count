@@ -170,7 +170,7 @@ guiTypes = {
 				name = open_orbital_ring
 				quadTextureSprite = GFX_button_orbital_ring
 				position = {
-					x = 0
+					x = -19
 					y = 4
 				}
 				clicksound = click
@@ -213,7 +213,7 @@ guiTypes = {
 				name = move_capital
 				quadTextureSprite = GFX_fleet_action_button_move_capital
 				position = {
-					x = 173
+					x = 17
 					y = 4
 				}
 			}
@@ -221,7 +221,7 @@ guiTypes = {
 				name = zoom_to_planet_button
 				quadTextureSprite = GFX_fleetview_focus
 				position = {
-					x = 204
+					x = 205
 					y = 4
 				}
 				pdx_tooltip = ZOOM_TO_PLANET

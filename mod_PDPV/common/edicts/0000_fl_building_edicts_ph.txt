@@ -1,0 +1,20 @@
+# Placeholders for Unlock More Building Slots 2949397716
+architectonic_base = {
+        potential = { always = no }
+        allow = { always = no }
+	length = 0
+	ai_weight = { weight = 0 }
+}
+architectonic_med = {
+        potential = { always = no }
+        allow = { always = no }
+	length = 0
+	ai_weight = { weight = 0 }
+}
+
+architectonic_max = {
+        potential = { always = no }
+        allow = { always = no }
+	length = 0
+	ai_weight = { weight = 0 }
+}

@@ -87,6 +87,15 @@ bslot_from_housing = {
 		potential = { is_scope_type = planet }
 		trigger = num_districts
 		parameters = {
+			type = district_resort
+		}
+		mode = add
+		mult = @bslot_district_resort_add
+	}
+	complex_trigger_modifier = {
+		potential = { is_scope_type = planet }
+		trigger = num_districts
+		parameters = {
 			type = district_hab_housing
 		}
 		mode = add
@@ -111,6 +120,7 @@ bslot_from_housing = {
 		mode = add
 		mult = @bslot_district_storage_add
 	}
+	floor = yes
 }
 bslot_farming_districts_buildings = {
 	base = 0
@@ -205,7 +215,7 @@ bslot_mining_districts_buildings = {
 		}
 		mode = add
 	}
-	mult = @bslot_district_mining_uncapped_always_mult
+	mult = @bslot_district_mining_uncapped_owner_mult
 	floor = yes
 }
 bslot_from_holding = {
@@ -556,4 +566,5 @@ bslot_capacity = {
 		NOT = { has_owner = yes }
 		mult = 0
 	}
+        floor = yes
 }
