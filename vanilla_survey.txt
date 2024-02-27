@@ -13,8 +13,8 @@ common/buildings/00_capital_buildings.txt                             building_m
 common/buildings/00_capital_buildings.txt                             building_machine_major_capital       planet_max_buildings_add  =  @buildings_t3
 common/buildings/00_capital_buildings.txt                             building_machine_system_capital      planet_max_buildings_add  =  @buildings_t4
 common/buildings/00_capital_buildings.txt                             building_major_capital               planet_max_buildings_add  =  @buildings_t3
-common/buildings/00_capital_buildings.txt                             building_resort_capital              planet_max_buildings_add  =  5
-common/buildings/00_capital_buildings.txt                             building_resort_major_capital        planet_max_buildings_add  =  11
+common/buildings/00_capital_buildings.txt                             building_resort_capital              planet_max_buildings_add  =  @buildings_t2
+common/buildings/00_capital_buildings.txt                             building_resort_major_capital        planet_max_buildings_add  =  @buildings_t3
 common/buildings/00_capital_buildings.txt                             building_slave_capital               planet_max_buildings_add  =  5
 common/buildings/00_capital_buildings.txt                             building_slave_major_capital         planet_max_buildings_add  =  11
 common/buildings/00_capital_buildings.txt                             building_system_capital              planet_max_buildings_add  =  @buildings_t4
@@ -37,6 +37,7 @@ common/districts/00_urban_districts.txt                               district_c
 common/districts/00_urban_districts.txt                               district_hive                        planet_max_buildings_add  =  1
 common/districts/00_urban_districts.txt                               district_industrial                  planet_max_buildings_add  =  0.34
 common/districts/00_urban_districts.txt                               district_nexus                       planet_max_buildings_add  =  1
+common/districts/00_urban_districts.txt                               district_resort                      planet_max_buildings_add  =  0.5
 common/districts/02_rural_districts.txt                               district_farming                     planet_max_buildings_add  =  0.25
 common/districts/02_rural_districts.txt                               district_farming_uncapped            planet_max_buildings_add  =  0.25
 common/districts/02_rural_districts.txt                               district_mining_uncapped             planet_max_buildings_add  =  1

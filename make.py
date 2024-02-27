@@ -329,7 +329,7 @@ process_file(f"{cwp.vanilla_path}/common/districts/00_urban_districts.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
              success_len,
-             testargs = { "expected": 3 },
+             testargs = { "expected": 4 },
 
              genargs =  { "tests": [ 
                {
@@ -342,6 +342,14 @@ process_file(f"{cwp.vanilla_path}/common/districts/00_urban_districts.txt",
                },
                {
                "outmostblock": "district_city",
+               "innerblock": "planet_modifier",
+               "testleft": "planet_modifier",
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_", "suffix": "add"
+               },
+               {
+               "outmostblock": "district_resort",
                "innerblock": "planet_modifier",
                "testleft": "planet_modifier",
                "testright": None,
