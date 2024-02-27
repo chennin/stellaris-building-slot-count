@@ -37,8 +37,6 @@
 #
 @bslot_orbital_ring_habitation_holding_orbital_assembly_complex_mult = 0.5
 #
-@bslot_building_resort_capital_add = @buildings_t2
-@bslot_building_resort_major_capital_add = @buildings_t3
 @bslot_building_slave_capital_add = 5
 @bslot_building_slave_major_capital_add = 11
 @bslot_building_imperial_capital_add = 11

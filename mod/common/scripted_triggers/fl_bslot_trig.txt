@@ -21,6 +21,7 @@ has_tier2_capital = {
 		has_building = building_machine_capital
 		has_building = building_hive_capital
 		has_building = building_hab_major_capital
+		has_building = building_resort_capital
 	}
 }
 has_tier3_capital = {
@@ -28,6 +29,7 @@ has_tier3_capital = {
 		has_building = building_major_capital
 		has_building = building_hab_system_capital
 		has_building = building_machine_major_capital
+		has_building = building_resort_major_capital
 	}
 }
 has_tier4_capital = {
@@ -47,14 +49,12 @@ has_imperial_capital = {
 has_special_tier1_capital = {
 	OR = {
 		has_building = building_slave_capital
-		has_building = building_resort_capital
 		has_building = building_solarpunk_organic_paradise
 	}
 }
 has_special_tier2_capital = {
 	OR = {
 		has_building = building_slave_major_capital
-		has_building = building_resort_major_capital
 		has_building = building_ancient_control_center
 		has_building = building_ancient_palace
 		has_building = building_hab_fe_capital

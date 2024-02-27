@@ -468,18 +468,10 @@ process_file(f"{cwp.vanilla_path}/common/buildings/00_capital_buildings.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
              success_len,
-             testargs = { "expected": 5 },
+             testargs = { "expected": 3 },
              genargs =  { "tests": [ 
                { 
                "outmostblock": "building_imperial_capital",
-               "innerblock": "planet_modifier",
-               "testleft": "planet_modifier",
-               "testright": None,
-               "keywanted": "planet_max_buildings_add",
-               "prefix": "bslot_", "suffix": "add"
-               },
-               { 
-               "outmostblock": "building_resort_major_capital",
                "innerblock": "planet_modifier",
                "testleft": "planet_modifier",
                "testright": None,
@@ -496,14 +488,6 @@ process_file(f"{cwp.vanilla_path}/common/buildings/00_capital_buildings.txt",
                },
                { 
                "outmostblock": "building_slave_capital",
-               "innerblock": "planet_modifier",
-               "testleft": "planet_modifier",
-               "testright": None,
-               "keywanted": "planet_max_buildings_add",
-               "prefix": "bslot_", "suffix": "add"
-               },
-               { 
-               "outmostblock": "building_resort_capital",
                "innerblock": "planet_modifier",
                "testleft": "planet_modifier",
                "testright": None,
