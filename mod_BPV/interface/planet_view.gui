@@ -1304,7 +1304,7 @@ guiTypes = {
 							height = 1060
 						}
 						format = UPPER_LEFT
-						slotsize = {
+						slotSize = {
 							width = 265
 							height = 53
 						}
@@ -5643,7 +5643,7 @@ guiTypes = {
 					width = 65
 					height = 45
 				}
-				slotsize = {
+				slotSize = {
 					width = 15
 					height = 15
 				}
@@ -6007,7 +6007,7 @@ guiTypes = {
 				y = 0
 			}
 			format = UPPER_LEFT
-			slotsize = {
+			slotSize = {
 				width = 68
 				height = 36
 			}
@@ -8037,7 +8037,7 @@ guiTypes = {
 			gridBoxType = {
 				name = holdings_per_country_box
 				format = UPPER_LEFT
-				slotsize = {
+				slotSize = {
 					width = 540
 					height = 70
 				}
@@ -8127,7 +8127,7 @@ guiTypes = {
 						height = 144
 					}
 					format = UPPER_LEFT
-					slotsize = {
+					slotSize = {
 						width = 73
 						height = 72
 					}
