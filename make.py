@@ -172,7 +172,7 @@ def process_ecu_vanilla(inlist, outlist):
 def process_var_ariphaos(inlist, outlist):
     #@cap_planet_buildings
   for ele in inlist:
-    if ele.name in [ "@cap_planet_buildings" ]:
+    if ele.name in [ "@MAX_PLANET_BUILDING_SLOTS" ]:
       outlist.extend( cwp.stringToCW( "@buildings_ecu_ari = {}".format( ele.value ) ) )
   return outlist
 
