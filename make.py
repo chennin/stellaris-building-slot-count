@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#Copyright (c) 2023 Chris Henning
+#Copyright (c) 2024 Chris Henning
 #
 #Permission is hereby granted, free of charge, to any person obtaining a copy
 #of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ cwp.vanilla_path = os.path.expanduser( os.path.expandvars( "~/stellaris-game" ) 
 
 MOD_NAME = "Show Building Slot Capacity"
 VERSION = "5"
-SUPPORTED_VERSION = "3.11.1"
+SUPPORTED_VERSION = "3.11.2"
 # 3 = unlisted, 2 = hidden, 1 = friends, 0 = public
 VISIBILITY = 0
 
