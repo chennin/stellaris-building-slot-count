@@ -31,7 +31,7 @@ cwp.vanilla_path = os.path.expanduser( os.path.expandvars( "~/stellaris-game" ) 
 
 MOD_NAME = "Show Building Slot Capacity"
 VERSION = "5"
-SUPPORTED_VERSION = "3.11.*"
+SUPPORTED_VERSION = "3.12.*"
 # 3 = unlisted, 2 = hidden, 1 = friends, 0 = public
 VISIBILITY = 0
 

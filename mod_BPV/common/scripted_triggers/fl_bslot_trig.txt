@@ -13,6 +13,8 @@ has_tier1_capital = {
 		has_building = building_deployment_post
 		has_building = building_hab_capital
 		has_building = building_low_tech_capital
+                has_building = building_colony_shelter_nanotech
+                has_building = building_deployment_post_nanotech
 	}
 }
 has_tier2_capital = {
@@ -22,6 +24,8 @@ has_tier2_capital = {
 		has_building = building_hive_capital
 		has_building = building_hab_major_capital
 		has_building = building_resort_capital
+                has_building = building_capital_nanotech
+                has_building = building_machine_capital_nanotech
 	}
 }
 has_tier3_capital = {
@@ -30,6 +34,8 @@ has_tier3_capital = {
 		has_building = building_hab_system_capital
 		has_building = building_machine_major_capital
 		has_building = building_resort_major_capital
+                has_building = building_machine_major_capital_nanotech
+                has_building = building_major_capital_nanotech
 	}
 }
 has_tier4_capital = {
@@ -37,6 +43,8 @@ has_tier4_capital = {
 		has_building = building_system_capital
 		has_building = building_machine_system_capital
 		has_building = building_hive_major_capital
+                has_building = building_machine_system_capital_nanotech
+                has_building = building_system_capital_nanotech
 	}
 }
 has_imperial_capital = {
@@ -58,6 +66,7 @@ has_special_tier2_capital = {
 		has_building = building_ancient_control_center
 		has_building = building_ancient_palace
 		has_building = building_hab_fe_capital
+                has_building = building_ancient_hive_capital
 	}
 }
 has_special_tier3_capital = {
