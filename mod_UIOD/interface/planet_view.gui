@@ -65,13 +65,13 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = header_actions
-			position = {
-				x = -7
-				y = 16
-			}
 			size = {
 				width = 270
 				height = 40
+			}
+			position = {
+				x = -7
+				y = 16
 			}
 			orientation = upper_right
 			origo = upper_right
@@ -280,11 +280,11 @@ guiTypes = {
 			}
 			iconType = {
 				name = black_frame
+				spriteType = GFX_ui_planetview_black_frame
 				position = {
 					x = -4
 					y = 9
 				}
-				spriteType = GFX_ui_planetview_black_frame
 			}
 			iconType = {
 				name = stripes_1
@@ -4416,13 +4416,13 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = side_bar_window
-			position = {
-				x = 3
-				y = 9
-			}
 			size = {
 				width = @sidebar_w
 				height = 931
+			}
+			position = {
+				x = 3
+				y = 9
 			}
 			orientation = upper_right
 			background = {
@@ -5955,17 +5955,9 @@ guiTypes = {
 			width = 20
 			height = 20
 		}
-		position = {
-			x = 0
-			y = 0
-		}
 		iconType = {
 			name = icon
 			spriteType = GFX_resource_minerals
-			position = {
-				x = 0
-				y = 0
-			}
 		}
 	}
 	containerWindowType = {
@@ -5974,17 +5966,9 @@ guiTypes = {
 			width = 13
 			height = 13
 		}
-		position = {
-			x = 0
-			y = 0
-		}
 		iconType = {
 			name = icon
 			spriteType = GFX_district_box_icon
-			position = {
-				x = 0
-				y = 0
-			}
 		}
 	}
 	containerWindowType = {
@@ -5993,17 +5977,9 @@ guiTypes = {
 			width = 8
 			height = 8
 		}
-		position = {
-			x = 0
-			y = 0
-		}
 		iconType = {
 			name = icon
 			spriteType = GFX_district_box_icon_small
-			position = {
-				x = 0
-				y = 0
-			}
 			alwaysTransparent = yes
 		}
 	}
