@@ -6,6 +6,7 @@ uncapped_districts = {
 		is_planet_class = pc_city
 		is_ringworld = yes
 	}
+        NOT = { uses_district_set = shattered_ring_world }
 }
 has_tier1_capital = {
 	OR = {
