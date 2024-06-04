@@ -215,6 +215,7 @@ bslot_mining_districts_buildings = {
 		}
 		mode = add
 	}
+	mult = owner.value:scripted_modifier_add|MODIFIER|mining_district_buildings_add|
 	mult = @bslot_district_mining_uncapped_owner_mult
 	floor = yes
 }
