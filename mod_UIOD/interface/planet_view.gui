@@ -7,7 +7,7 @@
 @sidebar_w = 450
 @sidebar_inner_w = 430
 @sidebar_inner_button_w = 432
-@pop_strata = 572
+@pop_strata = 715
 guiTypes = {
 	positionType = {
 		name = pop_category_base_size
@@ -897,6 +897,7 @@ guiTypes = {
 							y = 6
 						}
 						tooltip_mode_enabled = yes
+						alwaysTransparent = yes
 					}
 					iconType = {
 						name = planet_amenities_no_happiness_icon
@@ -2291,12 +2292,29 @@ guiTypes = {
 					height = -5
 				}
 				position = {
-					x = 490
+					x = 345
 					y = 318
 				}
 				background = {
 					name = jobs_bg_art
 					quadTextureSprite = GFX_planet_bg_tile_frame
+				}
+			}
+			containerWindowType = {
+				name = restore_jobs_button_background
+				size = {
+					width = 271
+					height = 77
+				}
+				position = {
+					x = -10
+					y = 236
+				}
+				orientation = upper_right
+				origo = upper_right
+				background = {
+					name = restore_jobs_button_background
+					quadTextureSprite = GFX_dark_area_cut
 				}
 			}
 			containerWindowType = {
@@ -2306,7 +2324,7 @@ guiTypes = {
 					height = 50
 				}
 				position = {
-					x = 482
+					x = 339
 					y = 271
 				}
 				clipping = no
@@ -2361,31 +2379,41 @@ guiTypes = {
 					font = font_text_14
 					text = FAVORITE_JOB_DESC
 					position = {
-						x = 190
-						y = 22
+						x = 482
+						y = 16
 					}
-					maxWidth = 220
-					maxHeight = 16
-					format = left
-					vertical_alignment = bottom
+					maxWidth = 271
+					maxHeight = 26
+					fixedSize = yes
+					format = center
+					vertical_alignment = center
 					text_color_code = E
 				}
 			}
 			buttonType = {
 				name = restore_jobs_button
+				spriteType = GFX_ui_button_green
 				position = {
-					x = -172
-					y = 277
+					x = -276
+					y = 240
 				}
-				spriteType = GFX_button_150_24
 				orientation = upper_right
-				buttonFont = font_text_14
+				size = {
+					x = 261
+					y = 47
+				}
+				buttonFont = font_text_16
+				borderSize = {
+					x = 6
+					y = 0
+				}
+				multiline = yes
 				shortcut = J
 			}
 			smoothListboxType = {
 				name = pop_categories_list
 				position = {
-					x = 505
+					x = 360
 					y = 330
 				}
 				size = {
@@ -2449,7 +2477,7 @@ guiTypes = {
 					y = 323
 				}
 				size = {
-					width = 470
+					width = 330
 					height = -10
 				}
 				background = {
@@ -2611,7 +2639,7 @@ guiTypes = {
 					name = assembling_species_window
 					position = {
 						x = 10
-						y = 184
+						y = 186
 					}
 					size = {
 						width = 120
@@ -2711,7 +2739,7 @@ guiTypes = {
 						}
 						position = {
 							x = 96
-							y = -174
+							y = -176
 						}
 						orientation = upper_right
 						background = {
@@ -2746,7 +2774,7 @@ guiTypes = {
 					name = declining_species_window
 					position = {
 						x = 10
-						y = 358
+						y = 363
 					}
 					size = {
 						width = 120
@@ -2846,7 +2874,7 @@ guiTypes = {
 					y = 323
 				}
 				size = {
-					width = 470
+					width = 330
 					height = -10
 				}
 				background = {
@@ -2857,12 +2885,12 @@ guiTypes = {
 				containerWindowType = {
 					name = species_piechart
 					position = {
-						x = -10
-						y = 60
+						x = -18
+						y = 114
 					}
 					size = {
-						width = 130
-						height = -10
+						width = 162
+						height = -20
 					}
 					orientation = upper_right
 					origo = upper_right
@@ -2873,35 +2901,40 @@ guiTypes = {
 					}
 					iconType = {
 						name = species_piechart
-						spriteType = GFX_species_piechart_default
+						spriteType = GFX_species_piechart_75
 						position = {
-							x = -100
-							y = 55
+							x = 0
+							y = 7
 						}
+						orientation = center_up
 					}
 					iconType = {
 						name = species_piechart_overlay
-						spriteType = GFX_pie_chart_overlay
+						spriteType = GFX_pie_chart_overlay_300
 						position = {
-							x = -151
-							y = 54
+							x = 0
+							y = 82
 						}
+						orientation = center_up
+						centerPosition = yes
+						scale = 0.5
 					}
 					smoothListboxType = {
 						name = species_list
 						position = {
-							x = 10
-							y = 10
+							x = 26
+							y = 168
 						}
 						size = {
 							x = 110
-							y = 517
+							y = 294
 						}
-						scrollbarType = standardlistbox_slider_thick
+						scrollbarType = standardlistbox_slider_thick_small
 						offset = {
 							x = -3
 							y = 0
 						}
+						spacing = 2
 					}
 				}
 				containerWindowType = {
@@ -2911,7 +2944,7 @@ guiTypes = {
 						y = 10
 					}
 					size = {
-						width = 350
+						width = 210
 						height = 40
 					}
 					background = {
@@ -2926,7 +2959,7 @@ guiTypes = {
 						y = 15
 					}
 					size = {
-						x = 320
+						x = 200
 						y = 30
 					}
 					format = center
@@ -2939,7 +2972,7 @@ guiTypes = {
 					height = 40
 				}
 				position = {
-					x = 380
+					x = 240
 					y = 333
 				}
 				background = {
@@ -6760,7 +6793,7 @@ guiTypes = {
 					y = 34
 				}
 				size = {
-					x = 473
+					x = 616
 					y = 60
 				}
 				format = left
@@ -6785,7 +6818,7 @@ guiTypes = {
 					x = 60
 					y = 0
 				}
-				maxWidth = 200
+				maxWidth = 230
 				maxHeight = 30
 				fixedSize = yes
 				format = left
@@ -6820,7 +6853,7 @@ guiTypes = {
 				overlappingElementsBoxType = {
 					name = upkeep
 					position = {
-						x = -510
+						x = -580
 						y = 6
 					}
 					size = {
@@ -6834,7 +6867,7 @@ guiTypes = {
 					name = leads_to_arrows
 					spriteType = GFX_leads_to_arrows
 					position = {
-						x = -244
+						x = -314
 						y = 9
 					}
 					orientation = upper_right
@@ -6844,11 +6877,11 @@ guiTypes = {
 				overlappingElementsBoxType = {
 					name = production
 					position = {
-						x = -225
+						x = -295
 						y = 6
 					}
 					size = {
-						x = 190
+						x = 255
 						y = 20
 					}
 					orientation = upper_right
@@ -7040,7 +7073,7 @@ guiTypes = {
 					x = 10
 					y = 0
 				}
-				maxWidth = 175
+				maxWidth = 200
 				maxHeight = 25
 				fixedSize = yes
 				format = left
@@ -7048,12 +7081,12 @@ guiTypes = {
 			}
 			containerWindowType = {
 				size = {
-					width = -1
-					height = 22
+					width = 100%%
+					height = 25
 				}
 				position = {
-					x = 145
-					y = 3
+					x = 220
+					y = 0
 				}
 				name = planet_job_production_info
 				background = {
@@ -7065,20 +7098,22 @@ guiTypes = {
 					font = font_text_14
 					text = "+99 minerals"
 					position = {
-						x = 0
-						y = 2
+						x = -430
+						y = 0
 					}
+					orientation = upper_right
 					maxWidth = 90
 					maxHeight = 25
 					fixedSize = yes
 					format = right
+					vertical_alignment = center
 				}
 				iconType = {
 					name = leads_to_arrows
 					spriteType = GFX_leads_to_arrows
 					position = {
-						x = -233
-						y = 4
+						x = -333
+						y = 6
 					}
 					orientation = upper_right
 					scale = 0.5
@@ -7088,14 +7123,15 @@ guiTypes = {
 					font = font_text_14
 					text = "+99 minerals"
 					position = {
-						x = -214
-						y = 2
+						x = -314
+						y = 0
 					}
 					orientation = upper_right
-					maxWidth = 194
+					maxWidth = 290
 					maxHeight = 25
 					fixedSize = yes
 					format = left
+					vertical_alignment = center
 				}
 			}
 		}
@@ -7166,7 +7202,7 @@ guiTypes = {
 					y = 24
 				}
 				size = {
-					x = 478
+					x = 620
 					y = 55
 				}
 				format = left
@@ -7190,6 +7226,7 @@ guiTypes = {
 						y = -28
 					}
 					scale = 0.8
+					alwaysTransparent = yes
 				}
 				buttonType = {
 					name = job_prio_increase
