@@ -719,12 +719,13 @@ guiTypes = {
 				}
 				iconType = {
 					name = planet_stability_icon
-					spriteType = GFX_stability
+					spriteType = GFX_ui_stability
 					position = {
-						x = 15
-						y = 2
+						x = 30
+						y = 18
 					}
-					scale = 1.15
+					centerPosition = yes
+					scale = 0.9
 					alwaysTransparent = yes
 				}
 				instantTextBoxType = {
@@ -759,12 +760,13 @@ guiTypes = {
 				}
 				iconType = {
 					name = planet_pops_icon
-					spriteType = GFX_pop
+					spriteType = GFX_ui_pop
 					position = {
-						x = 15
-						y = 1
+						x = 30
+						y = 18
 					}
-					scale = 1.15
+					centerPosition = yes
+					scale = 0.8
 					alwaysTransparent = yes
 				}
 				instantTextBoxType = {
@@ -1327,7 +1329,6 @@ guiTypes = {
 						}
 						spriteType = GFX_ui_inspect_planet_features
 						buttonFont = font_text_14
-						font = font_text_14
 						oversound = mouse_over
 						pdx_tooltip = DEPOSITS_TOOLTIP
 						navLeft = change
@@ -1345,12 +1346,13 @@ guiTypes = {
 						}
 						iconType = {
 							name = blocker_deposit_frame
-							spriteType = GFX_resource_strategic_top_bar
+							spriteType = GFX_ui_rare_features
 							position = {
-								x = 6
-								y = 10
+								x = 16
+								y = 20
 							}
-							scale = 1.1
+							centerPosition = yes
+							scale = 0.8
 						}
 						instantTextBoxType = {
 							name = blocker_deposit_num
@@ -1379,12 +1381,13 @@ guiTypes = {
 						}
 						iconType = {
 							name = blocker_deposit_frame
-							spriteType = GFX_blocker_icon
+							spriteType = GFX_ui_blocker_icon
 							position = {
-								x = -7
-								y = 10
+								x = 4
+								y = 20
 							}
-							scale = 1
+							centerPosition = yes
+							scale = 0.8
 						}
 						instantTextBoxType = {
 							name = blocker_deposit_num
@@ -1481,6 +1484,7 @@ guiTypes = {
 						bottom = 2
 					}
 					verticalScrollbar = right_vertical_slider_thick
+					smooth_scrolling = yes
 					background = {
 						name = districts_window
 						spriteType = GFX_invisible
@@ -2004,7 +2008,6 @@ guiTypes = {
 								y = 27
 							}
 							centerPosition = yes
-							scale = 1
 							alwaysTransparent = yes
 						}
 						instantTextBoxType = {
@@ -2078,7 +2081,7 @@ guiTypes = {
 								x = 6
 								y = 8
 							}
-							alwaystransparent = yes
+							alwaysTransparent = yes
 						}
 						buttonType = {
 							name = automated_development_settings_button
@@ -2357,7 +2360,6 @@ guiTypes = {
 						x = 16
 						y = 15
 					}
-					scale = 1
 					tooltip_mode_enabled = yes
 				}
 				instantTextBoxType = {
@@ -2987,7 +2989,6 @@ guiTypes = {
 						y = 11
 					}
 					tooltip_mode_enabled = yes
-					scale = 1
 				}
 				instantTextBoxType = {
 					name = planet_happiness_amount
@@ -3171,7 +3172,6 @@ guiTypes = {
 						x = 274
 						y = 101
 					}
-					scale = 1
 					alwaysTransparent = yes
 				}
 				instantTextBoxType = {
@@ -3310,7 +3310,6 @@ guiTypes = {
 						y = 101
 					}
 					orientation = upper_right
-					scale = 1
 					alwaysTransparent = yes
 				}
 				instantTextBoxType = {
@@ -4250,7 +4249,8 @@ guiTypes = {
 					x = 10
 					y = 323
 				}
-				verticalScrollbar = right_vertical_slider_s
+				verticalScrollbar = right_vertical_slider_thick
+				smooth_scrolling = yes
 				background = {
 					name = background
 					spriteType = GFX_tiles_dark_area_cut_8
@@ -5338,6 +5338,7 @@ guiTypes = {
 						height = 257
 					}
 					verticalScrollbar = right_vertical_slider_thick_small
+					smooth_scrolling = yes
 					margin = {
 						top = 5
 						right = 4
@@ -6035,7 +6036,6 @@ guiTypes = {
 				x = 1
 				y = 2
 			}
-			scale = 1
 		}
 		buttonType = {
 			name = district_icon_border
@@ -6151,7 +6151,6 @@ guiTypes = {
 				}
 				centerPosition = yes
 				orientation = lower_left
-				scale = 1
 			}
 			instantTextBoxType = {
 				name = num_districts_text
@@ -8446,7 +8445,6 @@ guiTypes = {
 				x = 6
 				y = 5
 			}
-			scale = 1
 			alwaysTransparent = yes
 		}
 	}
