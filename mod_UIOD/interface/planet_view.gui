@@ -721,11 +721,11 @@ guiTypes = {
 					name = planet_stability_icon
 					spriteType = GFX_ui_stability
 					position = {
-						x = 30
-						y = 18
+						x = 29
+						y = 19
 					}
 					centerPosition = yes
-					scale = 0.9
+					scale = 0.84
 					alwaysTransparent = yes
 				}
 				instantTextBoxType = {
@@ -766,7 +766,7 @@ guiTypes = {
 						y = 18
 					}
 					centerPosition = yes
-					scale = 0.8
+					scale = 0.75
 					alwaysTransparent = yes
 				}
 				instantTextBoxType = {
