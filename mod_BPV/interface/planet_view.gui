@@ -1226,6 +1226,7 @@ guiTypes = {
 						bottom = 2
 					}
 					verticalScrollbar = bpv_right_vertical_slider_thick
+					smooth_scrolling = yes
 					background = {
 						name = districts_window_background
 						spriteType = GFX_tiles_dark_area_cut_8
@@ -3698,7 +3699,8 @@ guiTypes = {
 					x = 20
 					y = 74
 				}
-				verticalScrollbar = right_vertical_slider_s
+				verticalScrollbar = bpv_right_vertical_slider_thick_small
+				smooth_scrolling = yes
 				background = {
 					name = background
 					spriteType = GFX_dark_area_cut
@@ -4848,6 +4850,7 @@ guiTypes = {
 						height = 236
 					}
 					verticalScrollbar = bpv_right_vertical_slider_thick_small
+					smooth_scrolling = yes
 					margin = {
 						top = 2
 						right = 4
