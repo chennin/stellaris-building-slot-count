@@ -96,6 +96,24 @@ bslot_from_housing = {
 		potential = { is_scope_type = planet }
 		trigger = num_districts
 		parameters = {
+			type = district_prison
+		}
+		mode = add
+		mult = @bslot_district_prison_add
+	}
+	complex_trigger_modifier = {
+		potential = { is_scope_type = planet }
+		trigger = num_districts
+		parameters = {
+			type = district_slave
+		}
+		mode = add
+		mult = @bslot_district_slave_add
+	}
+	complex_trigger_modifier = {
+		potential = { is_scope_type = planet }
+		trigger = num_districts
+		parameters = {
 			type = district_hab_housing
 		}
 		mode = add
@@ -309,13 +327,13 @@ bslot_from_capital = {
 	modifier = {
 		is_scope_type = planet
 		planet = { has_special_tier1_capital = yes }
-		add = @bslot_building_resort_capital_add
+		add = @bslot_building_slave_capital_add
 	}
 	# Governor's Estates / Resort Capital-Complex
 	modifier = {
 		is_scope_type = planet
 		planet = { has_special_tier2_capital = yes }
-		add = @bslot_building_resort_major_capital_add
+		add = @bslot_building_slave_major_capital_add
 	}
 	# building_fe_xeno_zoo
 	modifier = {
