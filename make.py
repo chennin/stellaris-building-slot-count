@@ -31,7 +31,7 @@ cwp.vanilla_path = os.path.expanduser( os.path.expandvars( "~/stellaris-game" ) 
 
 MOD_NAME = "Show Building Slot Capacity"
 VERSION = "5"
-SUPPORTED_VERSION = "3.12.*"
+SUPPORTED_VERSION = "v3.13.*"
 # 3 = unlisted, 2 = hidden, 1 = friends, 0 = public
 VISIBILITY = 0
 
@@ -334,7 +334,7 @@ process_file(f"{cwp.vanilla_path}/common/districts/00_urban_districts.txt",
              files["SCRIPTED_VAR_FILENAME"],
              look_in_block,
              legal_scripted_var,
-             testargs = { "expected": 4 },
+             testargs = { "expected": 6 },
 
              genargs =  { "tests": [ 
                {
@@ -363,6 +363,22 @@ process_file(f"{cwp.vanilla_path}/common/districts/00_urban_districts.txt",
                },
                {
                "outmostblock": "district_crashed_slaver_ship",
+               "innerblock": "planet_modifier",
+               "testleft": "planet_modifier",
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_", "suffix": "add"
+               },
+               {
+               "outmostblock": "district_prison",
+               "innerblock": "planet_modifier",
+               "testleft": "planet_modifier",
+               "testright": None,
+               "keywanted": "planet_max_buildings_add",
+               "prefix": "bslot_", "suffix": "add"
+               },
+               {
+               "outmostblock": "district_slave",
                "innerblock": "planet_modifier",
                "testleft": "planet_modifier",
                "testright": None,
