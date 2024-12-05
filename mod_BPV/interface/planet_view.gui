@@ -316,16 +316,16 @@ guiTypes = {
 		containerWindowType = {
 			name = sector_governor_window
 			size = {
-				width = 175
-				height = 117
+				width = 169
+				height = 195
 			}
 			position = {
-				x = 15
-				y = 155
+				x = 21
+				y = 77
 			}
 			clipping = no
 			background = {
-				name = governor_window
+				name = sector_governor_window
 				spriteType = GFX_invisible
 				alwaysTransparent = yes
 			}
@@ -342,7 +342,7 @@ guiTypes = {
 			}
 			clipping = no
 			background = {
-				name = sector_governor_window
+				name = governor_window
 				spriteType = GFX_invisible
 				alwaysTransparent = yes
 			}
